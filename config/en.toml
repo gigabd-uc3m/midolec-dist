@@ -1,0 +1,19 @@
+# -----------------------------------------------------------------------------
+# English language-pack configuration
+# These options are specific to the English package and its current spaCy backend.
+# -----------------------------------------------------------------------------
+
+[defaults]
+default_context = "default_en"
+# Default NLP backend for English.
+backend = "spacy"
+# Sentence segmentation currently comes from the selected backend.
+sentence_segmentation = "backend"
+
+[backends]
+# Backends currently declared as available for English.
+supported = ["spacy"]
+
+[backends.spacy]
+# Enable or disable the spaCy backend declaration.
+enabled = true

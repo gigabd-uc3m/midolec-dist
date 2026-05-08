@@ -1,0 +1,26 @@
+# Generated outputs
+*.json
+*.log
+*.tmp
+__pycache__/
+*.pyc
+
+# Local executable packages and build artifacts
+bin/
+dist/
+build/
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.tar.xz
+
+# Runtime assets installed by provisioning scripts
+runtime/freeling/lib/
+runtime/freeling/share/freeling/common/
+runtime/freeling/share/freeling/es/
+runtime/spacy/models/
+
+# Local environment files
+.env
+runtime/provisioning/runtime_sources.env
