@@ -1,5 +1,6 @@
 # Generated outputs
-*.json
+/*.json
+midolec-v6/*.json
 *.log
 *.tmp
 __pycache__/
@@ -29,3 +30,7 @@ midolec-v6/runtime/spacy/models/
 .env
 runtime/provisioning/runtime_sources.env
 midolec-v6/runtime/provisioning/runtime_sources.env
+
+# Agent analizers instructions
+AGENTS.md
+**/AGENTS.md
