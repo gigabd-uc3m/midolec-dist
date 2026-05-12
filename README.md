@@ -76,4 +76,5 @@ For Spanish/FreeLing, Midolec V6 uses RPATH/RUNPATH after running
 `patch_freeling_rpath.sh`; users should not need to export `LD_LIBRARY_PATH`
 manually in each terminal session.
 
-See `docs/GUIA_EJECUCION.md` and `docs/DEPENDENCIAS_RUNTIME.md` for details.
+See `docs/GUIA_EJECUCION.md`, `docs/DEPENDENCIAS_RUNTIME.md`,
+`docs/VALIDACION_V6.md` and `docs/TROUBLESHOOTING.md` for details.

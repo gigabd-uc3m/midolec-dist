@@ -3,6 +3,11 @@
 Los binarios y recursos pesados deben publicarse como assets de GitHub Releases,
 no como ficheros versionados en `main`.
 
+Este documento describe como nombrar y preparar entregas internas o publicas de
+Midolec. Para ejecutar una version ya descargada, consultar
+`docs/GUIA_EJECUCION.md`. Para validar una entrega interna, consultar
+`docs/VALIDACION_V6.md`.
+
 ## Convencion de versiones
 
 Para V6, mientras siga siendo una version intermedia:
@@ -28,6 +33,97 @@ Cada Release deberia incluir:
 - recursos FreeLing, si aplica;
 - checksums `SHA256SUMS`;
 - guia breve de ejecucion de esa version.
+
+## Entrega interna actual de V6
+
+Estado:
+
+```text
+Tipo: internal evaluation build
+Source repo commit de referencia: 51122d6
+Distribution package commit de referencia: ae8f06b
+Runtime assets tag: v6-runtime-2026-05-07
+Repositorio de assets: gigabd-uc3m/midolec-dist
+```
+
+El commit de distribucion indicado corresponde al paquete base compartido para
+prueba interna. La documentacion de soporte puede tener commits posteriores.
+
+La distribucion interna actual se organiza alrededor de:
+
+```text
+midolec-v6/
+  midolec-v6
+  _internal/
+  midolecConfig.toml
+  config/
+  runtime/
+    README.md
+    provisioning/
+```
+
+Incluido en Git:
+
+- binario PyInstaller `midolec-v6`;
+- dependencias internas empaquetadas por PyInstaller en `_internal/`;
+- configuracion TOML editable;
+- scripts de provisioning;
+- documentacion de ejecucion, configuracion, validacion y troubleshooting.
+
+No incluido en Git:
+
+- librerias nativas FreeLing descargables en `runtime/freeling/lib/`;
+- recursos FreeLing descargables en `runtime/freeling/share/freeling/`;
+- modelos spaCy descargables en `runtime/spacy/models/`;
+- salidas JSON generadas por ejecuciones locales.
+
+Assets runtime esperados:
+
+```text
+midolec-v6-freeling-libs-linux-x86_64-2026-05-07.tar.gz
+midolec-v6-freeling-resources-es-2026-05-07.tar.gz
+SHA256SUMS
+```
+
+Validacion minima antes de compartir una build interna:
+
+```bash
+cd midolec-v6
+gh auth login
+bash runtime/provisioning/install_freeling_libs.sh
+bash runtime/provisioning/install_freeling_resources.sh
+bash runtime/provisioning/patch_freeling_rpath.sh .
+bash runtime/provisioning/check_freeling_runtime.sh
+./midolec-v6 prueba_v6.txt
+```
+
+Criterio minimo:
+
+- el binario arranca;
+- no hace falta exportar `LD_LIBRARY_PATH`;
+- FreeLing resuelve librerias mediante RPATH/RUNPATH;
+- se genera un JSON de salida;
+- no hay librerias nativas de FreeLing dentro de `_internal/`.
+
+## Checklist para crear una nueva Release V6
+
+1. Generar o actualizar el paquete `midolec-v6/`.
+2. Comprobar que `_internal/` no contiene `libfreeling.so`, `libfoma.so`,
+   `libtreeler.so`, `libdynet.so` ni `libcrfsuite.so`.
+3. Comprobar que `runtime/freeling/` y `runtime/spacy/` no contienen assets
+   descargados antes del commit.
+4. Publicar o reutilizar los assets runtime versionados.
+5. Ejecutar `docs/VALIDACION_V6.md`.
+6. Actualizar este documento con commits, tag y observaciones.
+7. Avisar a colaboradores de la version y del procedimiento de validacion.
+
+## Limitaciones conocidas de la entrega interna
+
+- La distribucion esta pensada para Linux/WSL.
+- El backend espanol usa FreeLing y depende de assets runtime externos.
+- El backend ingles con spaCy debe validarse por separado antes de anunciarlo
+  como estable.
+- La publicacion externa requiere revisar licencias, especialmente por FreeLing.
 
 ## Publicacion futura
 
