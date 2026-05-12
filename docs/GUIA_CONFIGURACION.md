@@ -4,7 +4,7 @@ Midolec se configura mediante ficheros TOML editables.
 
 ## Configuracion global
 
-`midolecConfig.toml` contiene opciones generales del programa:
+`midolec-v6/midolecConfig.toml` contiene opciones generales del programa:
 
 - idioma por defecto;
 - contexto por defecto;
@@ -14,10 +14,10 @@ Midolec se configura mediante ficheros TOML editables.
 
 ## Configuracion por idioma
 
-La carpeta `config/` contiene opciones especificas por idioma:
+La carpeta `midolec-v6/config/` contiene opciones especificas por idioma:
 
-- `config/es.toml`: backend FreeLing, segmentacion y flags de analisis espanol.
-- `config/en.toml`: backend ingles y opciones especificas de ingles.
+- `midolec-v6/config/es.toml`: backend FreeLing, segmentacion y flags de analisis espanol.
+- `midolec-v6/config/en.toml`: backend ingles y opciones especificas de ingles.
 
 ## Regla general
 

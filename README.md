@@ -20,11 +20,11 @@ public or publishing packages for external users.
 ## Repository layout
 
 ```text
-midolecConfig.toml       Global Midolec runtime configuration.
-config/                 Language-specific TOML configuration files.
-docs/                   User and maintainer documentation.
-runtime/provisioning/   Scripts that install external runtime dependencies.
-releases/               Notes about release packaging. Large binaries are not tracked here.
+midolec-v6/              Current packaged Midolec V6 executable workspace.
+midolec-v6/config/       Language-specific TOML configuration files.
+midolec-v6/runtime/      Runtime documentation and provisioning scripts.
+docs/                    User and maintainer documentation.
+releases/                Notes about release packaging. Large binaries are not tracked here.
 ```
 
 ## What belongs in Git
@@ -49,23 +49,31 @@ runtime provisioning scripts.
 
 1. Download the current Midolec executable package from the latest internal
    GitHub Release.
-2. Clone or unpack this distribution repository next to the executable package.
+2. Enter the packaged Midolec folder.
 3. Install the required runtime assets:
 
 ```bash
+cd midolec-v6
 gh auth login
 bash runtime/provisioning/install_freeling_libs.sh
 bash runtime/provisioning/install_freeling_resources.sh
+bash runtime/provisioning/patch_freeling_rpath.sh .
+```
+
+4. Optional: install the English spaCy runtime if English execution is needed.
+
+```bash
 bash runtime/provisioning/install_spacy_en.sh
 ```
 
-4. For Spanish/FreeLing execution, set the dynamic-library path before running:
+5. Run Midolec with the packaged executable:
 
 ```bash
-export LD_LIBRARY_PATH="$PWD/runtime/freeling/lib:${LD_LIBRARY_PATH:-}"
+./midolec-v6 input_text.txt
 ```
 
-5. Run Midolec with the packaged executable or with the development command
-   documented in the release notes.
+For Spanish/FreeLing, Midolec V6 uses RPATH/RUNPATH after running
+`patch_freeling_rpath.sh`; users should not need to export `LD_LIBRARY_PATH`
+manually in each terminal session.
 
 See `docs/GUIA_EJECUCION.md` and `docs/DEPENDENCIAS_RUNTIME.md` for details.

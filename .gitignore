@@ -20,7 +20,12 @@ runtime/freeling/lib/
 runtime/freeling/share/freeling/common/
 runtime/freeling/share/freeling/es/
 runtime/spacy/models/
+midolec-v6/runtime/freeling/lib/
+midolec-v6/runtime/freeling/share/freeling/common/
+midolec-v6/runtime/freeling/share/freeling/es/
+midolec-v6/runtime/spacy/models/
 
 # Local environment files
 .env
 runtime/provisioning/runtime_sources.env
+midolec-v6/runtime/provisioning/runtime_sources.env

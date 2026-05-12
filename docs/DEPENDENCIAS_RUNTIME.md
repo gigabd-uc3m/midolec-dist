@@ -14,16 +14,16 @@ El backend espanol necesita:
 Instalacion:
 
 ```bash
+cd midolec-v6
 gh auth login
 bash runtime/provisioning/install_freeling_libs.sh
 bash runtime/provisioning/install_freeling_resources.sh
+bash runtime/provisioning/patch_freeling_rpath.sh .
 ```
 
-Despues hay que definir:
-
-```bash
-export LD_LIBRARY_PATH="$PWD/runtime/freeling/lib:${LD_LIBRARY_PATH:-}"
-```
+`patch_freeling_rpath.sh` configura `_pyfreeling.so` y las librerias nativas
+para que resuelvan `runtime/freeling/lib/` mediante RPATH/RUNPATH. Despues de
+ese paso, no hace falta exportar `LD_LIBRARY_PATH` manualmente en cada terminal.
 
 ## spaCy
 
@@ -36,6 +36,7 @@ El backend ingles necesita:
 Instalacion:
 
 ```bash
+cd midolec-v6
 bash runtime/provisioning/install_spacy_en.sh
 ```
 
