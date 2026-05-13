@@ -108,6 +108,12 @@ runtime/spacy/models/en_core_web_sm/
 When that local folder exists, the English loader can prefer it instead of
 depending only on a globally installed spaCy model.
 
+Important packaging note: installing the spaCy runtime model is not enough for a
+PyInstaller binary if the executable was built without the Python packages
+`spacy` and `pyphen`. The source-code execution path is validated, but the
+current internal binary needs a rebuild including those packages before English
+execution is considered validated in distribution form.
+
 ## Provisioning Scripts
 
 The `provisioning/` folder contains versioned scripts that populate this runtime

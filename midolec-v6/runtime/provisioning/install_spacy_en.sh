@@ -94,7 +94,14 @@ copy_model_to_runtime() {
     run_python - <<'PY'
 from pathlib import Path
 import en_core_web_sm
-print(Path(en_core_web_sm.__file__).resolve().parent)
+package_path = Path(en_core_web_sm.__file__).resolve().parent
+candidate_paths = [package_path] + sorted(path for path in package_path.iterdir() if path.is_dir())
+for candidate_path in candidate_paths:
+    if (candidate_path / "config.cfg").is_file():
+        print(candidate_path)
+        break
+else:
+    raise SystemExit(f"Could not find loadable spaCy model folder under {package_path}")
 PY
   )"
 

@@ -97,6 +97,11 @@ install_spacy_en.sh
   runtime/spacy/models/ so the English loader can prefer the local runtime
   model when available.
 
+  In source-code execution, these dependencies are imported from the active
+  Python environment. In a PyInstaller binary, `spacy` and `pyphen` must also
+  have been included when the executable was built; this script cannot add
+  Python packages into an already-built `_internal/` bundle.
+
 check_freeling_runtime.sh
   Validates the local FreeLing runtime layout. It can check the full runtime or
   only one part with --libs-only or --resources-only. The FreeLing installers
