@@ -105,6 +105,26 @@ Criterio minimo:
 - se genera un JSON de salida;
 - no hay librerias nativas de FreeLing dentro de `_internal/`.
 
+### Validacion WSL del 2026-05-13
+
+Se ha realizado una validacion local en WSL sobre el codigo fuente V6 y sobre el
+paquete de distribucion.
+
+Resultados:
+
+- Codigo fuente V6 en espanol: validado.
+- Codigo fuente V6 en ingles: validado.
+- Bateria `es-2026_juridica_avanzada`: 70/70 comprobaciones configuradas correctas.
+- Bateria `es-2025_bateria_funcionalidades`: 120/120 comprobaciones configuradas correctas, 20 deshabilitadas.
+- Bateria `en-2025_bateria_funcionalidades`: 200/200 comprobaciones configuradas correctas.
+- Binario de distribucion en espanol: validado sin `LD_LIBRARY_PATH`.
+- Binario de distribucion en ingles: pendiente de nueva build PyInstaller que incluya `spacy` y `pyphen` dentro de `_internal/`.
+
+Durante esta validacion se confirmo que la estrategia RPATH/RUNPATH funciona para
+FreeLing en el binario de distribucion. Tambien se detecto que el flujo ingles
+funciona en codigo fuente, pero no puede considerarse validado en el binario
+actual hasta reconstruir el ejecutable con sus dependencias Python.
+
 ## Checklist para crear una nueva Release V6
 
 1. Generar o actualizar el paquete `midolec-v6/`.
@@ -121,8 +141,9 @@ Criterio minimo:
 
 - La distribucion esta pensada para Linux/WSL.
 - El backend espanol usa FreeLing y depende de assets runtime externos.
-- El backend ingles con spaCy debe validarse por separado antes de anunciarlo
-  como estable.
+- El backend ingles con spaCy esta validado desde codigo fuente, pero el binario
+  actual debe reconstruirse incluyendo `spacy` y `pyphen` para validarlo tambien
+  en distribucion.
 - La publicacion externa requiere revisar licencias, especialmente por FreeLing.
 
 ## Publicacion futura

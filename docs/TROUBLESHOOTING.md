@@ -17,6 +17,13 @@ Sintoma:
 gh: command not found
 ```
 
+Tambien puede aparecer como:
+
+```text
+GitHub CLI (gh) is required to download runtime assets from a private GitHub Release.
+Install it and authenticate before running this script: gh auth login
+```
+
 Causa probable:
 
 GitHub CLI no esta instalado en la maquina. Es necesario porque los assets
@@ -30,6 +37,11 @@ gh --version
 
 Si el comando no existe, instalar GitHub CLI siguiendo las instrucciones
 oficiales o las indicaciones del equipo.
+
+En validaciones internas de desarrollo se puede usar la opcion `--from-dir` de
+los scripts de FreeLing para copiar assets desde una carpeta local ya validada.
+Esa opcion no sustituye al flujo normal para colaboradores, que debe usar la
+Release privada.
 
 ## El usuario no tiene acceso a la Release privada
 
@@ -196,6 +208,44 @@ Solucion:
 ```bash
 bash runtime/provisioning/install_spacy_en.sh
 ```
+
+## El binario no encuentra spaCy aunque install_spacy_en.sh haya funcionado
+
+Sintoma:
+
+```text
+Midolec V6 cannot start English analysis because the spaCy runtime is incomplete.
+Missing Python dependencies:
+  - Python package 'spacy'
+  - Python package 'pyphen'
+```
+
+Causa probable:
+
+El script `install_spacy_en.sh` instala dependencias en el Python del sistema y
+copia el modelo ingles a `runtime/spacy/models/`. Sin embargo, el binario
+PyInstaller ejecuta los modulos Python empaquetados en `_internal/`. Si la build
+del binario no incluyo `spacy` y `pyphen`, el binario no podra importarlos aunque
+esten instalados en el sistema.
+
+Solucion para desarrolladores:
+
+Generar una nueva build PyInstaller incluyendo `spacy`, `pyphen` y los imports
+necesarios del backend ingles. Despues, repetir:
+
+```bash
+bash runtime/provisioning/install_spacy_en.sh
+./midolec-v6 -L en input_text.txt
+```
+
+No se recomienda intentar arreglar este caso copiando manualmente paquetes de
+`site-packages` dentro de `_internal/`, porque es fragil y dificil de reproducir.
+
+Estado conocido:
+
+En la validacion WSL del 2026-05-13, el backend ingles funciono correctamente
+desde codigo fuente y paso su bateria completa, pero el binario de distribucion
+quedo pendiente de nueva build con `spacy` y `pyphen` incluidos.
 
 ## No se genera el JSON de salida
 

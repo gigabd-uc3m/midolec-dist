@@ -121,3 +121,91 @@ Validado por:
 Fecha:
 Observaciones:
 ```
+
+## Validacion WSL local - 2026-05-13
+
+Esta validacion se ha realizado en el entorno local WSL de desarrollo para
+comprobar tanto el codigo fuente como el paquete de distribucion interna.
+
+```text
+Fecha: 2026-05-13
+Maquina: LAPTOP-IJVIND2J
+Sistema operativo: Ubuntu sobre WSL2
+Kernel: 5.15.153.1-microsoft-standard-WSL2
+Python: 3.10.12
+Usuario que valida: juanantonio
+Commit de source repo al inicio de la validacion: b77a8a6
+LD_LIBRARY_PATH: no definido
+Runtime assets: instalados localmente desde runtime validado
+```
+
+### Codigo fuente V6
+
+Resultado general: validado para ejecucion local WSL en espanol e ingles.
+
+Comprobaciones realizadas:
+
+- `bash v6/runtime/provisioning/check_freeling_runtime.sh`: correcto.
+- `python3 v6/midolec.py -H`: correcto.
+- Ejecucion espanola con FreeLing: genera JSON valido.
+- Bateria `es-2026_juridica_avanzada`: 70/70 comprobaciones configuradas correctas.
+- Bateria `es-2025_bateria_funcionalidades`: 120/120 comprobaciones configuradas correctas, 20 comprobaciones deshabilitadas, 0 errores.
+- Provisioning ingles con `install_spacy_en.sh`: correcto tras ajustar la copia del modelo spaCy.
+- Ejecucion inglesa con spaCy: genera JSON valido.
+- Bateria `en-2025_bateria_funcionalidades`: 200/200 comprobaciones configuradas correctas.
+
+Durante la validacion se han actualizado expectativas de testing cuando el
+comportamiento actual se ha considerado correcto:
+
+- `phone_numbers` y `abbreviations` en la bateria espanola antigua.
+- `difficult_terms` en la bateria inglesa.
+
+Tambien se ha corregido la logica de testing para extraer correctamente algunas
+familias de sugerencias inglesas y el nuevo formato estructurado de telefonos.
+
+### Paquete de distribucion `midolec-v6`
+
+Resultado general: validado para espanol/FreeLing en WSL sin usar
+`LD_LIBRARY_PATH`.
+
+Comprobaciones realizadas desde el paquete de distribucion:
+
+- `./midolec-v6 -H`: correcto.
+- Instalacion de librerias FreeLing mediante `--from-dir`: correcta.
+- Instalacion de recursos FreeLing mediante `--from-dir`: correcta.
+- `bash runtime/provisioning/patch_freeling_rpath.sh .`: correcto.
+- `bash runtime/provisioning/check_freeling_runtime.sh`: correcto.
+- Ejecucion espanola con `env -u LD_LIBRARY_PATH ./midolec-v6 ...`: genera JSON valido.
+
+Se ha comprobado especificamente que el binario espanol funciona sin exportar
+`LD_LIBRARY_PATH`, porque `_pyfreeling.so` resuelve las librerias nativas de
+FreeLing mediante RPATH/RUNPATH hacia `runtime/freeling/lib/`.
+
+### Incidencias detectadas
+
+1. El entorno local no tenia `gh` instalado. Por tanto, los scripts de descarga
+   desde GitHub Release privada no pudieron probarse directamente en este WSL.
+   Para esta validacion se uso la opcion de desarrollo `--from-dir`, copiando
+   assets desde un runtime local ya validado.
+
+2. La primera version de `install_spacy_en.sh` copiaba el paquete Python
+   `en_core_web_sm`, pero no siempre dejaba el directorio cargable con
+   `config.cfg` en la raiz de `runtime/spacy/models/en_core_web_sm/`. Se ha
+   corregido el script para copiar la carpeta real del modelo.
+
+3. El binario actual de distribucion no pudo ejecutar ingles aunque el modelo
+   spaCy estuviera instalado en `runtime/spacy/models/`. El motivo es que el
+   binario PyInstaller actual no incluye los paquetes Python `spacy` y
+   `pyphen` dentro de `_internal/`. Esto no afecta al codigo fuente, donde el
+   backend ingles si ha quedado validado. Para validar ingles en el binario hay
+   que generar una nueva build PyInstaller incluyendo esas dependencias.
+
+### Estado final de esta validacion
+
+```text
+Codigo fuente V6 espanol: validado
+Codigo fuente V6 ingles: validado
+Binario distribucion espanol: validado
+Binario distribucion ingles: pendiente de nueva build con spacy/pyphen incluidos
+LD_LIBRARY_PATH manual: no necesario para espanol/FreeLing
+```
