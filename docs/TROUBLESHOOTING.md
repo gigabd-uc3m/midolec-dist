@@ -220,7 +220,7 @@ Missing Python dependencies:
   - Python package 'pyphen'
 ```
 
-Causa probable:
+Causa probable en builds antiguas:
 
 El script `install_spacy_en.sh` instala dependencias en el Python del sistema y
 copia el modelo ingles a `runtime/spacy/models/`. Sin embargo, el binario
@@ -228,10 +228,10 @@ PyInstaller ejecuta los modulos Python empaquetados en `_internal/`. Si la build
 del binario no incluyo `spacy` y `pyphen`, el binario no podra importarlos aunque
 esten instalados en el sistema.
 
-Solucion para desarrolladores:
+Solucion:
 
-Generar una nueva build PyInstaller incluyendo `spacy`, `pyphen` y los imports
-necesarios del backend ingles. Despues, repetir:
+Usar una build de distribucion reconstruida con `spacy` y `pyphen` incluidos en
+`_internal/`. Despues, instalar o comprobar el modelo ingles runtime:
 
 ```bash
 bash runtime/provisioning/install_spacy_en.sh
@@ -241,11 +241,31 @@ bash runtime/provisioning/install_spacy_en.sh
 No se recomienda intentar arreglar este caso copiando manualmente paquetes de
 `site-packages` dentro de `_internal/`, porque es fragil y dificil de reproducir.
 
-Estado conocido:
+Estado actual:
 
-En la validacion WSL del 2026-05-13, el backend ingles funciono correctamente
-desde codigo fuente y paso su bateria completa, pero el binario de distribucion
-quedo pendiente de nueva build con `spacy` y `pyphen` incluidos.
+La build actual de distribucion incluye `spacy` y `pyphen` dentro de
+`_internal/`. El modelo `en_core_web_sm` sigue siendo un recurso runtime externo
+y debe estar disponible en `runtime/spacy/models/`.
+
+## Division by zero al procesar una entrada en ingles
+
+Sintoma:
+
+```text
+division by zero
+```
+
+Causa probable en builds antiguas:
+
+El procesador ingles calculaba algunos ratios dividiendo por el numero de
+palabras analizables de la oracion. Si la entrada no era texto natural o una
+oracion quedaba sin palabras analizables, el denominador podia ser cero.
+
+Solucion:
+
+Usar una build reconstruida a partir del codigo fuente corregido. La logica
+actual devuelve ratios `0.0` cuando no hay denominador suficiente, en lugar de
+interrumpir la ejecucion.
 
 ## No se genera el JSON de salida
 

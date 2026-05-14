@@ -133,7 +133,7 @@ Maquina: LAPTOP-IJVIND2J
 Sistema operativo: Ubuntu sobre WSL2
 Kernel: 5.15.153.1-microsoft-standard-WSL2
 Python: 3.10.12
-Usuario que valida: juanantonio
+Usuario que valida: Juan Romero (juaromer@pa.uc3m.es)
 Commit de source repo al inicio de la validacion: b77a8a6
 LD_LIBRARY_PATH: no definido
 Runtime assets: instalados localmente desde runtime validado
@@ -178,8 +178,8 @@ Comprobaciones realizadas desde el paquete de distribucion:
 - Ejecucion espanola con `env -u LD_LIBRARY_PATH ./midolec-v6 ...`: genera JSON valido.
 
 Se ha comprobado especificamente que el binario espanol funciona sin exportar
-`LD_LIBRARY_PATH`, porque `_pyfreeling.so` resuelve las librerias nativas de
-FreeLing mediante RPATH/RUNPATH hacia `runtime/freeling/lib/`.
+`LD_LIBRARY_PATH`, porque en la solucióna actual `_pyfreeling.so` resuelve las 
+librerias nativas de FreeLing mediante RPATH/RUNPATH hacia `runtime/freeling/lib/`.
 
 ### Incidencias detectadas
 
@@ -193,12 +193,18 @@ FreeLing mediante RPATH/RUNPATH hacia `runtime/freeling/lib/`.
    `config.cfg` en la raiz de `runtime/spacy/models/en_core_web_sm/`. Se ha
    corregido el script para copiar la carpeta real del modelo.
 
-3. El binario actual de distribucion no pudo ejecutar ingles aunque el modelo
-   spaCy estuviera instalado en `runtime/spacy/models/`. El motivo es que el
-   binario PyInstaller actual no incluye los paquetes Python `spacy` y
-   `pyphen` dentro de `_internal/`. Esto no afecta al codigo fuente, donde el
-   backend ingles si ha quedado validado. Para validar ingles en el binario hay
-   que generar una nueva build PyInstaller incluyendo esas dependencias.
+3. El primer binario de distribucion no pudo ejecutar ingles aunque el modelo
+   spaCy estuviera instalado en `runtime/spacy/models/`. El motivo era que esa
+   build PyInstaller no incluia los paquetes Python `spacy` y `pyphen` dentro
+   de `_internal/`. Se genero una nueva build incorporando esas dependencias
+   Python en el binario, manteniendo el modelo ingles como recurso runtime
+   externo.
+
+4. Durante la validacion de la nueva build se detecto un error `division by
+   zero` al procesar entradas no naturales en ingles, por ejemplo un fichero
+   TOML usado accidentalmente como texto de entrada. El fallo estaba en el
+   calculo de ratios cuando una oracion no tenia palabras analizables. Se
+   corrigio en el codigo fuente y se reconstruyo el binario.
 
 ### Estado final de esta validacion
 
@@ -206,6 +212,7 @@ FreeLing mediante RPATH/RUNPATH hacia `runtime/freeling/lib/`.
 Codigo fuente V6 espanol: validado
 Codigo fuente V6 ingles: validado
 Binario distribucion espanol: validado
-Binario distribucion ingles: pendiente de nueva build con spacy/pyphen incluidos
+Binario distribucion ingles: validado con spacy/pyphen incluidos en _internal/
+Modelo ingles spaCy: recurso runtime externo en runtime/spacy/models/
 LD_LIBRARY_PATH manual: no necesario para espanol/FreeLing
 ```

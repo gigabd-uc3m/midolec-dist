@@ -40,8 +40,8 @@ Estado:
 
 ```text
 Tipo: internal evaluation build
-Source repo commit de referencia: 51122d6
-Distribution package commit de referencia: ae8f06b
+Source repo commit de referencia: 082b290
+Distribution package commit de referencia: commit de la build con spacy/pyphen integrados
 Runtime assets tag: v6-runtime-2026-05-07
 Repositorio de assets: gigabd-uc3m/midolec-dist
 ```
@@ -118,12 +118,13 @@ Resultados:
 - Bateria `es-2025_bateria_funcionalidades`: 120/120 comprobaciones configuradas correctas, 20 deshabilitadas.
 - Bateria `en-2025_bateria_funcionalidades`: 200/200 comprobaciones configuradas correctas.
 - Binario de distribucion en espanol: validado sin `LD_LIBRARY_PATH`.
-- Binario de distribucion en ingles: pendiente de nueva build PyInstaller que incluya `spacy` y `pyphen` dentro de `_internal/`.
+- Binario de distribucion en ingles: validado tras reconstruir PyInstaller con `spacy` y `pyphen` dentro de `_internal/`.
 
 Durante esta validacion se confirmo que la estrategia RPATH/RUNPATH funciona para
-FreeLing en el binario de distribucion. Tambien se detecto que el flujo ingles
-funciona en codigo fuente, pero no puede considerarse validado en el binario
-actual hasta reconstruir el ejecutable con sus dependencias Python.
+FreeLing en el binario de distribucion. Tambien se reconstruyo el ejecutable
+para que el backend ingles pueda importar `spacy` y `pyphen` desde `_internal/`.
+El modelo `en_core_web_sm` se mantiene fuera de Git como recurso runtime externo
+en `runtime/spacy/models/`.
 
 ## Checklist para crear una nueva Release V6
 
@@ -141,9 +142,8 @@ actual hasta reconstruir el ejecutable con sus dependencias Python.
 
 - La distribucion esta pensada para Linux/WSL.
 - El backend espanol usa FreeLing y depende de assets runtime externos.
-- El backend ingles con spaCy esta validado desde codigo fuente, pero el binario
-  actual debe reconstruirse incluyendo `spacy` y `pyphen` para validarlo tambien
-  en distribucion.
+- El backend ingles con spaCy esta validado en la build actual, siempre que el
+  modelo `en_core_web_sm` este instalado en `runtime/spacy/models/`.
 - La publicacion externa requiere revisar licencias, especialmente por FreeLing.
 
 ## Publicacion futura
