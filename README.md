@@ -7,23 +7,36 @@ The source-code repository is kept separate. This repository is intended to help
 internal collaborators install and test packaged Midolec versions without
 working directly with the development tree.
 
+## DO NOT MAKE ANY COMMIT
+No one should do any commit, unless GigaBD development team aproves.
+
+It is recommended to download the repo. In order to use it, modify it, test it, etc...
+as pleased.
+
+You may also clone it. Eventhough it is recommended to make a copy in another folder.
+
+
+This is just to avoid any unintentional commit or modification of the repository.
+
+
 ## Current status
 
 Midolec V6 is currently an internal evaluation build. Do not treat this
 repository as a public distribution channel until licensing and publication
 requirements have been reviewed.
 
-The Spanish backend uses FreeLing. FreeLing is distributed under AGPL terms, so
-public binary distribution must be reviewed before making this repository
-public or publishing packages for external users.
+The Spanish analysis backend can be configured to use both FreeLing and 
+some own PLN functions.
+
+The Enlgish backend currently uses SpaCy.
+
+Still public binary distribution must be reviewed before making this repository
+public or publishing packages for external useStill 
 
 Current validation status:
 
-- Spanish/FreeLing is validated in WSL for the current internal binary without
-  requiring manual `LD_LIBRARY_PATH`.
-- English/spaCy is validated from source code, but the current internal binary
-  must be rebuilt with `spacy` and `pyphen` included before English execution is
-  considered validated in the packaged distribution.
+- Spanish/FreeLing is validated in WSL for the current internal binary.
+- English/spaCy is validated in WSL for the current binary.
 
 ## Repository layout
 
@@ -88,8 +101,7 @@ the PyInstaller bundle.
 ```
 
 For Spanish/FreeLing, Midolec V6 uses RPATH/RUNPATH after running
-`patch_freeling_rpath.sh`; users should not need to export `LD_LIBRARY_PATH`
-manually in each terminal session.
+`patch_freeling_rpath.sh`.
 
 See `docs/GUIA_EJECUCION.md`, `docs/DEPENDENCIAS_RUNTIME.md`,
 `docs/VALIDACION_V6.md` and `docs/TROUBLESHOOTING.md` for details.

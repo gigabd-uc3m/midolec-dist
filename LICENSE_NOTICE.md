@@ -3,9 +3,12 @@
 This repository is currently intended for internal evaluation and packaged
 testing of Midolec.
 
-Midolec V6 can use FreeLing for Spanish analysis. FreeLing is distributed under
-AGPL terms, so public distribution of a Midolec binary that integrates FreeLing
-must be reviewed before publishing this repository or its releases externally.
+Midolec V6 may call FreeLing for Spanish texts preprocessing and categorizing words. 
+FreeLing is distributed under AGPL terms. Nevertheless Midolec doesn't modify nor
+integrates FreeLing, as it is used as a detachable NPL backend.
+
+Still GigaBD developing group is pending to complete a full review of the internal 
+binary code for privacy purposes.
 
 Until that review is complete:
 

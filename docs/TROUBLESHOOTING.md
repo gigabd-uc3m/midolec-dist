@@ -9,7 +9,7 @@ Los comandos se ejecutan desde la raiz del paquete:
 cd midolec-v6
 ```
 
-## GitHub CLI no esta instalado
+## 1) GitHub CLI no esta instalado
 
 Sintoma:
 
@@ -43,7 +43,7 @@ los scripts de FreeLing para copiar assets desde una carpeta local ya validada.
 Esa opcion no sustituye al flujo normal para colaboradores, que debe usar la
 Release privada.
 
-## El usuario no tiene acceso a la Release privada
+## 2) El usuario no tiene acceso a la Release privada
 
 Sintomas habituales:
 
@@ -68,7 +68,7 @@ gh auth status
 Si `gh auth status` funciona pero la descarga sigue fallando, pedir acceso al
 repositorio de distribucion.
 
-## Falta patchelf
+## 3) Falta patchelf
 
 Sintoma:
 
@@ -94,7 +94,7 @@ Despues, repetir:
 bash runtime/provisioning/patch_freeling_rpath.sh .
 ```
 
-## Missing FreeLing RPATH/RUNPATH configuration
+## 4) Missing FreeLing RPATH/RUNPATH configuration
 
 Sintoma:
 
@@ -117,7 +117,7 @@ bash runtime/provisioning/check_freeling_runtime.sh
 No se debe resolver este error exportando `LD_LIBRARY_PATH` manualmente. La
 estrategia actual de V6 es usar RPATH/RUNPATH.
 
-## Falta una libreria nativa de FreeLing
+## 5) Falta una libreria nativa de FreeLing
 
 Sintomas habituales:
 
@@ -142,7 +142,7 @@ bash runtime/provisioning/patch_freeling_rpath.sh .
 bash runtime/provisioning/check_freeling_runtime.sh --libs-only
 ```
 
-## Undefined symbol en _pyfreeling.so
+## 6) Undefined symbol en _pyfreeling.so
 
 Sintoma:
 
@@ -167,7 +167,7 @@ bash runtime/provisioning/check_freeling_runtime.sh --libs-only
 Si el error persiste, eliminar `runtime/freeling/lib/` y repetir la instalacion
 desde la Release oficial de `midolec-dist`.
 
-## Faltan recursos linguisticos de FreeLing
+## 7) Faltan recursos linguisticos de FreeLing
 
 Sintomas habituales:
 
@@ -189,7 +189,7 @@ bash runtime/provisioning/install_freeling_resources.sh
 bash runtime/provisioning/check_freeling_runtime.sh --resources-only
 ```
 
-## El backend ingles no encuentra spaCy o pyphen
+## 8) El backend ingles no encuentra spaCy o pyphen
 
 Sintomas habituales:
 
@@ -209,7 +209,7 @@ Solucion:
 bash runtime/provisioning/install_spacy_en.sh
 ```
 
-## El binario no encuentra spaCy aunque install_spacy_en.sh haya funcionado
+## 9) El binario no encuentra spaCy aunque install_spacy_en.sh haya funcionado
 
 Sintoma:
 
@@ -247,27 +247,8 @@ La build actual de distribucion incluye `spacy` y `pyphen` dentro de
 `_internal/`. El modelo `en_core_web_sm` sigue siendo un recurso runtime externo
 y debe estar disponible en `runtime/spacy/models/`.
 
-## Division by zero al procesar una entrada en ingles
 
-Sintoma:
-
-```text
-division by zero
-```
-
-Causa probable en builds antiguas:
-
-El procesador ingles calculaba algunos ratios dividiendo por el numero de
-palabras analizables de la oracion. Si la entrada no era texto natural o una
-oracion quedaba sin palabras analizables, el denominador podia ser cero.
-
-Solucion:
-
-Usar una build reconstruida a partir del codigo fuente corregido. La logica
-actual devuelve ratios `0.0` cuando no hay denominador suficiente, en lugar de
-interrumpir la ejecucion.
-
-## No se genera el JSON de salida
+## 10) No se genera el JSON de salida
 
 Sintoma:
 
@@ -288,7 +269,7 @@ Revisar:
 - que `runtime/provisioning/check_freeling_runtime.sh` termina sin errores si
   se usa espanol/FreeLing.
 
-## Informacion que conviene reportar
+## IMP: Informacion que conviene reportar
 
 Cuando un colaborador reporte un fallo, pedir:
 
