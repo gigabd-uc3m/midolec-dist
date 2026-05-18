@@ -29,7 +29,7 @@ REQUIRED_LIBS=(
 print_usage() {
   cat <<'EOF'
 Usage:
-  runtime/provisioning/install_freeling_libs.sh [options]
+  v6/runtime/provisioning/install_freeling_libs.sh [options]
 
 Options:
   --url URL             Download a compatible FreeLing .so archive from URL.

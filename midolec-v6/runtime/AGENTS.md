@@ -15,13 +15,13 @@ This directory contains runtime documentation and provisioning scripts. Heavy ru
 Run the closest applicable command:
 
 ```bash
-bash runtime/provisioning/check_freeling_runtime.sh
-bash runtime/provisioning/check_freeling_runtime.sh --libs-only
-bash runtime/provisioning/check_freeling_runtime.sh --resources-only
+bash v6/runtime/provisioning/check_freeling_runtime.sh
+bash v6/runtime/provisioning/check_freeling_runtime.sh --libs-only
+bash v6/runtime/provisioning/check_freeling_runtime.sh --resources-only
 ```
 
 ## Distribution Notes
 
-- The distribution package should include `runtime/README.md` and `runtime/provisioning/`.
+- The source package should include `v6/runtime/README.md` and `v6/runtime/provisioning/`.
 - FreeLing libs/resources and spaCy models should be versioned release assets when they are too heavy for source.
 - `midolec-dist` is the distribution/runtime assets repository, not the canonical source-code repository.

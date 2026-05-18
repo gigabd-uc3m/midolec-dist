@@ -37,7 +37,7 @@ CHECK_ABI=1
 print_usage() {
   cat <<'EOF'
 Usage:
-  bash runtime/provisioning/check_freeling_runtime.sh [options]
+  bash v6/runtime/provisioning/check_freeling_runtime.sh [options]
 
 Options:
   --all             Validate libraries, binding dependencies and resources. Default.
@@ -205,13 +205,13 @@ print_manual_help() {
 
 How to fix missing FreeLing runtime files:
 
-  runtime/provisioning/install_freeling_libs.sh
-  runtime/provisioning/install_freeling_resources.sh
+  v6/runtime/provisioning/install_freeling_libs.sh
+  v6/runtime/provisioning/install_freeling_resources.sh
 
 If the runtime files are present but Midolec still reports missing
 RPATH/RUNPATH resolution, patch the binding and the native libraries with:
 
-  bash runtime/provisioning/patch_freeling_rpath.sh /path/to/midolec-v6
+  bash v6/runtime/provisioning/patch_freeling_rpath.sh /path/to/midolec-root
 
 If ldd reports missing system libraries, install the required OS packages. The
 known Ubuntu/WSL packages used by this runtime are:

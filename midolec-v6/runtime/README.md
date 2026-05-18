@@ -71,7 +71,7 @@ This patches the binding so it resolves native libraries from
 After that, the canonical source entry point remains:
 
 ```bash
-./midolec-v6 input.txt
+python3 midolec.py input.txt
 ```
 
 ## Configuration
@@ -108,11 +108,15 @@ runtime/spacy/models/en_core_web_sm/
 When that local folder exists, the English loader can prefer it instead of
 depending only on a globally installed spaCy model.
 
-Important packaging note: installing the spaCy runtime model is not enough for a
-PyInstaller binary if the executable was built without the Python packages
-`spacy` and `pyphen`. The source-code execution path is validated, but the
-current internal binary needs a rebuild including those packages before English
-execution is considered validated in distribution form.
+The installer copies the loadable spaCy model directory, meaning the target
+folder should contain `config.cfg` directly at:
+
+```text
+runtime/spacy/models/en_core_web_sm/config.cfg
+```
+
+If the model appears one level deeper, rerun the current provisioning script so
+the runtime layout matches what the preflight and English loader expect.
 
 ## Provisioning Scripts
 
@@ -124,16 +128,16 @@ Recommended usage:
 
 ```bash
 # Install the current English spaCy dependencies and model.
-runtime/provisioning/install_spacy_en.sh
+v6/runtime/provisioning/install_spacy_en.sh
 
 # Install/check compatible FreeLing native libraries.
-runtime/provisioning/install_freeling_libs.sh --url "<release-asset-url>"
+v6/runtime/provisioning/install_freeling_libs.sh --url "<release-asset-url>"
 
 # Install FreeLing common/ and es/ resources.
-runtime/provisioning/install_freeling_resources.sh --url "<release-asset-url>"
+v6/runtime/provisioning/install_freeling_resources.sh --url "<release-asset-url>"
 
 # Patch the binding and the native libraries for RPATH/RUNPATH resolution.
-bash runtime/provisioning/patch_freeling_rpath.sh .
+bash v6/runtime/provisioning/patch_freeling_rpath.sh v6
 ```
 
 For FreeLing archives, prefer GitHub Release assets or another stable direct

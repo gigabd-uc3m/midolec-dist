@@ -21,7 +21,7 @@ source "${SCRIPT_DIR}/_github_release.sh"
 print_usage() {
   cat <<'EOF'
 Usage:
-  runtime/provisioning/install_freeling_resources.sh [options]
+  v6/runtime/provisioning/install_freeling_resources.sh [options]
 
 Options:
   --url URL             Download a FreeLing resources archive from URL.

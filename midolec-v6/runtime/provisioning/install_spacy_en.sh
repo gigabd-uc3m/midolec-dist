@@ -11,7 +11,7 @@ UPGRADE_PACKAGES=0
 print_usage() {
   cat <<'EOF'
 Usage:
-  runtime/provisioning/install_spacy_en.sh [options]
+  v6/runtime/provisioning/install_spacy_en.sh [options]
 
 Options:
   --python PATH              Python executable to use. Defaults to MIDOLEC_PYTHON or python3.
