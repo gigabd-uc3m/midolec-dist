@@ -105,3 +105,13 @@ For Spanish/FreeLing, Midolec V6 uses RPATH/RUNPATH after running
 
 See `docs/GUIA_EJECUCION.md`, `docs/DEPENDENCIAS_RUNTIME.md`,
 `docs/VALIDACION_V6.md` and `docs/TROUBLESHOOTING.md` for details.
+
+
+
+a
+b
+c
+d
+e
+f
+
