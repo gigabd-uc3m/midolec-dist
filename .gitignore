@@ -16,6 +16,11 @@ build/
 *.tgz
 *.tar.xz
 
+# PyInstaller runtime archive required by the embedded Python interpreter.
+# Do not ignore this file: without it the binary fails before Midolec starts
+# with "ModuleNotFoundError: No module named 'encodings'".
+!midolec-v6/_internal/base_library.zip
+
 # Runtime assets installed by provisioning scripts
 runtime/freeling/lib/
 runtime/freeling/share/freeling/common/
