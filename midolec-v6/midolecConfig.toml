@@ -15,7 +15,7 @@ default_context = "default_es"
 #   "24h" -> detect 12-hour patterns and suggest forms such as "14:30"
 hour_format_suggested = "12h"
 # When false, empty branches and zero-like values will be pruned from the output.
-include_empty_attributes = false
+include_empty_attributes = true
 
 
 [paths]

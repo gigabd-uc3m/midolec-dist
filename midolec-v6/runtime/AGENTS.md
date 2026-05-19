@@ -15,9 +15,10 @@ This directory contains runtime documentation and provisioning scripts. Heavy ru
 Run the closest applicable command:
 
 ```bash
-bash v6/runtime/provisioning/check_freeling_runtime.sh
-bash v6/runtime/provisioning/check_freeling_runtime.sh --libs-only
-bash v6/runtime/provisioning/check_freeling_runtime.sh --resources-only
+bash v6/runtime/provisioning/install_configure_freeling.sh
+bash v6/runtime/provisioning/freeling/check_runtime.sh
+bash v6/runtime/provisioning/freeling/check_runtime.sh --libs-only
+bash v6/runtime/provisioning/freeling/check_runtime.sh --resources-only
 ```
 
 ## Distribution Notes

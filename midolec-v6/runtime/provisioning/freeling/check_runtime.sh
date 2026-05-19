@@ -2,7 +2,7 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-RUNTIME_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
+RUNTIME_ROOT="$(cd "${SCRIPT_DIR}/../.." && pwd)"
 APP_ROOT="$(cd "${RUNTIME_ROOT}/.." && pwd)"
 FREELING_ROOT="${RUNTIME_ROOT}/freeling"
 FREELING_LIB_DIR="${FREELING_ROOT}/lib"
@@ -37,7 +37,7 @@ CHECK_ABI=1
 print_usage() {
   cat <<'EOF'
 Usage:
-  bash v6/runtime/provisioning/check_freeling_runtime.sh [options]
+  bash v6/runtime/provisioning/freeling/check_runtime.sh [options]
 
 Options:
   --all             Validate libraries, binding dependencies and resources. Default.
@@ -128,7 +128,7 @@ check_binding_dependencies() {
   if env -u LD_LIBRARY_PATH ldd "$binding_path" | grep -Fq 'not found'; then
     echo ""
     echo "There are unresolved shared-library dependencies for _pyfreeling.so." >&2
-    echo "If runtime/freeling/lib exists, run patch_freeling_rpath.sh and retry." >&2
+    echo "If runtime/freeling/lib exists, run freeling/patch_freeling_rpath.sh and retry." >&2
     return 1
   fi
 
@@ -205,13 +205,12 @@ print_manual_help() {
 
 How to fix missing FreeLing runtime files:
 
-  v6/runtime/provisioning/install_freeling_libs.sh
-  v6/runtime/provisioning/install_freeling_resources.sh
+  v6/runtime/provisioning/install_configure_freeling.sh
 
 If the runtime files are present but Midolec still reports missing
 RPATH/RUNPATH resolution, patch the binding and the native libraries with:
 
-  bash v6/runtime/provisioning/patch_freeling_rpath.sh /path/to/midolec-root
+  bash v6/runtime/provisioning/freeling/patch_freeling_rpath.sh /path/to/midolec-root
 
 If ldd reports missing system libraries, install the required OS packages. The
 known Ubuntu/WSL packages used by this runtime are:

@@ -5,8 +5,8 @@ set -euo pipefail
 # Patch FreeLing RPATH/RUNPATH for Midolec V6
 # ------------------------------------------------------------
 # Usage:
-#   bash runtime/provisioning/patch_freeling_rpath.sh
-#   bash runtime/provisioning/patch_freeling_rpath.sh /path/to/midolec-root
+#   bash runtime/provisioning/freeling/patch_freeling_rpath.sh
+#   bash runtime/provisioning/freeling/patch_freeling_rpath.sh /path/to/midolec-root
 #
 # It supports both:
 #   1) Source tree:

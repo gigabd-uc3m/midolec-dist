@@ -2,7 +2,7 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-RUNTIME_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
+RUNTIME_ROOT="$(cd "${SCRIPT_DIR}/../.." && pwd)"
 TARGET_DIR="${RUNTIME_ROOT}/freeling/lib"
 SOURCE_URL="${MIDOLEC_FREELING_LIBS_URL:-}"
 GITHUB_REPO="${MIDOLEC_RUNTIME_GITHUB_REPO:-gigabd-uc3m/midolec-dist}"
@@ -29,7 +29,7 @@ REQUIRED_LIBS=(
 print_usage() {
   cat <<'EOF'
 Usage:
-  v6/runtime/provisioning/install_freeling_libs.sh [options]
+  v6/runtime/provisioning/freeling/install_libs.sh [options]
 
 Options:
   --url URL             Download a compatible FreeLing .so archive from URL.
@@ -40,7 +40,7 @@ Options:
   --archive PATH        Use a local archive instead of downloading.
   --from-dir PATH       Copy .so files from a local directory.
   --skip-checksum       Do not verify SHA256SUMS when using GitHub Release download.
-  --skip-check          Do not run check_freeling_runtime.sh --libs-only.
+  --skip-check          Do not run check_runtime.sh --libs-only.
   --keep-tmp            Keep the temporary extraction directory for debugging.
   -h, --help            Show this help.
 
@@ -188,8 +188,8 @@ run_runtime_check() {
     return 0
   fi
 
-  if [[ -f "${SCRIPT_DIR}/check_freeling_runtime.sh" ]]; then
-    bash "${SCRIPT_DIR}/check_freeling_runtime.sh" --libs-only
+  if [[ -f "${SCRIPT_DIR}/check_runtime.sh" ]]; then
+    bash "${SCRIPT_DIR}/check_runtime.sh" --libs-only
   else
     echo "Runtime check script not found; skipping."
   fi

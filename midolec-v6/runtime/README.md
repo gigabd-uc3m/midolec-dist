@@ -20,11 +20,13 @@ runtime/
 │           ├── common/
 │           └── es/
 ├── provisioning/
-│   ├── check_freeling_runtime.sh
-│   ├── install_freeling_libs.sh
-│   ├── install_freeling_resources.sh
-│   ├── patch_freeling_rpath.sh
-│   └── install_spacy_en.sh
+│   ├── install_configure_freeling.sh
+│   ├── install_spacy_en.sh
+│   └── freeling/
+│       ├── check_runtime.sh
+│       ├── install_libs.sh
+│       ├── install_resources.sh
+│       └── patch_freeling_rpath.sh
 └── spacy/
     └── models/
         └── en_core_web_sm/
@@ -56,17 +58,17 @@ current strategy is:
 
 1. Install the runtime libraries in `runtime/freeling/lib/`.
 2. Install the linguistic resources in `runtime/freeling/share/freeling/`.
-3. Patch `_pyfreeling.so` and the native FreeLing libraries with
-   `patch_freeling_rpath.sh`.
+3. Patch `_pyfreeling.so` and the native FreeLing libraries with the FreeLing
+   RPATH/RUNPATH helper.
 
-After installing or copying the runtime folder, run:
+For normal first-time setup, run the global FreeLing installer:
 
 ```bash
-bash runtime/provisioning/patch_freeling_rpath.sh .
+runtime/provisioning/install_configure_freeling.sh
 ```
 
-This patches the binding so it resolves native libraries from
-`runtime/freeling/lib/` through RPATH/RUNPATH.
+This script installs FreeLing libraries, installs the common/ and es/
+resources, patches RPATH/RUNPATH, and runs the final runtime check.
 
 After that, the canonical source entry point remains:
 
@@ -130,14 +132,8 @@ Recommended usage:
 # Install the current English spaCy dependencies and model.
 v6/runtime/provisioning/install_spacy_en.sh
 
-# Install/check compatible FreeLing native libraries.
-v6/runtime/provisioning/install_freeling_libs.sh --url "<release-asset-url>"
-
-# Install FreeLing common/ and es/ resources.
-v6/runtime/provisioning/install_freeling_resources.sh --url "<release-asset-url>"
-
-# Patch the binding and the native libraries for RPATH/RUNPATH resolution.
-bash v6/runtime/provisioning/patch_freeling_rpath.sh v6
+# Install, configure and check FreeLing.
+v6/runtime/provisioning/install_configure_freeling.sh
 ```
 
 For FreeLing archives, prefer GitHub Release assets or another stable direct
