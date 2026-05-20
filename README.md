@@ -32,7 +32,7 @@ git clone https://github.com/gigabd-uc3m/midolec-dist.git
 cd midolec-dist/midolec-v6
 ```
 
-If you download the ZIP on Windows, open WSL Ubuntu and unzip/copy the package
+>If you download the ZIP on Windows, open WSL Ubuntu and unzip/copy the package
 inside the Linux home directory, for example `~/midolec-dist`.
 
 Run the guided installer:
