@@ -39,11 +39,9 @@ Ejecutar desde la raiz del paquete:
 
 ```bash
 cd midolec-v6
-gh auth login
-bash runtime/provisioning/install_freeling_libs.sh
-bash runtime/provisioning/install_freeling_resources.sh
-bash runtime/provisioning/patch_freeling_rpath.sh .
-bash runtime/provisioning/check_freeling_runtime.sh
+sudo apt update
+sudo apt install -y curl patchelf libboost-regex1.74.0 libboost-program-options1.74.0
+bash runtime/provisioning/install_configure_freeling.sh
 ```
 
 ## Prueba minima de ejecucion
@@ -92,7 +90,7 @@ Despues, restaurar el valor anterior.
 
 La version se considera validada para prueba interna si:
 
-- `check_freeling_runtime.sh` termina sin errores;
+- `freeling/check_runtime.sh` termina sin errores;
 - `./midolec-v6 prueba_v6.txt` genera JSON correctamente;
 - no aparece ningun error de tipo `libfreeling.so not found`, `undefined symbol`,
   `Missing FreeLing RPATH/RUNPATH configuration` o similar;
@@ -145,7 +143,7 @@ Resultado general: validado para ejecucion local WSL en espanol e ingles.
 
 Comprobaciones realizadas:
 
-- `bash v6/runtime/provisioning/check_freeling_runtime.sh`: correcto.
+- `bash v6/runtime/provisioning/freeling/check_runtime.sh`: correcto.
 - `python3 v6/midolec.py -H`: correcto.
 - Ejecucion espanola con FreeLing: genera JSON valido.
 - Bateria `es-2026_juridica_avanzada`: 70/70 comprobaciones configuradas correctas.
@@ -173,8 +171,8 @@ Comprobaciones realizadas desde el paquete de distribucion:
 - `./midolec-v6 -H`: correcto.
 - Instalacion de librerias FreeLing mediante `--from-dir`: correcta.
 - Instalacion de recursos FreeLing mediante `--from-dir`: correcta.
-- `bash runtime/provisioning/patch_freeling_rpath.sh .`: correcto.
-- `bash runtime/provisioning/check_freeling_runtime.sh`: correcto.
+- `bash runtime/provisioning/freeling/patch_freeling_rpath.sh .`: correcto.
+- `bash runtime/provisioning/freeling/check_runtime.sh`: correcto.
 - Ejecucion espanola con `env -u LD_LIBRARY_PATH ./midolec-v6 ...`: genera JSON valido.
 
 Se ha comprobado especificamente que el binario espanol funciona sin exportar

@@ -16,10 +16,10 @@ requirements have been reviewed.
 The Spanish analysis backend can be configured to use both FreeLing and 
 some own PLN functions.
 
-The Enlgish backend currently uses SpaCy.
+The English backend currently uses spaCy.
 
 Still public binary distribution must be reviewed before making this repository
-public or publishing packages for external useStill 
+public or publishing packages for external use.
 
 Current validation status:
 
@@ -27,14 +27,30 @@ Current validation status:
 - English/spaCy is validated in WSL for the current binary.
 
 
-## Quick start
-It is recommended to install, configure and execute the software in WSL or an Ubuntu distribution.
+## Supported environments
 
-1. Clone the current Midolec executable distrubtion folder:
+The current `midolec-v6` package is a Linux build. Use one of these
+environments:
+
+- Ubuntu or another compatible Linux distribution.
+- WSL Ubuntu on Windows.
+- MobaXterm only as an SSH client connected to a Linux server.
+
+Do not run the package from the local MobaXterm/Cygwin/MSYS/Git Bash shell on
+Windows. Those environments are not Ubuntu/WSL, even if some Linux-like
+commands appear to work.
+
+## Quick start
+
+1. Clone the current Midolec executable distribution folder:
 ```bash
 git clone git@github.com:gigabd-uc3m/midolec-dist.git
 ```
 Or download it as a zip.
+
+If you download the ZIP on Windows, open WSL Ubuntu and unzip/copy the package
+inside the Linux home directory, for example `~/midolec-dist`. Avoid running the
+installer from a local MobaXterm shell.
 
 2. Enter the packaged Midolec folder.
 3. Install the required runtime assets for Spanish or English version
@@ -45,17 +61,12 @@ Or download it as a zip.
 ```bash
 cd midolec-v6
 ```
-2. (Optional) If you do not have a token, create a token in GitHub: https://github.com/settings/tokens 
-3. Log in `gh` *(you might need to download `gh`)*
-You'll need to use the token
+2. Install the Ubuntu/WSL packages required by the FreeLing runtime check:
 ```bash
-gh auth login
+sudo apt update
+sudo apt install -y curl patchelf libboost-regex1.74.0 libboost-program-options1.74.0
 ```
-4. (Optional) Download `patchelf` if you don't have it:
-```bash
-sudo apt update && sudp apt install -y patchelf
-```
-5. Run the installing and configuration Script for Midolec in Spanish
+3. Run the global FreeLing installation and configuration script:
 ```bash
 bash runtime/provisioning/install_configure_freeling.sh
 ```
@@ -65,13 +76,7 @@ bash runtime/provisioning/install_configure_freeling.sh
 ```bash
 cd midolec-v6
 ```
-2. (Optional) If you do not have a token, create a token in GitHub: https://github.com/settings/tokens 
-3. Log in `gh` *(you might need to download `gh`)*
-You'll need to use the token
-```bash
-gh auth login
-```
-4. Install the English spaCy runtime if English execution is needed.
+2. Install the English spaCy runtime if English execution is needed.
 ```bash
 bash runtime/provisioning/install_spacy_en.sh
 ```
@@ -104,7 +109,7 @@ releases/                Notes about release packaging. Large binaries are not t
 - Documentation and guides.
 - Provisioning scripts.
 - Small metadata files such as checksums or release notes.
-- The current internal `midolec-v6/` package, while this private repository is
+- The current internal `midolec-v6/` package, while this repository is
   being used for collaborator testing.
 
 ## What does not belong in Git

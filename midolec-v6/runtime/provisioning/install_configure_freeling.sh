@@ -13,7 +13,7 @@ COMMON_INSTALL_ARGS=()
 print_usage() {
   cat <<'EOF'
 Usage:
-  v6/runtime/provisioning/install_configure_freeling.sh [options]
+  bash runtime/provisioning/install_configure_freeling.sh [options]
 
 Options:
   --root PATH           Midolec root folder to patch/check. Defaults to the
@@ -27,17 +27,50 @@ Options:
   --skip-check          Do not run the final FreeLing runtime check.
   -h, --help            Show this help.
 
-Recommended first-time setup for private release assets:
-  gh auth login
-  v6/runtime/provisioning/install_configure_freeling.sh
+Recommended first-time setup for public release assets:
+  sudo apt update
+  sudo apt install -y curl patchelf libboost-regex1.74.0 libboost-program-options1.74.0
+  bash runtime/provisioning/install_configure_freeling.sh
 
 This script runs the full FreeLing setup sequence:
   1) freeling/install_libs.sh
   2) freeling/install_resources.sh
   3) freeling/patch_freeling_rpath.sh
   4) freeling/check_runtime.sh
+
+Supported environments:
+  Ubuntu native, Linux servers, or WSL Ubuntu. MobaXterm/Cygwin/MSYS/Git Bash
+  local terminals are not supported for this Linux runtime package.
 EOF
 }
+
+require_supported_linux_runtime() {
+  local kernel_name
+  kernel_name="$(uname -s 2>/dev/null || true)"
+
+  if [[ "$kernel_name" != "Linux" ]]; then
+    cat >&2 <<EOF
+ERROR: Midolec V6 FreeLing provisioning must run in a Linux runtime.
+
+Supported environments:
+  - Ubuntu or another compatible Linux distribution
+  - WSL Ubuntu on Windows
+  - SSH session connected to a Linux server
+
+Unsupported local terminals for this package:
+  - MobaXterm local shell
+  - Cygwin/MSYS/Git Bash
+  - Windows PowerShell or CMD without WSL
+
+If you are on Windows, install/open WSL Ubuntu and run this script there.
+GitHub CLI is only needed if the release assets are private or direct public
+download is unavailable.
+EOF
+    exit 1
+  fi
+}
+
+require_supported_linux_runtime
 
 while [[ "$#" -gt 0 ]]; do
   case "$1" in

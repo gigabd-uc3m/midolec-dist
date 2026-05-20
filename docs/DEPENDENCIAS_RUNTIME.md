@@ -15,10 +15,9 @@ Instalacion:
 
 ```bash
 cd midolec-v6
-gh auth login
-bash runtime/provisioning/install_freeling_libs.sh
-bash runtime/provisioning/install_freeling_resources.sh
-bash runtime/provisioning/patch_freeling_rpath.sh .
+sudo apt update
+sudo apt install -y curl patchelf libboost-regex1.74.0 libboost-program-options1.74.0
+bash runtime/provisioning/install_configure_freeling.sh
 ```
 
 `patch_freeling_rpath.sh` configura `_pyfreeling.so` y las librerias nativas
@@ -40,14 +39,10 @@ cd midolec-v6
 bash runtime/provisioning/install_spacy_en.sh
 ```
 
-## GitHub CLI
+## Descarga de assets
 
-Como el repositorio es privado, los scripts que descargan assets desde Releases
-usan GitHub CLI:
+Los scripts descargan los assets desde la Release publica de GitHub mediante
+`curl` o `wget`. GitHub CLI no es necesario para el flujo normal.
 
-```bash
-gh auth login
-gh auth status
-```
-
-La cuenta autenticada debe tener acceso al repositorio de distribucion.
+Si el repositorio vuelve a ser privado, los mismos scripts pueden usar GitHub
+CLI como fallback tras ejecutar `gh auth login` en la misma terminal Ubuntu/WSL.

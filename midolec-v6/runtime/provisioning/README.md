@@ -5,28 +5,35 @@ Midolec V6. The scripts are versioned because they are part of the deployment
 process, but the files they install are intentionally ignored by Git.
 
 Unless stated otherwise, commands in this document are executed from the
-repository root.
+packaged application root: `midolec-v6/`.
+
+## Supported Environments
+
+The current Midolec V6 package is a Linux runtime. Run these scripts in Ubuntu,
+a compatible Linux server, or WSL Ubuntu on Windows.
+
+Do not run the V6 provisioning flow from a local MobaXterm/Cygwin/MSYS/Git Bash
+terminal. Those shells can look Unix-like, but they are not the Ubuntu/WSL
+runtime expected by the Linux binary and the FreeLing shared libraries. MobaXterm
+is fine as an SSH client when the commands actually run on a Linux server.
 
 ## Recommended First-Time Setup
 
 For Spanish/FreeLing, collaborators should use the global installer:
 
 ```bash
-# 1) Install GitHub CLI if it is not available yet.
-gh --version
+# 1) Move to the packaged application root.
+cd midolec-v6
 
-# 2) Authenticate with a GitHub account that has access to gigabd-uc3m/midolec-dist.
-gh auth login
+# 2) Install required Ubuntu/WSL system packages.
+sudo apt update
+sudo apt install -y curl patchelf libboost-regex1.74.0 libboost-program-options1.74.0
 
-# 3) Optional: verify that authentication works.
-gh auth status
+# 3) Install, configure and check FreeLing.
+bash runtime/provisioning/install_configure_freeling.sh
 
-# 4) Install, configure and check FreeLing.
-v6/runtime/provisioning/install_configure_freeling.sh
-
-# 5) Execute Midolec from the v6 folder.
-cd v6
-python3 midolec.py input_text.txt
+# 4) Execute Midolec.
+./midolec-v6 input_text.txt output.json
 ```
 
 The global installer runs the full FreeLing setup sequence:
@@ -47,21 +54,13 @@ normal execution once the setup script has finished.
 
 ## Recommended Artifact Source
 
-Use the private GitHub Release published in the Midolec distribution/runtime
-assets repository. Because the repository is private, collaborators must
-authenticate with GitHub CLI before downloading runtime assets:
+Use the public GitHub Release published in the Midolec distribution/runtime
+assets repository. The provisioning scripts download Release assets directly
+with `curl` or `wget`, so collaborators do not need GitHub CLI or a personal
+access token for the normal flow.
 
-```bash
-gh auth login
-```
-
-`gh` is the official GitHub command-line tool. It is needed here because the
-runtime assets are attached to a private GitHub Release, so a normal anonymous
-`curl` download cannot access them.
-
-The collaborator only needs to run `gh auth login` once per machine/user, not
-every time Midolec is executed. The authenticated GitHub account must have
-access to the private repository `gigabd-uc3m/midolec-dist`.
+If the repository becomes private again, the same scripts can fall back to
+GitHub CLI after `gh auth login`.
 
 The default release used by the scripts is:
 
@@ -104,10 +103,10 @@ freeling/check_runtime.sh
 ## Expected Runtime Targets
 
 ```text
-v6/runtime/freeling/lib/
-v6/runtime/freeling/share/freeling/common/
-v6/runtime/freeling/share/freeling/es/
-v6/runtime/spacy/models/
+runtime/freeling/lib/
+runtime/freeling/share/freeling/common/
+runtime/freeling/share/freeling/es/
+runtime/spacy/models/
 ```
 
 ## Default GitHub Release Usage
@@ -116,23 +115,21 @@ After publishing the Release assets, a collaborator with repository access can
 prepare FreeLing with:
 
 ```bash
-gh auth login
-v6/runtime/provisioning/install_configure_freeling.sh
-cd v6
-python3 midolec.py input_text.txt
+bash runtime/provisioning/install_configure_freeling.sh
+./midolec-v6 input_text.txt output.json
 ```
 
 The release can also be pinned explicitly:
 
 ```bash
-v6/runtime/provisioning/install_configure_freeling.sh \
+bash runtime/provisioning/install_configure_freeling.sh \
   --release-url https://github.com/gigabd-uc3m/midolec-dist/releases/tag/v6-runtime-2026-05-07
 ```
 
 Or by passing repo and tag separately:
 
 ```bash
-v6/runtime/provisioning/install_configure_freeling.sh \
+bash runtime/provisioning/install_configure_freeling.sh \
   --github-repo gigabd-uc3m/midolec-dist \
   --release-tag v6-runtime-2026-05-07
 ```
@@ -143,17 +140,17 @@ The advanced scripts inside `freeling/` are still available when maintainers
 need to install only one part:
 
 ```bash
-v6/runtime/provisioning/freeling/install_libs.sh --archive /path/to/libs.tar.gz
-v6/runtime/provisioning/freeling/install_resources.sh --archive /path/to/resources.tar.gz
-bash v6/runtime/provisioning/freeling/patch_freeling_rpath.sh v6
-bash v6/runtime/provisioning/freeling/check_runtime.sh
+runtime/provisioning/freeling/install_libs.sh --archive /path/to/libs.tar.gz
+runtime/provisioning/freeling/install_resources.sh --archive /path/to/resources.tar.gz
+bash runtime/provisioning/freeling/patch_freeling_rpath.sh .
+bash runtime/provisioning/freeling/check_runtime.sh
 ```
 
 Copy the example file and fill in project-specific artifact URLs if a future
 runtime source is needed:
 
 ```bash
-cp v6/runtime/provisioning/runtime_sources.env.example runtime_sources.env
+cp runtime/provisioning/runtime_sources.env.example runtime_sources.env
 ```
 
 Then either source it:

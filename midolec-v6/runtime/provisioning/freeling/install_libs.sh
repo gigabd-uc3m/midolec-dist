@@ -34,7 +34,7 @@ Usage:
 Options:
   --url URL             Download a compatible FreeLing .so archive from URL.
   --release-url URL     Parse repo and tag from a GitHub Release URL.
-  --github-repo REPO    Download from a private GitHub Release repo (owner/name).
+  --github-repo REPO    Download from a GitHub Release repo (owner/name).
   --release-tag TAG     GitHub Release tag to download from.
   --asset NAME          GitHub Release asset name for the .so archive.
   --archive PATH        Use a local archive instead of downloading.
@@ -55,8 +55,9 @@ The source must provide these compatible libraries:
   libfreeling.so, libfoma.so, libtreeler.so, libdynet.so, libcrfsuite.so
 
 Recommended source: a versioned GitHub Release asset built from the same
-FreeLing build as core/vendor/freeling/_pyfreeling.so. For private repos this
-script uses GitHub CLI, so run "gh auth login" first.
+FreeLing build as core/vendor/freeling/_pyfreeling.so. Public releases are
+downloaded directly with curl or wget. If the repo is private, the script falls
+back to GitHub CLI, so run "gh auth login" first.
 EOF
 }
 

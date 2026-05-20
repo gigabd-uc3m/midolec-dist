@@ -37,7 +37,7 @@ CHECK_ABI=1
 print_usage() {
   cat <<'EOF'
 Usage:
-  bash v6/runtime/provisioning/freeling/check_runtime.sh [options]
+  bash runtime/provisioning/freeling/check_runtime.sh [options]
 
 Options:
   --all             Validate libraries, binding dependencies and resources. Default.
@@ -53,7 +53,17 @@ EOF
 
 require_linux() {
   if [[ "$(uname -s)" != "Linux" ]]; then
-    echo "This script only supports Linux/WSL." >&2
+    cat >&2 <<'EOF'
+ERROR: Midolec V6 FreeLing checks must run in a Linux runtime.
+
+Supported environments:
+  - Ubuntu or another compatible Linux distribution
+  - WSL Ubuntu on Windows
+  - SSH session connected to a Linux server
+
+MobaXterm/Cygwin/MSYS/Git Bash local terminals are not supported for this
+Linux runtime package.
+EOF
     exit 1
   fi
 }
@@ -110,6 +120,11 @@ check_model_dirs() {
 
 check_binding_dependencies() {
   local binding_path
+  local ldd_output
+  local missing_lib
+  local custom_missing=()
+  local system_missing=()
+  local unknown_missing=()
   if ! binding_path="$(resolve_binding_path)"; then
     echo "Binding not found in the expected PyInstaller or source locations." >&2
     return 1
@@ -123,16 +138,68 @@ check_binding_dependencies() {
   # Run ldd without LD_LIBRARY_PATH so the check validates the same
   # RPATH/RUNPATH-based resolution used by normal Midolec execution.
   echo "Inspecting Python binding dependencies with ldd..."
-  env -u LD_LIBRARY_PATH ldd "$binding_path"
+  ldd_output="$(env -u LD_LIBRARY_PATH ldd "$binding_path" 2>&1 || true)"
+  printf '%s\n' "$ldd_output"
 
-  if env -u LD_LIBRARY_PATH ldd "$binding_path" | grep -Fq 'not found'; then
+  while IFS= read -r missing_lib; do
+    [[ -z "$missing_lib" ]] && continue
+    if is_custom_freeling_lib "$missing_lib"; then
+      custom_missing+=("$missing_lib")
+    elif is_known_system_lib "$missing_lib"; then
+      system_missing+=("$missing_lib")
+    else
+      unknown_missing+=("$missing_lib")
+    fi
+  done < <(printf '%s\n' "$ldd_output" | awk '/=> not found/ {print $1}' | sort -u)
+
+  if [[ "${#custom_missing[@]}" -gt 0 || "${#system_missing[@]}" -gt 0 || "${#unknown_missing[@]}" -gt 0 ]]; then
     echo ""
     echo "There are unresolved shared-library dependencies for _pyfreeling.so." >&2
-    echo "If runtime/freeling/lib exists, run freeling/patch_freeling_rpath.sh and retry." >&2
+    if [[ "${#custom_missing[@]}" -gt 0 ]]; then
+      echo "Missing bundled FreeLing libraries: ${custom_missing[*]}" >&2
+      echo "Run the global FreeLing installer and retry:" >&2
+      echo "  bash runtime/provisioning/install_configure_freeling.sh" >&2
+      echo "If the files already exist, patch RPATH/RUNPATH and retry:" >&2
+      echo "  bash runtime/provisioning/freeling/patch_freeling_rpath.sh \"${APP_ROOT}\"" >&2
+    fi
+    if [[ "${#system_missing[@]}" -gt 0 ]]; then
+      echo "Missing system libraries: ${system_missing[*]}" >&2
+      echo "Install the required Ubuntu/WSL packages in this same Linux environment:" >&2
+      echo "  sudo apt update" >&2
+      echo "  sudo apt install -y ${SYSTEM_PACKAGES_HINT[*]}" >&2
+    fi
+    if [[ "${#unknown_missing[@]}" -gt 0 ]]; then
+      echo "Missing additional system libraries: ${unknown_missing[*]}" >&2
+      echo "Install the OS packages that provide those libraries and retry." >&2
+    fi
     return 1
   fi
 
   return 0
+}
+
+is_custom_freeling_lib() {
+  local candidate="$1"
+  local lib
+
+  for lib in "${CUSTOM_LIBS[@]}"; do
+    if [[ "$candidate" == "$lib" ]]; then
+      return 0
+    fi
+  done
+
+  return 1
+}
+
+is_known_system_lib() {
+  case "$1" in
+    libboost_regex.so.1.74.0|libboost_program_options.so.1.74.0)
+      return 0
+      ;;
+    *)
+      return 1
+      ;;
+  esac
 }
 
 check_freeling_abi_match() {
@@ -205,17 +272,18 @@ print_manual_help() {
 
 How to fix missing FreeLing runtime files:
 
-  v6/runtime/provisioning/install_configure_freeling.sh
+  bash runtime/provisioning/install_configure_freeling.sh
 
 If the runtime files are present but Midolec still reports missing
 RPATH/RUNPATH resolution, patch the binding and the native libraries with:
 
-  bash v6/runtime/provisioning/freeling/patch_freeling_rpath.sh /path/to/midolec-root
+  bash runtime/provisioning/freeling/patch_freeling_rpath.sh /path/to/midolec-root
 
 If ldd reports missing system libraries, install the required OS packages. The
 known Ubuntu/WSL packages used by this runtime are:
 
-  ${SYSTEM_PACKAGES_HINT[*]}
+  sudo apt update
+  sudo apt install -y ${SYSTEM_PACKAGES_HINT[*]}
 EOF
 }
 

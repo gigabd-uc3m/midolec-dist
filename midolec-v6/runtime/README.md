@@ -51,6 +51,10 @@ Midolec now runs a Python preflight check before loading FreeLing or spaCy. If
 the selected backend is incomplete, the program fails early with an actionable
 message and the script that should be executed to install the missing assets.
 
+The current V6 runtime is supported on Ubuntu, compatible Linux servers and WSL
+Ubuntu. Do not use local MobaXterm/Cygwin/MSYS/Git Bash shells as the execution
+environment; use WSL Ubuntu or SSH into a Linux machine.
+
 ## FreeLing native dependency resolution
 
 Midolec V6 no longer expects users to export `LD_LIBRARY_PATH` manually. The
@@ -129,11 +133,15 @@ resources, and spaCy models they install remain ignored by Git.
 Recommended usage:
 
 ```bash
+# Install required Ubuntu/WSL system packages for FreeLing checks.
+sudo apt update
+sudo apt install -y curl patchelf libboost-regex1.74.0 libboost-program-options1.74.0
+
 # Install the current English spaCy dependencies and model.
-v6/runtime/provisioning/install_spacy_en.sh
+bash runtime/provisioning/install_spacy_en.sh
 
 # Install, configure and check FreeLing.
-v6/runtime/provisioning/install_configure_freeling.sh
+bash runtime/provisioning/install_configure_freeling.sh
 ```
 
 For FreeLing archives, prefer GitHub Release assets or another stable direct

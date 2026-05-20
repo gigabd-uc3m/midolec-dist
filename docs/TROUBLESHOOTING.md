@@ -9,41 +9,77 @@ Los comandos se ejecutan desde la raiz del paquete:
 cd midolec-v6
 ```
 
-## 1) GitHub CLI no esta instalado
+## 1) Entorno soportado
+
+La build actual es un paquete Linux. Usar:
+
+- Ubuntu o una distribucion Linux compatible.
+- WSL Ubuntu en Windows.
+- MobaXterm solo como cliente SSH hacia un servidor Linux.
+
+No usar el shell local de MobaXterm/Cygwin/MSYS/Git Bash para instalar o
+ejecutar esta build. Aunque parezcan terminales Unix, no son el entorno Ubuntu
+esperado por el binario Linux ni por las librerias `.so` de FreeLing.
+
+Comprobacion rapida:
+
+```bash
+uname -s
+```
+
+Resultado esperado:
+
+```text
+Linux
+```
+
+## 2) La descarga publica de assets falla
 
 Sintoma:
 
 ```text
-gh: command not found
-```
-
-Tambien puede aparecer como:
-
-```text
-GitHub CLI (gh) is required to download runtime assets from a private GitHub Release.
-Install it and authenticate before running this script: gh auth login
+curl: ...
+wget: ...
+Direct public download failed; trying GitHub CLI fallback...
 ```
 
 Causa probable:
 
-GitHub CLI no esta instalado en la maquina. Es necesario porque los assets
-runtime estan publicados en una Release privada.
+No hay conexion con GitHub, la Release o el asset no existe, o no estan
+instalados `curl`/`wget` en el entorno Ubuntu/WSL.
 
 Solucion:
 
 ```bash
-gh --version
+sudo apt update
+sudo apt install -y curl
+bash runtime/provisioning/install_configure_freeling.sh
 ```
 
-Si el comando no existe, instalar GitHub CLI siguiendo las instrucciones
-oficiales o las indicaciones del equipo.
+Si el repositorio de distribucion volviera a ser privado, entonces si haria
+falta instalar GitHub CLI dentro de Ubuntu/WSL y ejecutar `gh auth login`.
 
-En validaciones internas de desarrollo se puede usar la opcion `--from-dir` de
-los scripts de FreeLing para copiar assets desde una carpeta local ya validada.
-Esa opcion no sustituye al flujo normal para colaboradores, que debe usar la
-Release privada.
+## 3) Se esta usando MobaXterm local en Windows
 
-## 2) El usuario no tiene acceso a la Release privada
+Sintomas habituales:
+
+```text
+gh: command not found
+cygstart: command not found
+```
+
+Causa probable:
+
+El paquete se esta ejecutando desde el shell local de MobaXterm, por ejemplo
+desde una ruta `/mnt/c/...`. Ese entorno usa una capa tipo Cygwin y no equivale
+a Ubuntu/WSL.
+
+Solucion:
+
+Instalar WSL Ubuntu y ejecutar la instalacion desde una terminal Ubuntu, o usar
+MobaXterm para conectarse por SSH a una maquina Linux real.
+
+## 4) El repositorio vuelve a ser privado o no hay acceso a la Release
 
 Sintomas habituales:
 
@@ -55,8 +91,8 @@ permission denied
 
 Causa probable:
 
-La cuenta autenticada con GitHub CLI no tiene acceso al repositorio privado
-`gigabd-uc3m/midolec-dist`, o no se ha ejecutado `gh auth login`.
+La Release ya no es publica o la cuenta autenticada con GitHub CLI no tiene
+acceso al repositorio `gigabd-uc3m/midolec-dist`.
 
 Solucion:
 
@@ -66,9 +102,31 @@ gh auth status
 ```
 
 Si `gh auth status` funciona pero la descarga sigue fallando, pedir acceso al
-repositorio de distribucion.
+repositorio de distribucion. Este caso no deberia afectar al flujo normal
+mientras `midolec-dist` sea publico.
 
-## 3) Falta patchelf
+## 5) Faltan paquetes Ubuntu/WSL de sistema
+
+Sintoma visto en `freeling/check_runtime.sh`:
+
+```text
+libboost_program_options.so.1.74.0 => not found
+```
+
+Causa probable:
+
+Los assets de FreeLing estan correctamente descargados, pero el sistema no
+tiene una libreria compartida de Boost requerida por esa build.
+
+Solucion en Ubuntu/WSL:
+
+```bash
+sudo apt update
+sudo apt install -y curl patchelf libboost-regex1.74.0 libboost-program-options1.74.0
+bash runtime/provisioning/freeling/check_runtime.sh
+```
+
+## 6) Falta patchelf
 
 Sintoma:
 
@@ -78,23 +136,18 @@ ERROR: patchelf is not installed.
 
 Causa probable:
 
-El sistema no tiene instalada la herramienta necesaria para escribir RPATH o
-RUNPATH en `_pyfreeling.so` y en las librerias nativas.
+El sistema no tiene instalada la herramienta necesaria para escribir
+RPATH/RUNPATH en `_pyfreeling.so` y en las librerias nativas.
 
 Solucion en Ubuntu/WSL:
 
 ```bash
 sudo apt update
 sudo apt install -y patchelf
+bash runtime/provisioning/install_configure_freeling.sh
 ```
 
-Despues, repetir:
-
-```bash
-bash runtime/provisioning/patch_freeling_rpath.sh .
-```
-
-## 4) Missing FreeLing RPATH/RUNPATH configuration
+## 7) Missing FreeLing RPATH/RUNPATH configuration
 
 Sintoma:
 
@@ -110,14 +163,14 @@ Las librerias de FreeLing existen en `runtime/freeling/lib/`, pero
 Solucion:
 
 ```bash
-bash runtime/provisioning/patch_freeling_rpath.sh .
-bash runtime/provisioning/check_freeling_runtime.sh
+bash runtime/provisioning/freeling/patch_freeling_rpath.sh .
+bash runtime/provisioning/freeling/check_runtime.sh
 ```
 
 No se debe resolver este error exportando `LD_LIBRARY_PATH` manualmente. La
 estrategia actual de V6 es usar RPATH/RUNPATH.
 
-## 5) Falta una libreria nativa de FreeLing
+## 8) Falta una libreria nativa de FreeLing
 
 Sintomas habituales:
 
@@ -134,15 +187,21 @@ Causa probable:
 No se han descargado las librerias nativas compatibles con esta build de
 Midolec V6, o se han borrado de `runtime/freeling/lib/`.
 
-Solucion:
+Solucion recomendada:
 
 ```bash
-bash runtime/provisioning/install_freeling_libs.sh
-bash runtime/provisioning/patch_freeling_rpath.sh .
-bash runtime/provisioning/check_freeling_runtime.sh --libs-only
+bash runtime/provisioning/install_configure_freeling.sh
 ```
 
-## 6) Undefined symbol en _pyfreeling.so
+Solucion avanzada:
+
+```bash
+bash runtime/provisioning/freeling/install_libs.sh
+bash runtime/provisioning/freeling/patch_freeling_rpath.sh .
+bash runtime/provisioning/freeling/check_runtime.sh --libs-only
+```
+
+## 9) Undefined symbol en _pyfreeling.so
 
 Sintoma:
 
@@ -159,15 +218,14 @@ copiadas desde otra build.
 Solucion:
 
 ```bash
-bash runtime/provisioning/install_freeling_libs.sh
-bash runtime/provisioning/patch_freeling_rpath.sh .
-bash runtime/provisioning/check_freeling_runtime.sh --libs-only
+bash runtime/provisioning/install_configure_freeling.sh
+bash runtime/provisioning/freeling/check_runtime.sh --libs-only
 ```
 
 Si el error persiste, eliminar `runtime/freeling/lib/` y repetir la instalacion
 desde la Release oficial de `midolec-dist`.
 
-## 7) Faltan recursos linguisticos de FreeLing
+## 10) Faltan recursos linguisticos de FreeLing
 
 Sintomas habituales:
 
@@ -182,14 +240,20 @@ Causa probable:
 No estan instaladas las carpetas `common/` y `es/` en
 `runtime/freeling/share/freeling/`.
 
-Solucion:
+Solucion recomendada:
 
 ```bash
-bash runtime/provisioning/install_freeling_resources.sh
-bash runtime/provisioning/check_freeling_runtime.sh --resources-only
+bash runtime/provisioning/install_configure_freeling.sh
 ```
 
-## 8) El backend ingles no encuentra spaCy o pyphen
+Solucion avanzada:
+
+```bash
+bash runtime/provisioning/freeling/install_resources.sh
+bash runtime/provisioning/freeling/check_runtime.sh --resources-only
+```
+
+## 11) El backend ingles no encuentra spaCy o pyphen
 
 Sintomas habituales:
 
@@ -201,7 +265,7 @@ Can't find model 'en_core_web_sm'
 
 Causa probable:
 
-No se han instalado las dependencias del backend ingles.
+No se han instalado las dependencias o el modelo del backend ingles.
 
 Solucion:
 
@@ -209,56 +273,33 @@ Solucion:
 bash runtime/provisioning/install_spacy_en.sh
 ```
 
-## 9) El binario no encuentra spaCy aunque install_spacy_en.sh haya funcionado
+## 12) PyInstaller no encuentra encodings
 
 Sintoma:
 
 ```text
-Midolec V6 cannot start English analysis because the spaCy runtime is incomplete.
-Missing Python dependencies:
-  - Python package 'spacy'
-  - Python package 'pyphen'
+ModuleNotFoundError: No module named 'encodings'
+Failed to start embedded python interpreter
 ```
 
-Causa probable en builds antiguas:
+Causa probable:
 
-El script `install_spacy_en.sh` instala dependencias en el Python del sistema y
-copia el modelo ingles a `runtime/spacy/models/`. Sin embargo, el binario
-PyInstaller ejecuta los modulos Python empaquetados en `_internal/`. Si la build
-del binario no incluyo `spacy` y `pyphen`, el binario no podra importarlos aunque
-esten instalados en el sistema.
+Falta `midolec-v6/_internal/base_library.zip` o la carpeta `_internal/` esta
+incompleta. Esto suele pasar si la distribucion se ha copiado parcialmente.
 
 Solucion:
 
-Usar una build de distribucion reconstruida con `spacy` y `pyphen` incluidos en
-`_internal/`. Despues, instalar o comprobar el modelo ingles runtime:
+Actualizar o volver a descargar `midolec-dist` completo. No intentar arreglarlo
+instalando paquetes Python del sistema, porque el binario usa su runtime
+PyInstaller empaquetado en `_internal/`.
 
-```bash
-bash runtime/provisioning/install_spacy_en.sh
-./midolec-v6 -L en input_text.txt
-```
-
-No se recomienda intentar arreglar este caso copiando manualmente paquetes de
-`site-packages` dentro de `_internal/`, porque es fragil y dificil de reproducir.
-
-Estado actual:
-
-La build actual de distribucion incluye `spacy` y `pyphen` dentro de
-`_internal/`. El modelo `en_core_web_sm` sigue siendo un recurso runtime externo
-y debe estar disponible en `runtime/spacy/models/`.
-
-
-## 10) No se genera el JSON de salida
-
-Sintoma:
-
-El comando termina con error o no aparece el fichero `.json` esperado.
+## 13) No se genera el JSON de salida
 
 Comprobaciones recomendadas:
 
 ```bash
 ./midolec-v6 -H
-./midolec-v6 input_text.txt
+./midolec-v6 input_text.txt output.json
 ```
 
 Revisar:
@@ -266,10 +307,10 @@ Revisar:
 - que el fichero de entrada existe;
 - que se esta ejecutando desde `midolec-v6/`;
 - que `midolecConfig.toml` y `config/` estan junto al binario;
-- que `runtime/provisioning/check_freeling_runtime.sh` termina sin errores si
-  se usa espanol/FreeLing.
+- que `bash runtime/provisioning/freeling/check_runtime.sh` termina sin errores
+  si se usa espanol/FreeLing.
 
-## IMP: Informacion que conviene reportar
+## Informacion que conviene reportar
 
 Cuando un colaborador reporte un fallo, pedir:
 
@@ -277,7 +318,8 @@ Cuando un colaborador reporte un fallo, pedir:
 Sistema operativo:
 Comando ejecutado:
 Salida completa del error:
-Resultado de gh auth status:
-Resultado de bash runtime/provisioning/check_freeling_runtime.sh:
+Resultado de uname -s:
+Resultado de gh auth status, solo si se esta usando un repositorio privado:
+Resultado de bash runtime/provisioning/freeling/check_runtime.sh:
 Commit o version de midolec-dist:
 ```

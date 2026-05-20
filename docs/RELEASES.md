@@ -89,11 +89,9 @@ Validacion minima antes de compartir una build interna:
 
 ```bash
 cd midolec-v6
-gh auth login
-bash runtime/provisioning/install_freeling_libs.sh
-bash runtime/provisioning/install_freeling_resources.sh
-bash runtime/provisioning/patch_freeling_rpath.sh .
-bash runtime/provisioning/check_freeling_runtime.sh
+sudo apt update
+sudo apt install -y curl patchelf libboost-regex1.74.0 libboost-program-options1.74.0
+bash runtime/provisioning/install_configure_freeling.sh
 ./midolec-v6 prueba_v6.txt
 ```
 
