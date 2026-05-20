@@ -20,6 +20,8 @@ runtime/
 │           ├── common/
 │           └── es/
 ├── provisioning/
+│   ├── doctor.sh
+│   ├── install_midolec_runtime.sh
 │   ├── install_configure_freeling.sh
 │   ├── install_spacy_en.sh
 │   └── freeling/
@@ -65,19 +67,26 @@ current strategy is:
 3. Patch `_pyfreeling.so` and the native FreeLing libraries with the FreeLing
    RPATH/RUNPATH helper.
 
-For normal first-time setup, run the global FreeLing installer:
+For normal first-time setup, run the guided runtime installer:
 
 ```bash
-runtime/provisioning/install_configure_freeling.sh
+bash runtime/provisioning/install_midolec_runtime.sh
 ```
 
-This script installs FreeLing libraries, installs the common/ and es/
-resources, patches RPATH/RUNPATH, and runs the final runtime check.
+It lets the user choose FreeLing, spaCy, or both, prints an environment
+checklist, installs the missing pieces after confirmation, and runs a final
+doctor check.
 
-After that, the canonical source entry point remains:
+For non-interactive FreeLing-only setup, maintainers can still run:
 
 ```bash
-python3 midolec.py input.txt
+bash runtime/provisioning/install_configure_freeling.sh
+```
+
+After that, the canonical binary entry point remains:
+
+```bash
+./midolec-v6 input.txt output.json
 ```
 
 ## Configuration
@@ -133,15 +142,15 @@ resources, and spaCy models they install remain ignored by Git.
 Recommended usage:
 
 ```bash
-# Install required Ubuntu/WSL system packages for FreeLing checks.
-sudo apt update
-sudo apt install -y curl patchelf libboost-regex1.74.0 libboost-program-options1.74.0
+# Guided setup for FreeLing, spaCy, or both.
+bash runtime/provisioning/install_midolec_runtime.sh
 
-# Install the current English spaCy dependencies and model.
-bash runtime/provisioning/install_spacy_en.sh
+# Diagnostic checklist without installing anything.
+bash runtime/provisioning/doctor.sh --backend all
 
-# Install, configure and check FreeLing.
+# Optional non-interactive backend-specific setup.
 bash runtime/provisioning/install_configure_freeling.sh
+bash runtime/provisioning/install_spacy_en.sh
 ```
 
 For FreeLing archives, prefer GitHub Release assets or another stable direct

@@ -1,6 +1,7 @@
 # Generated outputs
 /*.json
 midolec-v6/*.json
+midolec-v6/examples/**/*.json
 *.log
 *.tmp
 __pycache__/

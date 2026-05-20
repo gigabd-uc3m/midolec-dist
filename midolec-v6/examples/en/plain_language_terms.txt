@@ -1,0 +1,5 @@
+The technical report describes the interoperability between modules and mentions that the parameterization must be consistent. The non-specialist reader could get lost in the terminology.
+
+We insist on the traceability of changes and the consolidation of the repository before delivery. The word consolidation appears several times.
+
+The text adds that process orchestration improves scalability. Disambiguation is also mentioned as a prior step to analysis.

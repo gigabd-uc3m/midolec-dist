@@ -3,6 +3,24 @@
 Las dependencias runtime son necesarias para ejecutar Midolec, pero no forman
 parte del codigo fuente del proyecto.
 
+## Instalacion recomendada
+
+Para usuarios finales, usar el instalador guiado:
+
+```bash
+cd midolec-v6
+bash runtime/provisioning/install_midolec_runtime.sh
+```
+
+El instalador pregunta que backend preparar, muestra una checklist
+`OK/MISSING/WARN`, solicita confirmacion antes de instalar y termina con un
+resumen. Para diagnosticar sin modificar nada:
+
+```bash
+cd midolec-v6
+bash runtime/provisioning/doctor.sh --backend all
+```
+
 ## FreeLing
 
 El backend espanol necesita:
@@ -11,13 +29,11 @@ El backend espanol necesita:
 - recursos linguisticos en `runtime/freeling/share/freeling/common/`;
 - recursos linguisticos en `runtime/freeling/share/freeling/es/`.
 
-Instalacion:
+Instalacion no interactiva para mantenedores:
 
 ```bash
 cd midolec-v6
-sudo apt update
-sudo apt install -y curl patchelf libboost-regex1.74.0 libboost-program-options1.74.0
-bash runtime/provisioning/install_configure_freeling.sh
+bash runtime/provisioning/install_midolec_runtime.sh --backend freeling --yes
 ```
 
 `patch_freeling_rpath.sh` configura `_pyfreeling.so` y las librerias nativas
@@ -32,11 +48,11 @@ El backend ingles necesita:
 - `pyphen`;
 - modelo `en_core_web_sm`.
 
-Instalacion:
+Instalacion no interactiva para mantenedores:
 
 ```bash
 cd midolec-v6
-bash runtime/provisioning/install_spacy_en.sh
+bash runtime/provisioning/install_midolec_runtime.sh --backend spacy --yes
 ```
 
 ## Descarga de assets
