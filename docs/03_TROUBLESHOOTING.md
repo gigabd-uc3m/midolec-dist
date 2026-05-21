@@ -1,53 +1,54 @@
 # Troubleshooting Midolec V6
 
-Este documento recoge errores frecuentes durante la instalacion y ejecucion de
-la distribucion interna de Midolec V6.
+This document collects common installation and execution errors for the Midolec
+V6 distribution package.
 
-Los comandos se ejecutan desde la raiz del paquete:
+Run commands from the package root:
 
 ```bash
 cd midolec-v6
 ```
 
-Antes de diagnosticar un caso concreto, ejecuta la checklist general:
+Before diagnosing a specific case, run the general checklist:
 
 ```bash
 bash runtime/provisioning/doctor.sh --backend all
 ```
 
-Si quieres que el propio paquete intente instalar lo que falta, ejecuta:
+If you want the package to try to install missing dependencies automatically,
+run:
 
 ```bash
 bash runtime/provisioning/install_midolec_runtime.sh
 ```
 
-## 1) Entorno soportado
+## 1. Supported Environment
 
-La build actual es un paquete Linux. Usar:
+The current package is a Linux build. Use:
 
-- Ubuntu o una distribucion Linux compatible.
-- WSL Ubuntu en Windows.
-- MobaXterm solo como cliente SSH hacia un servidor Linux.
+- Ubuntu or another compatible Linux distribution.
+- WSL Ubuntu on Windows.
+- MobaXterm only as an SSH client connected to a Linux server.
 
-No usar el shell local de MobaXterm/Cygwin/MSYS/Git Bash para instalar o
-ejecutar esta build. Aunque parezcan terminales Unix, no son el entorno Ubuntu
-esperado por el binario Linux ni por las librerias `.so` de FreeLing.
+Do not run this package from local MobaXterm/Cygwin/MSYS/Git Bash shells on
+Windows. Those shells may look Unix-like, but they are not the Ubuntu/WSL
+runtime expected by the Linux binary and FreeLing shared libraries.
 
-Comprobacion rapida:
+Quick check:
 
 ```bash
 uname -s
 ```
 
-Resultado esperado:
+Expected result:
 
 ```text
 Linux
 ```
 
-## 2) La descarga publica de assets falla
+## 2. Public Asset Download Fails
 
-Sintoma:
+Typical symptoms:
 
 ```text
 curl: ...
@@ -55,12 +56,12 @@ wget: ...
 Direct public download failed; trying GitHub CLI fallback...
 ```
 
-Causa probable:
+Likely cause:
 
-No hay conexion con GitHub, la Release o el asset no existe, o no estan
-instalados `curl`/`wget` en el entorno Ubuntu/WSL.
+There is no connection to GitHub, the Release or asset does not exist, or
+`curl` / `wget` is missing in Ubuntu/WSL.
 
-Solucion:
+Recommended fix:
 
 ```bash
 sudo apt update
@@ -68,32 +69,32 @@ sudo apt install -y curl
 bash runtime/provisioning/install_midolec_runtime.sh --backend freeling
 ```
 
-Si el repositorio de distribucion volviera a ser privado, entonces si haria
-falta instalar GitHub CLI dentro de Ubuntu/WSL y ejecutar `gh auth login`.
+If the distribution repository becomes private again, GitHub CLI may be needed
+inside Ubuntu/WSL after running `gh auth login`.
 
-## 3) Se esta usando MobaXterm local en Windows
+## 3. Local MobaXterm Shell On Windows
 
-Sintomas habituales:
+Typical symptoms:
 
 ```text
 gh: command not found
 cygstart: command not found
 ```
 
-Causa probable:
+Likely cause:
 
-El paquete se esta ejecutando desde el shell local de MobaXterm, por ejemplo
-desde una ruta `/mnt/c/...`. Ese entorno usa una capa tipo Cygwin y no equivale
-a Ubuntu/WSL.
+The package is running from a local MobaXterm shell, often from a `/mnt/c/...`
+path. That environment uses a Cygwin-like layer and is not equivalent to
+Ubuntu/WSL.
 
-Solucion:
+Fix:
 
-Instalar WSL Ubuntu y ejecutar la instalacion desde una terminal Ubuntu, o usar
-MobaXterm para conectarse por SSH a una maquina Linux real.
+Install WSL Ubuntu and run the installation from an Ubuntu terminal, or use
+MobaXterm only to connect by SSH to a real Linux machine.
 
-## 4) El repositorio vuelve a ser privado o no hay acceso a la Release
+## 4. Release Access Or Private Repository Issue
 
-Sintomas habituales:
+Typical symptoms:
 
 ```text
 HTTP 404
@@ -101,87 +102,85 @@ not found
 permission denied
 ```
 
-Causa probable:
+Likely cause:
 
-La Release ya no es publica o la cuenta autenticada con GitHub CLI no tiene
-acceso al repositorio `gigabd-uc3m/midolec-dist`.
+The Release is no longer public, or the authenticated GitHub CLI account cannot
+access `gigabd-uc3m/midolec-dist`.
 
-Solucion:
+Fix:
 
 ```bash
 gh auth login
 gh auth status
 ```
 
-Si `gh auth status` funciona pero la descarga sigue fallando, pedir acceso al
-repositorio de distribucion. Este caso no deberia afectar al flujo normal
-mientras `midolec-dist` sea publico.
+This should not affect the normal flow while `midolec-dist` remains public.
 
-## 5) Faltan paquetes Ubuntu/WSL de sistema
+## 5. Missing Ubuntu/WSL System Libraries
 
-Sintoma visto en `freeling/check_runtime.sh`:
+Typical symptom in `freeling/check_runtime.sh`:
 
 ```text
 libboost_program_options.so.1.74.0 => not found
 ```
 
-Causa probable:
+Likely cause:
 
-Los assets de FreeLing estan correctamente descargados, pero el sistema no
-tiene una libreria compartida de Boost requerida por esa build.
+FreeLing assets are present, but the operating system is missing a Boost shared
+library required by this build.
 
-Solucion en Ubuntu/WSL:
+Recommended fix:
 
 ```bash
 bash runtime/provisioning/install_midolec_runtime.sh --backend freeling
 bash runtime/provisioning/doctor.sh --backend freeling
 ```
 
-## 6) Falta patchelf
+## 6. Missing patchelf
 
-Sintoma:
+Typical symptom:
 
 ```text
 ERROR: patchelf is not installed.
 ```
 
-Causa probable:
+Likely cause:
 
-El sistema no tiene instalada la herramienta necesaria para escribir
-RPATH/RUNPATH en `_pyfreeling.so` y en las librerias nativas.
+The system is missing the tool used to write RPATH/RUNPATH into `_pyfreeling.so`
+and the native FreeLing libraries.
 
-Solucion en Ubuntu/WSL:
+Recommended fix:
 
 ```bash
 bash runtime/provisioning/install_midolec_runtime.sh --backend freeling
 ```
 
-## 7) Missing FreeLing RPATH/RUNPATH configuration
+## 7. Missing FreeLing RPATH/RUNPATH Configuration
 
-Sintoma:
+Typical symptom:
 
 ```text
 Missing FreeLing RPATH/RUNPATH configuration
 ```
 
-Causa probable:
+Likely cause:
 
-Las librerias de FreeLing existen en `runtime/freeling/lib/`, pero
-`_pyfreeling.so` todavia no sabe resolverlas automaticamente desde esa carpeta.
+The FreeLing libraries exist in `runtime/freeling/lib/`, but `_pyfreeling.so`
+does not yet know how to resolve them automatically from that folder.
 
-Solucion:
+Fix:
 
 ```bash
 bash runtime/provisioning/freeling/patch_freeling_rpath.sh .
 bash runtime/provisioning/freeling/check_runtime.sh
 ```
 
-No se debe resolver este error exportando `LD_LIBRARY_PATH` manualmente. La
-estrategia actual de V6 es usar RPATH/RUNPATH.
+Do not solve this by manually exporting `LD_LIBRARY_PATH`. The current V6
+strategy is to use RPATH/RUNPATH.
 
-## 8) Falta una libreria nativa de FreeLing
+## 8. Missing Native FreeLing Library
 
-Sintomas habituales:
+Typical symptoms:
 
 ```text
 libfreeling.so: cannot open shared object file
@@ -191,18 +190,18 @@ libdynet.so: cannot open shared object file
 libcrfsuite.so: cannot open shared object file
 ```
 
-Causa probable:
+Likely cause:
 
-No se han descargado las librerias nativas compatibles con esta build de
-Midolec V6, o se han borrado de `runtime/freeling/lib/`.
+The compatible native libraries were not downloaded, or they were removed from
+`runtime/freeling/lib/`.
 
-Solucion recomendada:
+Recommended fix:
 
 ```bash
 bash runtime/provisioning/install_midolec_runtime.sh --backend freeling
 ```
 
-Solucion avanzada:
+Advanced fix:
 
 ```bash
 bash runtime/provisioning/freeling/install_libs.sh
@@ -210,33 +209,32 @@ bash runtime/provisioning/freeling/patch_freeling_rpath.sh .
 bash runtime/provisioning/freeling/check_runtime.sh --libs-only
 ```
 
-## 9) Undefined symbol en _pyfreeling.so
+## 9. Undefined Symbol In _pyfreeling.so
 
-Sintoma:
+Typical symptom:
 
 ```text
 undefined symbol: _ZN8freeling...
 ```
 
-Causa probable:
+Likely cause:
 
-`_pyfreeling.so` esta intentando cargar una version de `libfreeling.so`
-incompatible. Esto puede ocurrir si se usan librerias del sistema o librerias
-copiadas desde otra build.
+`_pyfreeling.so` is loading an incompatible `libfreeling.so`. This can happen
+when system libraries or libraries copied from another build are used.
 
-Solucion:
+Recommended fix:
 
 ```bash
 bash runtime/provisioning/install_midolec_runtime.sh --backend freeling
 bash runtime/provisioning/doctor.sh --backend freeling
 ```
 
-Si el error persiste, eliminar `runtime/freeling/lib/` y repetir la instalacion
-desde la Release oficial de `midolec-dist`.
+If the error persists, remove `runtime/freeling/lib/` and repeat the
+installation from the official `midolec-dist` Release.
 
-## 10) Faltan recursos linguisticos de FreeLing
+## 10. Missing FreeLing Linguistic Resources
 
-Sintomas habituales:
+Typical symptoms:
 
 ```text
 Missing FreeLing resource folders
@@ -244,27 +242,27 @@ cannot open tokenizer.dat
 cannot open splitter.dat
 ```
 
-Causa probable:
+Likely cause:
 
-No estan instaladas las carpetas `common/` y `es/` en
+The `common/` and `es/` resource folders are missing from
 `runtime/freeling/share/freeling/`.
 
-Solucion recomendada:
+Recommended fix:
 
 ```bash
 bash runtime/provisioning/install_midolec_runtime.sh --backend freeling
 ```
 
-Solucion avanzada:
+Advanced fix:
 
 ```bash
 bash runtime/provisioning/freeling/install_resources.sh
 bash runtime/provisioning/freeling/check_runtime.sh --resources-only
 ```
 
-## 11) El backend ingles no encuentra spaCy o pyphen
+## 11. English Backend Cannot Find spaCy Or pyphen
 
-Sintomas habituales:
+Typical symptoms:
 
 ```text
 No module named spacy
@@ -272,64 +270,61 @@ No module named pyphen
 Can't find model 'en_core_web_sm'
 ```
 
-Causa probable:
+Likely cause:
 
-No se han instalado las dependencias o el modelo del backend ingles.
+The English backend dependencies or model were not installed.
 
-Solucion:
+Recommended fix:
 
 ```bash
 bash runtime/provisioning/install_midolec_runtime.sh --backend spacy
 bash runtime/provisioning/doctor.sh --backend spacy
 ```
 
-## 12) PyInstaller no encuentra encodings
+## 12. PyInstaller Cannot Find encodings
 
-Sintoma:
+Typical symptom:
 
 ```text
 ModuleNotFoundError: No module named 'encodings'
 Failed to start embedded python interpreter
 ```
 
-Causa probable:
+Likely cause:
 
-Falta `midolec-v6/_internal/base_library.zip` o la carpeta `_internal/` esta
-incompleta. Esto suele pasar si la distribucion se ha copiado parcialmente.
+`midolec-v6/_internal/base_library.zip` is missing, or the `_internal/` folder
+is incomplete. This usually happens when the distribution was copied only
+partially.
 
-Solucion:
+Fix:
 
-Actualizar o volver a descargar `midolec-dist` completo. No intentar arreglarlo
-instalando paquetes Python del sistema, porque el binario usa su runtime
-PyInstaller empaquetado en `_internal/`.
+Download or copy the complete `midolec-dist` package again. Do not try to solve
+this by installing Python packages on the system, because the binary uses the
+embedded PyInstaller runtime stored in `_internal/`.
 
-## 13) No se genera el JSON de salida
+## 13. No JSON Output Is Created
 
-Comprobaciones recomendadas:
+Recommended checks:
 
 ```bash
 ./midolec-v6 -H
 ./midolec-v6 input_text.txt output.json
 ```
 
-Revisar:
+Review:
 
-- que el fichero de entrada existe;
-- que se esta ejecutando desde `midolec-v6/`;
-- que `midolecConfig.toml` y `config/` estan junto al binario;
-- que `bash runtime/provisioning/doctor.sh --backend all` muestra `OK` para los
-  backends que se van a usar.
+- The input file exists.
+- The command is executed from `midolec-v6/`.
+- `midolecConfig.toml` and `config/` are next to the executable.
+- `bash runtime/provisioning/doctor.sh --backend all` prints `OK` for the
+  backend you plan to use.
 
-## Informacion que conviene reportar
+## Unknown Error
 
-Cuando un colaborador reporte un fallo, pedir:
+If the error does not match any section above, do not guess or keep reinstalling
+random packages. Save the terminal output and follow the report template in
+[06_REPORTING_UNKNOWN_ERRORS.md](06_REPORTING_UNKNOWN_ERRORS.md).
 
-```text
-Sistema operativo:
-Comando ejecutado:
-Salida completa del error:
-Resultado de uname -s:
-Resultado de bash runtime/provisioning/doctor.sh --backend all:
-Resultado de gh auth status, solo si se esta usando un repositorio privado:
-Commit o version de midolec-dist:
-```
+The report guide explains what information to include, including the operating
+system, command executed, full error output, dependency checklist, and Midolec
+version or commit.

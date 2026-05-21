@@ -175,12 +175,13 @@ releases/                Notes about release packaging.
 
 ## Recommended Documentation
 
-- [docs/00_GUIA_EJECUCION.md](docs/00_GUIA_EJECUCION.md): step-by-step execution guide for users.
-- [docs/01_DEPENDENCIAS_RUNTIME.md](docs/01_DEPENDENCIAS_RUNTIME.md): runtime dependency details and direct installation commands.
-- [docs/02_GUIA_CONFIGURACION.md](docs/02_GUIA_CONFIGURACION.md): configuration files and language options.
+- [docs/00_EXECUTION_GUIDE.md](docs/00_EXECUTION_GUIDE.md): step-by-step execution guide for users.
+- [docs/01_RUNTIME_DEPENDENCIES.md](docs/01_RUNTIME_DEPENDENCIES.md): runtime dependency details and direct installation commands.
+- [docs/02_CONFIGURATION_GUIDE.md](docs/02_CONFIGURATION_GUIDE.md): configuration files and language options.
 - [docs/03_TROUBLESHOOTING.md](docs/03_TROUBLESHOOTING.md): known installation and execution errors.
-- [docs/04_VALIDACION_V6.md](docs/04_VALIDACION_V6.md): validation checklist for the V6 package.
+- [docs/04_V6_VALIDATION.md](docs/04_V6_VALIDATION.md): validation checklist for the V6 package.
 - [docs/05_RELEASES.md](docs/05_RELEASES.md): release and packaging notes.
+- [docs/06_REPORTING_UNKNOWN_ERRORS.md](docs/06_REPORTING_UNKNOWN_ERRORS.md): template for reporting errors not covered by troubleshooting.
 - [midolec-v6/README.md](midolec-v6/README.md): package-folder map and safe-editing notes.
 - [CONTRIBUTING.md](CONTRIBUTING.md): contribution rules, commit labels, and pull request workflow.
 - [SECURITY.md](SECURITY.md): supported versions and vulnerability reporting process.
@@ -193,12 +194,13 @@ releases/                Notes about release packaging.
 ├── CONTRIBUTING.md
 ├── SECURITY.md
 ├── docs/
-│   ├── 00_GUIA_EJECUCION.md
-│   ├── 01_DEPENDENCIAS_RUNTIME.md
-│   ├── 02_GUIA_CONFIGURACION.md
+│   ├── 00_EXECUTION_GUIDE.md
+│   ├── 01_RUNTIME_DEPENDENCIES.md
+│   ├── 02_CONFIGURATION_GUIDE.md
 │   ├── 03_TROUBLESHOOTING.md
-│   ├── 04_VALIDACION_V6.md
-│   └── 05_RELEASES.md
+│   ├── 04_V6_VALIDATION.md
+│   ├── 05_RELEASES.md
+│   └── 06_REPORTING_UNKNOWN_ERRORS.md
 ├── midolec-v6/
 │   ├── README.md
 │   ├── runtime/

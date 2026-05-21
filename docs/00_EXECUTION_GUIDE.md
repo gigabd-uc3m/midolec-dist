@@ -1,87 +1,83 @@
-# Guia de ejecucion
+# Execution Guide
 
-Este repositorio contiene la configuracion, documentacion y scripts necesarios
-para ejecutar paquetes binarios de Midolec.
+This guide explains how to install the runtime dependencies and run the Midolec
+V6 binary package.
 
-## Ejecucion rapida
+## Quick Execution Flow
 
-1. Ejecuta el paquete en Ubuntu, WSL Ubuntu o una sesion SSH a Linux.
-2. Descarga el paquete binario desde la Release interna correspondiente.
-3. Ejecuta el instalador guiado de dependencias runtime.
-4. Ejecuta Midolec sobre un fichero de texto.
+1. Use Ubuntu, WSL Ubuntu, or an SSH session connected to a Linux server.
+2. Open a terminal in the `midolec-v6/` folder.
+3. Run the guided runtime installer.
+4. Process one of the example text files.
+5. Open the generated JSON result.
 
-No uses el shell local de MobaXterm/Cygwin/MSYS/Git Bash para esta build. Si
-estas en Windows, abre WSL Ubuntu.
+Do not run this Linux package from local MobaXterm/Cygwin/MSYS/Git Bash shells
+on Windows. If you are on Windows, use WSL Ubuntu.
 
-## Instalacion guiada recomendada
+## Recommended Guided Installation
 
-El flujo recomendado para usuarios no tecnicos es ejecutar un unico script
-interactivo. El script pregunta si se quiere instalar FreeLing, spaCy o ambos,
-muestra una checklist de dependencias, solicita confirmacion y resume el
-resultado final:
+The recommended workflow for non-technical users is the guided installer. It
+asks whether to install FreeLing, spaCy, or both, shows a dependency checklist,
+asks for confirmation, and prints a final summary.
 
 ```bash
 cd midolec-v6
 bash runtime/provisioning/install_midolec_runtime.sh
 ```
 
-Si solo se quiere diagnosticar el entorno sin instalar nada:
+To inspect the environment without installing anything:
 
 ```bash
 cd midolec-v6
 bash runtime/provisioning/doctor.sh --backend all
 ```
 
-La instalacion directa, pensada para mantenedores o scripts automatizados, esta
-documentada en `docs/01_DEPENDENCIAS_RUNTIME.md`.
+Direct installation commands for maintainers and scripted environments are
+documented in `docs/01_RUNTIME_DEPENDENCIES.md`.
 
-## Espanol con FreeLing
+## Spanish With FreeLing
 
-FreeLing necesita librerias nativas y recursos linguisticos. El instalador
-guiado se encarga de instalar los paquetes Ubuntu/WSL necesarios, descargar los
-assets y verificar el runtime.
+The Spanish backend uses FreeLing. It requires native libraries and linguistic
+resources under `runtime/freeling/`. The guided installer downloads and checks
+these assets.
 
-El script `patch_freeling_rpath.sh` deja `_pyfreeling.so` preparado para
-encontrar las librerias nativas en `runtime/freeling/lib/`. Despues de ese paso,
-no hace falta exportar `LD_LIBRARY_PATH` manualmente en cada terminal.
-
-Si el instalador guiado muestra algun error, ejecutar la checklist:
+If the guided installer reports an error, run:
 
 ```bash
 cd midolec-v6
 bash runtime/provisioning/doctor.sh --backend freeling
 ```
 
-## Ingles con spaCy
+## English With spaCy
 
-El backend ingles necesita `spacy`, `pyphen` y el modelo `en_core_web_sm`. El
-instalador guiado prepara estas dependencias cuando se selecciona spaCy.
+The English backend uses spaCy, pyphen, and the `en_core_web_sm` model. The
+guided installer prepares these dependencies when spaCy is selected.
 
-Si el instalador guiado muestra algun error, ejecutar la checklist:
+If the guided installer reports an error, run:
 
 ```bash
 cd midolec-v6
 bash runtime/provisioning/doctor.sh --backend spacy
 ```
 
-## Comando de ejecucion
+## Running Midolec
 
-La distribucion V6 se ejecuta desde la carpeta `midolec-v6/`. Primero entra en
-esa carpeta:
+All commands in this section are executed from the `midolec-v6/` folder:
 
 ```bash
 cd ~/midolec-dist/midolec-v6
 ```
 
-Comprueba que el binario arranca:
+Check that the binary starts:
 
 ```bash
 ./midolec-v6 -H
 ```
 
-### 1. Ejemplo en espanol
+### 1. Spanish Example
 
-Midolec usa espanol por defecto. Esta seleccion esta en `midolecConfig.toml`:
+Spanish is the default language. The default language is configured in
+`midolecConfig.toml`:
 
 ```toml
 [general]
@@ -89,40 +85,40 @@ default_language = "es"
 default_context = "default_es"
 ```
 
-Procesa un ejemplo en espanol. Midolec creara automaticamente el fichero
+Process a Spanish example. Midolec automatically creates
 `../examples/es/legal_cross_references.json`:
 
 ```bash
 ./midolec-v6 ../examples/es/legal_cross_references.txt
 ```
 
-Abre el JSON generado desde terminal:
+Open the generated JSON file with `nano`:
 
 ```bash
 nano ../examples/es/legal_cross_references.json
 ```
 
-Si prefieres `vim`:
+Or with `vim`:
 
 ```bash
 vim ../examples/es/legal_cross_references.json
 ```
 
-### 2. Ejemplo en ingles
+### 2. English Example
 
-Para usar ingles solo en un comando, usa `-L en`:
+To use English only for one command, pass `-L en`:
 
 ```bash
 ./midolec-v6 -L en ../examples/en/plain_language_terms.txt
 ```
 
-Para dejar ingles como idioma por defecto, abre `midolecConfig.toml`:
+To make English the default language, open `midolecConfig.toml`:
 
 ```bash
 nano midolecConfig.toml
 ```
 
-Cambia estos valores:
+Set these values:
 
 ```toml
 [general]
@@ -130,13 +126,13 @@ default_language = "en"
 default_context = "default_en"
 ```
 
-Abre el JSON generado desde terminal:
+Open the generated JSON file:
 
 ```bash
 nano ../examples/en/plain_language_terms.json
 ```
 
-Para volver a espanol como idioma por defecto, restaura:
+To switch back to Spanish, restore:
 
 ```toml
 [general]
@@ -144,12 +140,14 @@ default_language = "es"
 default_context = "default_es"
 ```
 
-Tambien se puede procesar un fichero propio:
+## Running Your Own Text
+
+To process your own file and choose the output path:
 
 ```bash
-./midolec-v6 texto.txt salida.json
+./midolec-v6 my_text.txt my_result.json
 ```
 
-Si no indicas `salida.json`, Midolec crea un JSON junto al fichero de entrada.
-Tambien puedes abrir la carpeta `examples/` con el explorador de archivos y
-hacer doble clic sobre el resultado `.json`.
+If you do not provide an output path, Midolec creates a `.json` file next to the
+input file. You can also open the `examples/` folder with a graphical file
+explorer and double-click the generated `.json` file.

@@ -1,47 +1,50 @@
-# Dependencias runtime
+# Runtime Dependencies
 
-Las dependencias runtime son necesarias para ejecutar Midolec, pero no forman
-parte del codigo fuente del proyecto.
+Runtime dependencies are required to execute Midolec, but they are not part of
+the source code. They are installed or checked by the provisioning scripts in
+`midolec-v6/runtime/provisioning/`.
 
-## Instalacion recomendada
+## Recommended Installation
 
-Para usuarios finales, usar el instalador guiado:
+For end users, use the guided installer:
 
 ```bash
 cd midolec-v6
 bash runtime/provisioning/install_midolec_runtime.sh
 ```
 
-El instalador pregunta que backend preparar, muestra una checklist
-`OK/MISSING/WARN`, solicita confirmacion antes de instalar y termina con un
-resumen. Para diagnosticar sin modificar nada:
+The installer asks which backend should be prepared, shows an `OK` / `MISSING`
+/ `WARN` checklist, asks for confirmation, installs the missing pieces, and
+prints a final summary.
+
+To diagnose the environment without changing anything:
 
 ```bash
 cd midolec-v6
 bash runtime/provisioning/doctor.sh --backend all
 ```
 
-## Instalacion directa
+## Direct Installation
 
-La instalacion directa salta la pregunta interactiva y ejecuta una opcion
-concreta. Es util para mantenedores, scripts automatizados o usuarios que ya
-saben exactamente que backend necesitan.
+Direct installation skips the interactive question and selects a backend
+explicitly. This is useful for maintainers, scripted setup, or users who
+already know which backend they need.
 
-Instalar FreeLing para el backend espanol:
+Install FreeLing for Spanish:
 
 ```bash
 cd midolec-v6
 bash runtime/provisioning/install_midolec_runtime.sh --backend freeling --yes
 ```
 
-Instalar spaCy para el backend ingles:
+Install spaCy for English:
 
 ```bash
 cd midolec-v6
 bash runtime/provisioning/install_midolec_runtime.sh --backend spacy --yes
 ```
 
-Instalar FreeLing y spaCy:
+Install both FreeLing and spaCy:
 
 ```bash
 cd midolec-v6
@@ -50,42 +53,33 @@ bash runtime/provisioning/install_midolec_runtime.sh --backend all --yes
 
 ## FreeLing
 
-El backend espanol necesita:
+The Spanish backend requires:
 
-- librerias nativas en `runtime/freeling/lib/`;
-- recursos linguisticos en `runtime/freeling/share/freeling/common/`;
-- recursos linguisticos en `runtime/freeling/share/freeling/es/`.
+- Native shared libraries in `runtime/freeling/lib/`.
+- Common linguistic resources in `runtime/freeling/share/freeling/common/`.
+- Spanish linguistic resources in `runtime/freeling/share/freeling/es/`.
 
-Comando de instalacion directa:
-
-```bash
-cd midolec-v6
-bash runtime/provisioning/install_midolec_runtime.sh --backend freeling --yes
-```
-
-`patch_freeling_rpath.sh` configura `_pyfreeling.so` y las librerias nativas
-para que resuelvan `runtime/freeling/lib/` mediante RPATH/RUNPATH. Despues de
-ese paso, no hace falta exportar `LD_LIBRARY_PATH` manualmente en cada terminal.
+The installer also configures RPATH/RUNPATH so `_pyfreeling.so` can resolve the
+native libraries from `runtime/freeling/lib/`. Users should not need to export
+`LD_LIBRARY_PATH` manually.
 
 ## spaCy
 
-El backend ingles necesita:
+The English backend requires:
 
-- `spacy`;
-- `pyphen`;
-- modelo `en_core_web_sm`.
+- `spacy`.
+- `pyphen`.
+- The `en_core_web_sm` model.
 
-Comando de instalacion directa:
+When possible, the installer copies the model into
+`runtime/spacy/models/en_core_web_sm/` so the package can prefer the bundled
+runtime model.
 
-```bash
-cd midolec-v6
-bash runtime/provisioning/install_midolec_runtime.sh --backend spacy --yes
-```
+## Asset Downloads
 
-## Descarga de assets
+The provisioning scripts download runtime assets from the public GitHub Release
+using `curl` or `wget`. GitHub CLI is not required for the normal flow.
 
-Los scripts descargan los assets desde la Release publica de GitHub mediante
-`curl` o `wget`. GitHub CLI no es necesario para el flujo normal.
-
-Si el repositorio vuelve a ser privado, los mismos scripts pueden usar GitHub
-CLI como fallback tras ejecutar `gh auth login` en la misma terminal Ubuntu/WSL.
+If the distribution repository becomes private again, the same scripts can use
+GitHub CLI as a fallback after running `gh auth login` in the same Ubuntu/WSL
+terminal.

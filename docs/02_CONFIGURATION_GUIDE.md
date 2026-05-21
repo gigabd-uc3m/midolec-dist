@@ -1,32 +1,76 @@
-# Guia de configuracion
+# Configuration Guide
 
-Midolec se configura mediante ficheros TOML editables.
+Midolec V6 uses TOML configuration files. Most users only need to edit
+`midolec-v6/midolecConfig.toml`.
 
-## Configuracion global
+## Global Configuration
 
-`midolec-v6/midolecConfig.toml` contiene opciones generales del programa:
+The global configuration file is:
 
-- idioma por defecto;
-- contexto por defecto;
-- rutas runtime;
-- flags globales de salida JSON;
-- formato horario sugerido.
+```text
+midolec-v6/midolecConfig.toml
+```
 
-## Configuracion por idioma
+It controls cross-language defaults, including:
 
-La carpeta `midolec-v6/config/` contiene opciones especificas por idioma:
+- Default language.
+- Default context.
+- Output blocks.
+- Shared analysis flags.
+- Runtime paths.
 
-- `midolec-v6/config/es.toml`: backend FreeLing, segmentacion y flags de analisis espanol.
-- `midolec-v6/config/en.toml`: backend ingles y opciones especificas de ingles.
+To edit it from the terminal:
 
-## Regla general
+```bash
+cd midolec-v6
+nano midolecConfig.toml
+```
 
-Las metricas se calculan internamente y las flags controlan principalmente que
-bloques aparecen o desaparecen del JSON final. Esto evita mezclar la logica de
-analisis con la logica de presentacion.
+## Language Configuration
 
-## Recomendacion para testers
+Language-specific configuration files live in:
 
-Para probar cambios de configuracion, modifica una opcion cada vez y compara el
-JSON generado antes y despues. Asi es mas facil detectar si una flag afecta al
-bloque esperado.
+```text
+midolec-v6/config/es.toml
+midolec-v6/config/en.toml
+```
+
+These files declare backend-specific defaults such as FreeLing for Spanish and
+spaCy for English. Most users should not need to edit them.
+
+## Switching The Default Language
+
+For Spanish:
+
+```toml
+[general]
+default_language = "es"
+default_context = "default_es"
+```
+
+For English:
+
+```toml
+[general]
+default_language = "en"
+default_context = "default_en"
+```
+
+You can also override the language for a single command with `-L`:
+
+```bash
+./midolec-v6 -L en ../examples/en/plain_language_terms.txt
+./midolec-v6 -L es ../examples/es/legal_cross_references.txt
+```
+
+## General Rule
+
+Keep source-code changes in the canonical `midolec` repository. Use this
+distribution repository for packaged executables, runtime assets, examples,
+installation scripts, and user-facing documentation.
+
+## Recommendation For Testers
+
+When testing Midolec, prefer command-line overrides such as `-L en` before
+editing configuration files. This makes it easier to return to a known working
+state.
