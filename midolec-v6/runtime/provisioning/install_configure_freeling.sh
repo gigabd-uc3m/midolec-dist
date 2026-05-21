@@ -13,7 +13,7 @@ COMMON_INSTALL_ARGS=()
 print_usage() {
   cat <<'EOF'
 Usage:
-  bash runtime/provisioning/install_configure_freeling.sh [options]
+  v6/runtime/provisioning/install_configure_freeling.sh [options]
 
 Options:
   --root PATH           Midolec root folder to patch/check. Defaults to the
@@ -30,7 +30,7 @@ Options:
 Recommended first-time setup for public release assets:
   sudo apt update
   sudo apt install -y curl patchelf libboost-regex1.74.0 libboost-program-options1.74.0
-  bash runtime/provisioning/install_configure_freeling.sh
+  bash v6/runtime/provisioning/install_configure_freeling.sh
 
 This script runs the full FreeLing setup sequence:
   1) freeling/install_libs.sh

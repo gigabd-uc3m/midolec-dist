@@ -1213,7 +1213,7 @@
 
 	"number_words": {
 		"min_value_for_digits": 1000,
-		"suggestion_label": "Escribe los números grandes con cifras"
+		"suggestion_label": "Write large numbers using digits"
 	},
 	
 	"difficult_terms": {
@@ -1449,7 +1449,7 @@
 		"It's recommended to avoid superlatives": "Recomendamos evitar los superlativos",
 		"It's recommended to avoid adverbs ending in mente": "Recomendamos evitar los adverbios acabados en -mente",
 		"These constructions can be problematics": "Recomendamos evitar estas construcciones",
-		"avoid_roman_numerals": "Evita números romanos"
+		"avoid_roman_numerals": "Avoid roman numerals"
 
 	},
 	"Referencias": [

@@ -5,7 +5,7 @@ Midolec V6. The scripts are versioned because they are part of the deployment
 process, but the files they install are intentionally ignored by Git.
 
 Unless stated otherwise, commands in this document are executed from the
-packaged application root: `midolec-v6/`.
+repository root.
 
 ## Supported Environments
 
@@ -25,23 +25,21 @@ anything, it prints a checklist of available and missing dependencies, explains
 the planned actions, and asks for confirmation.
 
 ```bash
-# 1) Move to the packaged application root.
-cd midolec-v6
+# 1) Install the runtime backend selected by the user.
+bash v6/runtime/provisioning/install_midolec_runtime.sh
 
-# 2) Install the runtime backend selected by the user.
-bash runtime/provisioning/install_midolec_runtime.sh
+# 2) Optional: run the read-only diagnostic checklist again.
+bash v6/runtime/provisioning/doctor.sh --backend all
 
-# 3) Optional: run the read-only diagnostic checklist again.
-bash runtime/provisioning/doctor.sh --backend all
-
-# 4) Execute Midolec.
-./midolec-v6 input_text.txt output.json
+# 3) Execute Midolec from the v6 folder.
+cd v6
+python3 midolec.py input_text.txt
 ```
 
 For non-interactive FreeLing-only setup, maintainers can still run:
 
 ```bash
-bash runtime/provisioning/install_midolec_runtime.sh --backend freeling --yes
+bash v6/runtime/provisioning/install_midolec_runtime.sh --backend freeling --yes
 ```
 
 Internally, the FreeLing installer runs this setup sequence:
@@ -122,10 +120,10 @@ freeling/check_runtime.sh
 ## Expected Runtime Targets
 
 ```text
-runtime/freeling/lib/
-runtime/freeling/share/freeling/common/
-runtime/freeling/share/freeling/es/
-runtime/spacy/models/
+v6/runtime/freeling/lib/
+v6/runtime/freeling/share/freeling/common/
+v6/runtime/freeling/share/freeling/es/
+v6/runtime/spacy/models/
 ```
 
 ## Default GitHub Release Usage
@@ -134,21 +132,22 @@ After publishing the Release assets, a collaborator can prepare the runtime
 with:
 
 ```bash
-bash runtime/provisioning/install_midolec_runtime.sh
-./midolec-v6 input_text.txt output.json
+bash v6/runtime/provisioning/install_midolec_runtime.sh
+cd v6
+python3 midolec.py input_text.txt
 ```
 
 The release can also be pinned explicitly:
 
 ```bash
-bash runtime/provisioning/install_configure_freeling.sh \
+v6/runtime/provisioning/install_configure_freeling.sh \
   --release-url https://github.com/gigabd-uc3m/midolec-dist/releases/tag/v6-runtime-2026-05-07
 ```
 
 Or by passing repo and tag separately:
 
 ```bash
-bash runtime/provisioning/install_configure_freeling.sh \
+v6/runtime/provisioning/install_configure_freeling.sh \
   --github-repo gigabd-uc3m/midolec-dist \
   --release-tag v6-runtime-2026-05-07
 ```
@@ -159,17 +158,17 @@ The advanced scripts inside `freeling/` are still available when maintainers
 need to install only one part:
 
 ```bash
-runtime/provisioning/freeling/install_libs.sh --archive /path/to/libs.tar.gz
-runtime/provisioning/freeling/install_resources.sh --archive /path/to/resources.tar.gz
-bash runtime/provisioning/freeling/patch_freeling_rpath.sh .
-bash runtime/provisioning/freeling/check_runtime.sh
+v6/runtime/provisioning/freeling/install_libs.sh --archive /path/to/libs.tar.gz
+v6/runtime/provisioning/freeling/install_resources.sh --archive /path/to/resources.tar.gz
+bash v6/runtime/provisioning/freeling/patch_freeling_rpath.sh v6
+bash v6/runtime/provisioning/freeling/check_runtime.sh
 ```
 
 Copy the example file and fill in project-specific artifact URLs if a future
 runtime source is needed:
 
 ```bash
-cp runtime/provisioning/runtime_sources.env.example runtime_sources.env
+cp v6/runtime/provisioning/runtime_sources.env.example runtime_sources.env
 ```
 
 Then either source it:

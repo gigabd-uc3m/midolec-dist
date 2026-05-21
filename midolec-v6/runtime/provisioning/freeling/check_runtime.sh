@@ -37,7 +37,7 @@ CHECK_ABI=1
 print_usage() {
   cat <<'EOF'
 Usage:
-  bash runtime/provisioning/freeling/check_runtime.sh [options]
+  bash v6/runtime/provisioning/freeling/check_runtime.sh [options]
 
 Options:
   --all             Validate libraries, binding dependencies and resources. Default.

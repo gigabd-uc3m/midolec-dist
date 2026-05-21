@@ -83,10 +83,10 @@ For non-interactive FreeLing-only setup, maintainers can still run:
 bash runtime/provisioning/install_configure_freeling.sh
 ```
 
-After that, the canonical binary entry point remains:
+After that, the canonical source entry point remains:
 
 ```bash
-./midolec-v6 input.txt output.json
+python3 midolec.py input.txt
 ```
 
 ## Configuration
