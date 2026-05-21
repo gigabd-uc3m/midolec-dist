@@ -54,13 +54,14 @@ installs the required runtime pieces, and prints a final summary.
 
 ## Execution
 
-All commands below must be executed from the `midolec-v6` folder:
+All commands below must be executed from the `midolec-v6` folder.
 
+1) In the folder you've cloned/downloaded the repo, change to the binary folder:
 ```bash
-cd ~/midolec-dist/midolec-v6
+cd midolec-dist/midolec-v6
 ```
 
-Show the help message. This only checks that the executable can start:
+2) Show the help message. This only checks that the executable can start:
 
 ```bash
 ./midolec-v6 -H
@@ -68,23 +69,24 @@ Show the help message. This only checks that the executable can start:
 
 ### 1. Spanish Example
 
-Midolec uses Spanish by default. The default language is configured in
-`midolecConfig.toml`:
+Midolec uses Spanish by default. The default language is configured in the file
+`midolecConfig.toml`. You may find this file in `midolec-dist/midolec-v6/`.
 
+1. Read/Open the file and check the language configuration:
 ```toml
 [general]
 default_language = "es"
 default_context = "default_es"
 ```
 
-Run a Spanish example. Midolec creates a JSON file next to the input text, using
+2. Run a Spanish example. Midolec creates a JSON file next to the input text, using
 the same filename with the `.json` extension:
 
 ```bash
 ./midolec-v6 ../examples/es/legal_cross_references.txt
 ```
 
-Open the generated Spanish result in the terminal:
+3. Open the generated Spanish result in the terminal:
 
 ```bash
 nano ../examples/es/legal_cross_references.json
@@ -92,19 +94,19 @@ nano ../examples/es/legal_cross_references.json
 
 ### 2. English Example
 
-To use English for a single command, pass `-L en`:
-
+0. To use English for a one-time execution, write `-L en`:
 ```bash
 ./midolec-v6 -L en ../examples/en/plain_language_terms.txt
 ```
+Jump to step 2.
 
-To make English the default language, edit `midolecConfig.toml`:
+1. To make English the default language, edit `midolecConfig.toml`:
 
 ```bash
 nano midolecConfig.toml
 ```
 
-Set these values:
+And set these values:
 
 ```toml
 [general]
@@ -112,13 +114,13 @@ default_language = "en"
 default_context = "default_en"
 ```
 
-Open the generated English result in the terminal:
+2. Open the generated English result in the terminal:
 
 ```bash
 nano ../examples/en/plain_language_terms.json
 ```
 
-To switch back to Spanish, restore:
+3. To switch back to Spanish, restore:
 
 ```toml
 [general]
