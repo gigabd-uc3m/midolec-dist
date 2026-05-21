@@ -66,33 +66,68 @@ Show the help message. This only checks that the executable can start:
 ./midolec-v6 -H
 ```
 
+### 1. Spanish Example
+
+Midolec uses Spanish by default. The default language is configured in
+`midolecConfig.toml`:
+
+```toml
+[general]
+default_language = "es"
+default_context = "default_es"
+```
+
 Run a Spanish example. Midolec creates a JSON file next to the input text, using
 the same filename with the `.json` extension:
 
 ```bash
-./midolec-v6 examples/es/legal_cross_references.txt
+./midolec-v6 ../examples/es/legal_cross_references.txt
 ```
 
 Open the generated Spanish result in the terminal:
 
 ```bash
-nano examples/es/legal_cross_references.json
+nano ../examples/es/legal_cross_references.json
 ```
 
-Run an English example:
+### 2. English Example
+
+To use English for a single command, pass `-L en`:
 
 ```bash
-./midolec-v6 -L en examples/en/plain_language_terms.txt
+./midolec-v6 -L en ../examples/en/plain_language_terms.txt
+```
+
+To make English the default language, edit `midolecConfig.toml`:
+
+```bash
+nano midolecConfig.toml
+```
+
+Set these values:
+
+```toml
+[general]
+default_language = "en"
+default_context = "default_en"
 ```
 
 Open the generated English result in the terminal:
 
 ```bash
-nano examples/en/plain_language_terms.json
+nano ../examples/en/plain_language_terms.json
 ```
 
-If you prefer a graphical workflow, open the `midolec-v6/examples/` folder with
-your file explorer and double-click the generated `.json` file.
+To switch back to Spanish, restore:
+
+```toml
+[general]
+default_language = "es"
+default_context = "default_es"
+```
+
+If you prefer a graphical workflow, open the `examples/` folder with your file
+explorer and double-click the generated `.json` file.
 
 ## Check Your Dependencies
 
@@ -132,8 +167,8 @@ For known errors and manual recovery commands, see
 ```text
 midolec-v6/              Current packaged Midolec V6 executable workspace.
 midolec-v6/config/       Language-specific TOML configuration files.
-midolec-v6/examples/     Small input texts for quick execution checks.
 midolec-v6/runtime/      Runtime documentation and provisioning scripts.
+examples/                Small input texts for quick execution checks.
 docs/                    User and maintainer documentation.
 releases/                Notes about release packaging.
 ```
@@ -146,6 +181,7 @@ releases/                Notes about release packaging.
 - [docs/03_TROUBLESHOOTING.md](docs/03_TROUBLESHOOTING.md): known installation and execution errors.
 - [docs/04_VALIDACION_V6.md](docs/04_VALIDACION_V6.md): validation checklist for the V6 package.
 - [docs/05_RELEASES.md](docs/05_RELEASES.md): release and packaging notes.
+- [midolec-v6/README.md](midolec-v6/README.md): package-folder map and safe-editing notes.
 - [CONTRIBUTING.md](CONTRIBUTING.md): contribution rules, commit labels, and pull request workflow.
 - [SECURITY.md](SECURITY.md): supported versions and vulnerability reporting process.
 
@@ -164,9 +200,12 @@ releases/                Notes about release packaging.
 │   ├── 04_VALIDACION_V6.md
 │   └── 05_RELEASES.md
 ├── midolec-v6/
-│   ├── examples/
+│   ├── README.md
 │   ├── runtime/
 │   ├── config/
 │   └── midolec-v6
+├── examples/
+│   ├── es/
+│   └── en/
 └── releases/
 ```

@@ -79,36 +79,69 @@ Comprueba que el binario arranca:
 ./midolec-v6 -H
 ```
 
+### 1. Ejemplo en espanol
+
+Midolec usa espanol por defecto. Esta seleccion esta en `midolecConfig.toml`:
+
+```toml
+[general]
+default_language = "es"
+default_context = "default_es"
+```
+
 Procesa un ejemplo en espanol. Midolec creara automaticamente el fichero
-`examples/es/legal_cross_references.json`:
+`../examples/es/legal_cross_references.json`:
 
 ```bash
-./midolec-v6 examples/es/legal_cross_references.txt
+./midolec-v6 ../examples/es/legal_cross_references.txt
 ```
 
 Abre el JSON generado desde terminal:
 
 ```bash
-nano examples/es/legal_cross_references.json
+nano ../examples/es/legal_cross_references.json
 ```
 
 Si prefieres `vim`:
 
 ```bash
-vim examples/es/legal_cross_references.json
+vim ../examples/es/legal_cross_references.json
 ```
 
-Procesa un ejemplo en ingles. La opcion `-L en` indica que se use el backend
-ingles:
+### 2. Ejemplo en ingles
+
+Para usar ingles solo en un comando, usa `-L en`:
 
 ```bash
-./midolec-v6 -L en examples/en/plain_language_terms.txt
+./midolec-v6 -L en ../examples/en/plain_language_terms.txt
+```
+
+Para dejar ingles como idioma por defecto, abre `midolecConfig.toml`:
+
+```bash
+nano midolecConfig.toml
+```
+
+Cambia estos valores:
+
+```toml
+[general]
+default_language = "en"
+default_context = "default_en"
 ```
 
 Abre el JSON generado desde terminal:
 
 ```bash
-nano examples/en/plain_language_terms.json
+nano ../examples/en/plain_language_terms.json
+```
+
+Para volver a espanol como idioma por defecto, restaura:
+
+```toml
+[general]
+default_language = "es"
+default_context = "default_es"
 ```
 
 Tambien se puede procesar un fichero propio:
@@ -118,5 +151,5 @@ Tambien se puede procesar un fichero propio:
 ```
 
 Si no indicas `salida.json`, Midolec crea un JSON junto al fichero de entrada.
-Tambien puedes abrir la carpeta `midolec-v6/examples/` con el explorador de
-archivos y hacer doble clic sobre el resultado `.json`.
+Tambien puedes abrir la carpeta `examples/` con el explorador de archivos y
+hacer doble clic sobre el resultado `.json`.
