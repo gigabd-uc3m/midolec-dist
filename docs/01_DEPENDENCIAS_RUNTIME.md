@@ -21,6 +21,33 @@ cd midolec-v6
 bash runtime/provisioning/doctor.sh --backend all
 ```
 
+## Instalacion directa
+
+La instalacion directa salta la pregunta interactiva y ejecuta una opcion
+concreta. Es util para mantenedores, scripts automatizados o usuarios que ya
+saben exactamente que backend necesitan.
+
+Instalar FreeLing para el backend espanol:
+
+```bash
+cd midolec-v6
+bash runtime/provisioning/install_midolec_runtime.sh --backend freeling --yes
+```
+
+Instalar spaCy para el backend ingles:
+
+```bash
+cd midolec-v6
+bash runtime/provisioning/install_midolec_runtime.sh --backend spacy --yes
+```
+
+Instalar FreeLing y spaCy:
+
+```bash
+cd midolec-v6
+bash runtime/provisioning/install_midolec_runtime.sh --backend all --yes
+```
+
 ## FreeLing
 
 El backend espanol necesita:
@@ -29,7 +56,7 @@ El backend espanol necesita:
 - recursos linguisticos en `runtime/freeling/share/freeling/common/`;
 - recursos linguisticos en `runtime/freeling/share/freeling/es/`.
 
-Instalacion no interactiva para mantenedores:
+Comando de instalacion directa:
 
 ```bash
 cd midolec-v6
@@ -48,7 +75,7 @@ El backend ingles necesita:
 - `pyphen`;
 - modelo `en_core_web_sm`.
 
-Instalacion no interactiva para mantenedores:
+Comando de instalacion directa:
 
 ```bash
 cd midolec-v6

@@ -32,8 +32,8 @@ git clone https://github.com/gigabd-uc3m/midolec-dist.git
 cd midolec-dist/midolec-v6
 ```
 
->If you download the ZIP on Windows, open WSL Ubuntu and unzip/copy the package
-inside the Linux home directory, for example `~/midolec-dist`.
+If you download the ZIP on Windows, open WSL Ubuntu and unzip or copy the
+package inside the Linux home directory, for example `~/midolec-dist`.
 
 Run the guided installer:
 
@@ -52,7 +52,49 @@ The installer asks which backend you want to prepare:
 It then prints a checklist, explains what is missing, asks for confirmation,
 installs the required runtime pieces, and prints a final summary.
 
-## Doctor Check
+## Execution
+
+All commands below must be executed from the `midolec-v6` folder:
+
+```bash
+cd ~/midolec-dist/midolec-v6
+```
+
+Show the help message. This only checks that the executable can start:
+
+```bash
+./midolec-v6 -H
+```
+
+Run a Spanish example. Midolec creates a JSON file next to the input text, using
+the same filename with the `.json` extension:
+
+```bash
+./midolec-v6 examples/es/legal_cross_references.txt
+```
+
+Open the generated Spanish result in the terminal:
+
+```bash
+nano examples/es/legal_cross_references.json
+```
+
+Run an English example:
+
+```bash
+./midolec-v6 -L en examples/en/plain_language_terms.txt
+```
+
+Open the generated English result in the terminal:
+
+```bash
+nano examples/en/plain_language_terms.json
+```
+
+If you prefer a graphical workflow, open the `midolec-v6/examples/` folder with
+your file explorer and double-click the generated `.json` file.
+
+## Check Your Dependencies
 
 If you only want to inspect the environment without installing anything, run:
 
@@ -67,37 +109,8 @@ bash runtime/provisioning/doctor.sh --backend freeling
 bash runtime/provisioning/doctor.sh --backend spacy
 ```
 
-## Non-Interactive Install
-
-For scripted setup:
-
-```bash
-bash runtime/provisioning/install_midolec_runtime.sh --backend freeling --yes
-bash runtime/provisioning/install_midolec_runtime.sh --backend spacy --yes
-bash runtime/provisioning/install_midolec_runtime.sh --backend all --yes
-```
-
-## Execution
-
-Show the help message:
-
-```bash
-./midolec-v6 -H
-```
-
-Run a Spanish example:
-
-```bash
-./midolec-v6 examples/es/legal_cross_references.txt examples/es/legal_cross_references.json
-```
-
-Run an English example:
-
-```bash
-./midolec-v6 -L en examples/en/plain_language_terms.txt examples/en/plain_language_terms.json
-```
-
-Generated JSON files under `examples/` are ignored by Git.
+The checker prints `OK`, `MISSING`, and `WARN` lines so you can see what is
+ready and what still needs attention.
 
 ## Troubleshooting
 
@@ -113,7 +126,8 @@ Use this subject prefix:
 [midolec-dist] [install]
 ```
 
-For known errors and manual commands, see [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md).
+For known errors and manual recovery commands, see
+[docs/03_TROUBLESHOOTING.md](docs/03_TROUBLESHOOTING.md).
 
 ## Repository Layout
 
@@ -126,11 +140,35 @@ docs/                    User and maintainer documentation.
 releases/                Notes about release packaging.
 ```
 
-## Additional Documentation
+## Recommended Documentation
 
-- [docs/GUIA_EJECUCION.md](docs/GUIA_EJECUCION.md)
-- [docs/DEPENDENCIAS_RUNTIME.md](docs/DEPENDENCIAS_RUNTIME.md)
-- [docs/VALIDACION_V6.md](docs/VALIDACION_V6.md)
-- [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md)
-- [CONTRIBUTING.md](CONTRIBUTING.md)
-- [SECURITY.md](SECURITY.md)
+- [docs/00_GUIA_EJECUCION.md](docs/00_GUIA_EJECUCION.md): step-by-step execution guide for users.
+- [docs/01_DEPENDENCIAS_RUNTIME.md](docs/01_DEPENDENCIAS_RUNTIME.md): runtime dependency details and direct installation commands.
+- [docs/02_GUIA_CONFIGURACION.md](docs/02_GUIA_CONFIGURACION.md): configuration files and language options.
+- [docs/03_TROUBLESHOOTING.md](docs/03_TROUBLESHOOTING.md): known installation and execution errors.
+- [docs/04_VALIDACION_V6.md](docs/04_VALIDACION_V6.md): validation checklist for the V6 package.
+- [docs/05_RELEASES.md](docs/05_RELEASES.md): release and packaging notes.
+- [CONTRIBUTING.md](CONTRIBUTING.md): contribution rules, commit labels, and pull request workflow.
+- [SECURITY.md](SECURITY.md): supported versions and vulnerability reporting process.
+
+## Documentation Index
+
+```text
+.
+├── README.md
+├── CONTRIBUTING.md
+├── SECURITY.md
+├── docs/
+│   ├── 00_GUIA_EJECUCION.md
+│   ├── 01_DEPENDENCIAS_RUNTIME.md
+│   ├── 02_GUIA_CONFIGURACION.md
+│   ├── 03_TROUBLESHOOTING.md
+│   ├── 04_VALIDACION_V6.md
+│   └── 05_RELEASES.md
+├── midolec-v6/
+│   ├── examples/
+│   ├── runtime/
+│   ├── config/
+│   └── midolec-v6
+└── releases/
+```

@@ -9,6 +9,18 @@ Los comandos se ejecutan desde la raiz del paquete:
 cd midolec-v6
 ```
 
+Antes de diagnosticar un caso concreto, ejecuta la checklist general:
+
+```bash
+bash runtime/provisioning/doctor.sh --backend all
+```
+
+Si quieres que el propio paquete intente instalar lo que falta, ejecuta:
+
+```bash
+bash runtime/provisioning/install_midolec_runtime.sh
+```
+
 ## 1) Entorno soportado
 
 La build actual es un paquete Linux. Usar:
@@ -53,7 +65,7 @@ Solucion:
 ```bash
 sudo apt update
 sudo apt install -y curl
-bash runtime/provisioning/install_configure_freeling.sh
+bash runtime/provisioning/install_midolec_runtime.sh --backend freeling
 ```
 
 Si el repositorio de distribucion volviera a ser privado, entonces si haria
@@ -121,9 +133,8 @@ tiene una libreria compartida de Boost requerida por esa build.
 Solucion en Ubuntu/WSL:
 
 ```bash
-sudo apt update
-sudo apt install -y curl patchelf libboost-regex1.74.0 libboost-program-options1.74.0
-bash runtime/provisioning/freeling/check_runtime.sh
+bash runtime/provisioning/install_midolec_runtime.sh --backend freeling
+bash runtime/provisioning/doctor.sh --backend freeling
 ```
 
 ## 6) Falta patchelf
@@ -142,9 +153,7 @@ RPATH/RUNPATH en `_pyfreeling.so` y en las librerias nativas.
 Solucion en Ubuntu/WSL:
 
 ```bash
-sudo apt update
-sudo apt install -y patchelf
-bash runtime/provisioning/install_configure_freeling.sh
+bash runtime/provisioning/install_midolec_runtime.sh --backend freeling
 ```
 
 ## 7) Missing FreeLing RPATH/RUNPATH configuration
@@ -190,7 +199,7 @@ Midolec V6, o se han borrado de `runtime/freeling/lib/`.
 Solucion recomendada:
 
 ```bash
-bash runtime/provisioning/install_configure_freeling.sh
+bash runtime/provisioning/install_midolec_runtime.sh --backend freeling
 ```
 
 Solucion avanzada:
@@ -218,8 +227,8 @@ copiadas desde otra build.
 Solucion:
 
 ```bash
-bash runtime/provisioning/install_configure_freeling.sh
-bash runtime/provisioning/freeling/check_runtime.sh --libs-only
+bash runtime/provisioning/install_midolec_runtime.sh --backend freeling
+bash runtime/provisioning/doctor.sh --backend freeling
 ```
 
 Si el error persiste, eliminar `runtime/freeling/lib/` y repetir la instalacion
@@ -243,7 +252,7 @@ No estan instaladas las carpetas `common/` y `es/` en
 Solucion recomendada:
 
 ```bash
-bash runtime/provisioning/install_configure_freeling.sh
+bash runtime/provisioning/install_midolec_runtime.sh --backend freeling
 ```
 
 Solucion avanzada:
@@ -270,7 +279,8 @@ No se han instalado las dependencias o el modelo del backend ingles.
 Solucion:
 
 ```bash
-bash runtime/provisioning/install_spacy_en.sh
+bash runtime/provisioning/install_midolec_runtime.sh --backend spacy
+bash runtime/provisioning/doctor.sh --backend spacy
 ```
 
 ## 12) PyInstaller no encuentra encodings
@@ -307,8 +317,8 @@ Revisar:
 - que el fichero de entrada existe;
 - que se esta ejecutando desde `midolec-v6/`;
 - que `midolecConfig.toml` y `config/` estan junto al binario;
-- que `bash runtime/provisioning/freeling/check_runtime.sh` termina sin errores
-  si se usa espanol/FreeLing.
+- que `bash runtime/provisioning/doctor.sh --backend all` muestra `OK` para los
+  backends que se van a usar.
 
 ## Informacion que conviene reportar
 
@@ -319,7 +329,7 @@ Sistema operativo:
 Comando ejecutado:
 Salida completa del error:
 Resultado de uname -s:
+Resultado de bash runtime/provisioning/doctor.sh --backend all:
 Resultado de gh auth status, solo si se esta usando un repositorio privado:
-Resultado de bash runtime/provisioning/freeling/check_runtime.sh:
 Commit o version de midolec-dist:
 ```

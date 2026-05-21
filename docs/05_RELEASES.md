@@ -5,8 +5,8 @@ no como ficheros versionados en `main`.
 
 Este documento describe como nombrar y preparar entregas internas o publicas de
 Midolec. Para ejecutar una version ya descargada, consultar
-`docs/GUIA_EJECUCION.md`. Para validar una entrega interna, consultar
-`docs/VALIDACION_V6.md`.
+`docs/00_GUIA_EJECUCION.md`. Para validar una entrega interna, consultar
+`docs/04_VALIDACION_V6.md`.
 
 ## Convencion de versiones
 
@@ -132,7 +132,7 @@ en `runtime/spacy/models/`.
 3. Comprobar que `runtime/freeling/` y `runtime/spacy/` no contienen assets
    descargados antes del commit.
 4. Publicar o reutilizar los assets runtime versionados.
-5. Ejecutar `docs/VALIDACION_V6.md`.
+5. Ejecutar `docs/04_VALIDACION_V6.md`.
 6. Actualizar este documento con commits, tag y observaciones.
 7. Avisar a colaboradores de la version y del procedimiento de validacion.
 
