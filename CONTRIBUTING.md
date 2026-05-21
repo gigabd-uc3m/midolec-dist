@@ -17,9 +17,7 @@ Current repository rules include:
 
 If you are unsure how to prepare a commit or pull request, contact:
 
-```text
-gigabd@uc3m.es
-```
+[gigabd@uc3m.es](mailto:gigabd@uc3m.es?subject=%5Bmidolec-dist%5D%5Bgit%5D)
 
 Use this subject prefix:
 

@@ -31,9 +31,7 @@ Email the maintainers with:
 
 Contact:
 
-```text
-gigabd@uc3m.es
-```
+[gigabd@uc3m.es](mailto:gigabd@uc3m.es?subject=%5Bmidolec-dist%5D%5Bsecurity%5D)
 
 Use this subject prefix:
 

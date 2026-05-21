@@ -116,9 +116,7 @@ ready and what still needs attention.
 
 If installation fails, copy the full terminal output and send it to:
 
-```text
-gigabd@uc3m.es
-```
+[gigabd@uc3m.es](mailto:gigabd@uc3m.es?subject=%5Bmidolec-dist%5D%5Binstall%5D)
 
 Use this subject prefix:
 
