@@ -1,0 +1,89 @@
+# -----------------------------------------------------------------------------
+# Spanish language-pack configuration
+# These options are specific to the Spanish package, its backend selection, and
+# Spanish-only or strongly Spanish-oriented analysis families.
+# -----------------------------------------------------------------------------
+
+[defaults]
+default_context = "default_es"
+# Default NLP backend
+backend = "freeling"
+# Sentence segmentation strategy:
+#   "backend" -> use the backend tokenizer/splitter
+#   "legacy_santiago" -> protect_dots + manual splitter + restore_dots
+sentence_segmentation = "backend"
+
+[backends]
+# Backends currently declared as available for Spanish.
+supported = ["freeling"]
+
+[backends.freeling]
+# Enable or disable the FreeLing backend declaration.
+enabled = true
+
+
+# ---------------------------------------------------------------------------
+# Sentence length calibration for Spanish digital texts
+# ---------------------------------------------------------------------------
+[sentence_length]
+# Midolec classifies each sentence in five bands using word count as the main
+# signal and syllable count as a density adjustment. The effective length is:
+# max(words, syllables / syllables_per_word_reference).
+very_short_max_words = 5
+short_max_words = 10
+normal_max_words = 20
+long_max_words = 30
+syllables_per_word_reference = 2.0
+
+
+# ---------------------------------------------------------------------------
+# Paragraph length calibration for Spanish digital texts
+# ---------------------------------------------------------------------------
+[paragraph_length]
+# Midolec uses the same effective-length idea as sentence_length:
+# max(words, syllables / syllables_per_word_reference). Defaults are calibrated
+# for short, scannable digital paragraphs: <=100 effective words is normal;
+# longer blocks are flagged because comprehension pressure increases online.
+very_short_max_words = 20
+short_max_words = 45
+normal_max_words = 100
+long_max_words = 150
+syllables_per_word_reference = 2.0
+
+
+# ---------------------------------------------------------------------------
+# Spanish-specific analysis families
+# These flags control phenomena that are language-specific or whose current
+# implementation is tightly coupled to Spanish rules.
+# ---------------------------------------------------------------------------
+[analysis]
+
+# Keep or remove clitic, proclitic and enclitic counters and derived metrics.
+show_clitics = true
+# Keep or remove adverbs ending in -mente.
+show_adverbs_mente = true
+# Keep or remove constructions with "se" and their related suggestions.
+show_constructions_se = true
+# Keep or remove sentence-level voice labels for Spanish.
+show_voice = true
+# Keep or remove sentence-level tense labels for Spanish.
+show_tense = true
+# Keep or remove sentence-level verbal mode labels for Spanish.
+show_mode = true
+# Keep or remove passive-voice detections and related suggestions.
+show_passive_voice = true
+
+# Keep or remove the complete advanced legal plain-language branch.
+show_legal_clarity = true
+# Keep or remove legal jargon, Latinisms and opaque legal formulae.
+show_legal_jargon = true
+# Keep or remove legal terms that may need a nearby explanation or definition.
+show_legal_definition_candidates = true
+# Keep or remove cross-references and legal remissions that may force external consultation.
+show_legal_cross_references = true
+# Keep or remove markers for rights, obligations, permissions and prohibitions.
+show_rights_obligations_permissions = true
+# Keep or remove ambiguity and vagueness markers with legal relevance.
+show_legal_ambiguity_markers = true
+# Keep or remove possible acronyms/abbreviations that appear without local expansion.
+show_unexpanded_abbreviations = true

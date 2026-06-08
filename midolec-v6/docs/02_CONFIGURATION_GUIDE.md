@@ -59,8 +59,8 @@ default_context = "default_en"
 You can also override the language for a single command with `-L`:
 
 ```bash
-./midolec-v6 -L en ../examples/en/plain_language_terms.txt
-./midolec-v6 -L es ../examples/es/legal_cross_references.txt
+./midolec-v6 -L en ../examples/v6/en/plain_language_terms.txt
+./midolec-v6 -L es ../examples/v6/es/legal_cross_references.txt
 ```
 
 ## General Rule

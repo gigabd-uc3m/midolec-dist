@@ -18,7 +18,7 @@ midolec-v6/
 The example input texts are stored one level above this folder:
 
 ```text
-../examples/
+../examples/v6/
 ```
 
 ## What Users Can Edit
@@ -68,13 +68,13 @@ Show help:
 Run the Spanish example:
 
 ```bash
-./midolec-v6 ../examples/es/legal_cross_references.txt
+./midolec-v6 ../examples/v6/es/legal_cross_references.txt
 ```
 
 Run the English example:
 
 ```bash
-./midolec-v6 -L en ../examples/en/plain_language_terms.txt
+./midolec-v6 -L en ../examples/v6/en/plain_language_terms.txt
 ```
 
 Check installed dependencies:
@@ -82,3 +82,13 @@ Check installed dependencies:
 ```bash
 bash runtime/provisioning/doctor.sh --backend all
 ```
+
+## V6 Documentation
+
+- [docs/00_EXECUTION_GUIDE.md](docs/00_EXECUTION_GUIDE.md): step-by-step execution guide.
+- [docs/01_RUNTIME_DEPENDENCIES.md](docs/01_RUNTIME_DEPENDENCIES.md): runtime dependency details.
+- [docs/02_CONFIGURATION_GUIDE.md](docs/02_CONFIGURATION_GUIDE.md): language and context configuration.
+- [docs/03_TROUBLESHOOTING.md](docs/03_TROUBLESHOOTING.md): known installation and execution errors.
+- [docs/04_VALIDATION.md](docs/04_VALIDATION.md): validation checklist.
+- [docs/05_RELEASE_CHECKLIST.md](docs/05_RELEASE_CHECKLIST.md): package release checklist.
+- [docs/06_REPORTING_UNKNOWN_ERRORS.md](docs/06_REPORTING_UNKNOWN_ERRORS.md): unknown-error report template.

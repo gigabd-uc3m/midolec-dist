@@ -1,14 +1,14 @@
 # License notice
 
 This repository is currently intended for internal evaluation and packaged
-testing of Midolec.
+testing of Midolec distribution packages.
 
-Midolec V6 may call FreeLing for Spanish texts preprocessing and categorizing words. 
-FreeLing is distributed under AGPL terms. Nevertheless Midolec doesn't modify nor
-integrates FreeLing, as it is used as a detachable NPL backend.
+Midolec V6 and V7-a1 may call FreeLing for Spanish text preprocessing and word
+categorization. FreeLing is distributed under AGPL terms. Midolec uses FreeLing
+as a detachable NLP backend and does not modify FreeLing itself.
 
-Still GigaBD developing group is pending to complete a full review of the internal 
-binary code for privacy purposes.
+The GigaBD development group is still pending a full review of the internal
+binary packages for privacy and redistribution purposes.
 
 Until that review is complete:
 
@@ -17,3 +17,4 @@ Until that review is complete:
   internal collaborator group.
 - Keep source-code, runtime assets, and executable packages traceable to the
   corresponding internal release.
+- Treat `midolec-v7-a1/` as a partial alpha package until explicitly promoted.

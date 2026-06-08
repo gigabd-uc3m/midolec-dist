@@ -36,14 +36,17 @@ Recommended format:
 [v6] [docs] Clarify installation steps
 [v6] [provisioning] Improve runtime installer feedback
 [v6] [fix] Rebuild binary with missing runtime archive
-[v7] [examples] Add sample execution texts
+[v7-a1] [docs] Add alpha package execution guide
+[v7-a1] [binary] Add partial alpha executable package
+[v7-a1] [examples] Add sample execution texts
 ```
 
 Recommended version labels:
 
 - `[v4.2]` for legacy V4.2 distribution changes.
-- `[v6]` for current V6 distribution changes.
-- `[v7]` for V7 preparation changes.
+- `[v6]` for stable V6 distribution changes.
+- `[v7-a1]` for V7 partial alpha distribution changes.
+- `[v7]` for broader V7 preparation changes when no alpha package is affected.
 
 Recommended scope labels:
 
@@ -65,6 +68,8 @@ Recommended scope labels:
 - Checksums and release notes.
 - The current internal packaged workspace while collaborator testing uses this
   repository.
+- Version-specific package documentation under `midolec-v6/docs/` and
+  `midolec-v7-a1/docs/`.
 
 ## What Does Not Belong In Git
 
@@ -72,6 +77,7 @@ Recommended scope labels:
 - FreeLing linguistic resources.
 - Downloaded spaCy models.
 - Generated JSON outputs.
+- Generated Markdown reports.
 - Local logs, temporary files, caches, and personal environment files.
 
 Heavy runtime assets should be attached to versioned GitHub Releases or

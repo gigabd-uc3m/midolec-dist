@@ -53,8 +53,8 @@ Expected result: the command prints the Midolec CLI help and exits normally.
 ## Spanish Smoke Test
 
 ```bash
-./midolec-v6 ../examples/es/legal_cross_references.txt
-test -f ../examples/es/legal_cross_references.json
+./midolec-v6 ../examples/v6/es/legal_cross_references.txt
+test -f ../examples/v6/es/legal_cross_references.json
 ```
 
 Expected result: a JSON file is created next to the input text.
@@ -62,8 +62,8 @@ Expected result: a JSON file is created next to the input text.
 ## English Smoke Test
 
 ```bash
-./midolec-v6 -L en ../examples/en/plain_language_terms.txt
-test -f ../examples/en/plain_language_terms.json
+./midolec-v6 -L en ../examples/v6/en/plain_language_terms.txt
+test -f ../examples/v6/en/plain_language_terms.json
 ```
 
 Expected result: a JSON file is created next to the input text.

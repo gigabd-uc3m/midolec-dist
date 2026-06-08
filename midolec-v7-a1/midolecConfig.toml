@@ -1,0 +1,115 @@
+# -----------------------------------------------------------------------------
+# Global Midolec configuration
+# These options apply to the execution pipeline and to output blocks that should
+# be configurable in a comparable way across languages.
+# -----------------------------------------------------------------------------
+
+[general]
+# Default language pack selected
+default_language = "es"
+# Default context currently consumed by the runtime
+default_context = "default_es"
+
+# Preferred hour format in suggestions:
+#   "12h" -> detect 24-hour patterns and suggest forms such as "2:30 p.m."
+#   "24h" -> detect 12-hour patterns and suggest forms such as "14:30"
+hour_format_suggested = "12h"
+# When false, empty branches and zero-like values will be pruned from the output.
+include_empty_attributes = true
+
+
+[paths]
+# Root folder for external runtime assets managed by this Midolec distribution.
+# Relative paths are resolved from the v6 application root.
+runtime_root = "runtime"
+# Root folder used to locate FreeLing shared resources.
+# Midolec expects common/ and es/ under: runtime/freeling/share/freeling/
+freeling_root = "runtime/freeling"
+
+[logging]
+# Reserved for future structured logging. Currently stored in the runtime but
+# not yet used by a real logging subsystem.
+level = "INFO"
+
+
+[debugging]
+# Enables developer-facing timing and runtime diagnostics.
+debug = false
+# Timing detail level: "basic", "plus" or "ultra".
+detail = "basic"
+# When true, print timing messages in the terminal while processing.
+terminal_timestamps = true
+# When true, write .debug.jsonl and .debug-summary.json beside each JSON output.
+write_files = true
+# When true, include the resolved runtime/configuration snapshot in debug summaries.
+include_runtime_snapshot = true
+# When true, write a cProfile file and include its top cumulative entries in the debug summary.
+profile = false
+profile_top_n = 25
+
+[cli]
+# When true, CLI values such as -L and -C may override TOML defaults.
+allow_cli_overrides = true
+
+
+# ---------------------------------------------------------------------------
+# Global output-shape controls
+# These flags control which major blocks are kept in the final JSON.
+# ---------------------------------------------------------------------------
+[output]
+# Optional human-readable Markdown view generated beside the canonical JSON output.
+generate_markdown_report = true
+# Language used for report headings/labels. Use "auto" to follow the analysis language.
+markdown_report_language = "en"
+# Word table modes: "all", "findings_only" or "none".
+markdown_report_word_table = "findings_only"
+# When true, add compact JSON pointers that help cross-check the canonical JSON output.
+markdown_report_show_technical_appendix = false
+# When true, paragraphs without warning/error findings are collapsed in the Markdown view.
+markdown_report_collapse_clean_paragraphs = true
+
+# V7 machine-readable findings contract.
+show_findings = true
+show_structure_ids = true
+# Keeps character offsets in structural nodes and Findings as char_span fields.
+show_spans = true
+
+# Readability indexes set
+show_readability_set = true
+# Summary, Ratios, legacy Suggestion/Recommendation and Technicisms blocks at every level
+show_summary = true
+show_ratios = true
+# Suggestion_Set is kept only as a legacy compatibility block in V7.
+show_suggestion_set = false
+show_technicisms = true
+# Keep or remove the formal-style block at document level.
+show_formal_style = true
+# Detailed_analysis branch, show paragraph-level, sentence-level, or word-level analysis
+show_detailed_analysis = true
+show_paragraph_analysis = true
+show_sentence_analysis = true
+show_sentence_length = true
+show_paragraph_length = true
+show_word_analysis = true
+
+# ---------------------------------------------------------------------------
+# Cross-language semantic feature families
+# These flags control analysis families that are conceptually reusable across
+# languages, even if each language pack implements them differently.
+# Unsupported features should simply be ignored by a language pack.
+# ---------------------------------------------------------------------------
+
+# Keep or remove the verbs summary block and its main aggregates.
+show_verbs_summary = true
+# Legal-references, ordinals, conectors, ambigous/vague-term detections.
+show_legal_references = true
+show_ordinals = true
+show_number_words = true
+show_connectors = true
+show_vague_terms = true
+# Difficult-term, negation-related, phone-numbers, superlative and abbreviations detections
+show_difficult_terms = true
+show_negation = true
+show_phone_numbers = true
+show_superlatives = true
+show_abbreviations = true

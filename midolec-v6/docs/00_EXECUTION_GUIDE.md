@@ -33,7 +33,7 @@ bash runtime/provisioning/doctor.sh --backend all
 ```
 
 Direct installation commands for maintainers and scripted environments are
-documented in `docs/01_RUNTIME_DEPENDENCIES.md`.
+documented in [01_RUNTIME_DEPENDENCIES.md](01_RUNTIME_DEPENDENCIES.md).
 
 ## Spanish With FreeLing
 
@@ -86,22 +86,22 @@ default_context = "default_es"
 ```
 
 Process a Spanish example. Midolec automatically creates
-`../examples/es/legal_cross_references.json`:
+`../examples/v6/es/legal_cross_references.json`:
 
 ```bash
-./midolec-v6 ../examples/es/legal_cross_references.txt
+./midolec-v6 ../examples/v6/es/legal_cross_references.txt
 ```
 
 Open the generated JSON file with `nano`:
 
 ```bash
-nano ../examples/es/legal_cross_references.json
+nano ../examples/v6/es/legal_cross_references.json
 ```
 
 Or with `vim`:
 
 ```bash
-vim ../examples/es/legal_cross_references.json
+vim ../examples/v6/es/legal_cross_references.json
 ```
 
 ### 2. English Example
@@ -109,7 +109,7 @@ vim ../examples/es/legal_cross_references.json
 To use English only for one command, pass `-L en`:
 
 ```bash
-./midolec-v6 -L en ../examples/en/plain_language_terms.txt
+./midolec-v6 -L en ../examples/v6/en/plain_language_terms.txt
 ```
 
 To make English the default language, open `midolecConfig.toml`:
@@ -129,7 +129,7 @@ default_context = "default_en"
 Open the generated JSON file:
 
 ```bash
-nano ../examples/en/plain_language_terms.json
+nano ../examples/v6/en/plain_language_terms.json
 ```
 
 To switch back to Spanish, restore:

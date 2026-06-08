@@ -1,6 +1,7 @@
-# Reporting Unknown Errors
+# Reporting Unknown V6 Errors
 
-Use this guide when an error is not covered by `03_TROUBLESHOOTING.md`.
+Use this guide when an error is not covered by
+[03_TROUBLESHOOTING.md](03_TROUBLESHOOTING.md).
 
 Please do not summarize the error from memory. Copy the exact command and the
 full terminal output whenever possible.
@@ -36,7 +37,7 @@ If the issue happens while processing a text, also run:
 Copy and fill in this template:
 
 ```text
-Midolec unknown error report
+Midolec V6 unknown error report
 
 1. Operating system:
    Example: Ubuntu 22.04, WSL Ubuntu, Linux server distribution/version.

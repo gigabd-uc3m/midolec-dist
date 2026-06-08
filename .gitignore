@@ -1,7 +1,16 @@
 # Generated outputs
 /*.json
 midolec-v6/*.json
+midolec-v7-a1/*.json
+midolec-v7-a1/*.md
+!midolec-v7-a1/README.md
 examples/**/*.json
+examples/**/*.md
+!examples/**/README.md
+*.report.md
+*-report.md
+*_report.md
+*.analysis.md
 *.log
 *.tmp
 __pycache__/
@@ -21,6 +30,7 @@ build/
 # Do not ignore this file: without it the binary fails before Midolec starts
 # with "ModuleNotFoundError: No module named 'encodings'".
 !midolec-v6/_internal/base_library.zip
+!midolec-v7-a1/_internal/base_library.zip
 
 # Runtime assets installed by provisioning scripts
 runtime/freeling/lib/
@@ -31,11 +41,16 @@ midolec-v6/runtime/freeling/lib/
 midolec-v6/runtime/freeling/share/freeling/common/
 midolec-v6/runtime/freeling/share/freeling/es/
 midolec-v6/runtime/spacy/models/
+midolec-v7-a1/runtime/freeling/lib/
+midolec-v7-a1/runtime/freeling/share/freeling/common/
+midolec-v7-a1/runtime/freeling/share/freeling/es/
+midolec-v7-a1/runtime/spacy/models/
 
 # Local environment files
 .env
 runtime/provisioning/runtime_sources.env
 midolec-v6/runtime/provisioning/runtime_sources.env
+midolec-v7-a1/runtime/provisioning/runtime_sources.env
 
 # Agent analizers instructions
 AGENTS.md

@@ -9,12 +9,15 @@ We provide security support for the following Midolec distribution versions:
 
 | Version | Supported |
 | --- | --- |
+| v7-a1 | Limited alpha support |
 | v6 | Yes |
 | v4.2 | Yes |
 | Older versions | No |
 
 We recommend using the latest supported distribution whenever possible. Older
-versions may not receive fixes.
+versions may not receive fixes. V7-a1 is a partial alpha package: security
+reports are welcome, but it should not be treated as a stable production
+distribution.
 
 ## Reporting A Vulnerability
 
