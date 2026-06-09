@@ -10,7 +10,7 @@ is only for distribution packages and release-oriented documentation.
 
 | Package | Status | Recommended Use |
 | --- | --- | --- |
-| `midolec-v6/` | Stable internal package | Regular execution, validation, collaborator testing, and TFM documentation. |
+| `midolec-v6/` | Stable internal package | Regular execution, validation, collaborator testing, and other documentation. |
 | `midolec-v7-a1/` | Partial alpha build | Preview of V7 output features, especially Markdown reports and structured Findings. |
 
 Use `midolec-v6/` when you need the most stable package. Use `midolec-v7-a1/`
