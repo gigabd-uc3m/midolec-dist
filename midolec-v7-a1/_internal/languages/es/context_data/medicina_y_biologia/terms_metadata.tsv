@@ -1,0 +1,501 @@
+selection_rank	term	freq_abs_domain	freq_rel_dom_ppm	freq_abs_global	freq_rel_glob_ppm	specificity_ratio	log_likelihood	n_articles	qid_wikidata	depth	nivel_abstraccion
+1	contrapulsación	39	64.70	47	0.11	3431.22	468.66	5			desconocido
+2	multiómica	7	11.61	9	0.02	2463.44	82.28	7	Q25110691	2	muy_generico
+3	trincadeira	10	16.59	13	0.03	2346.13	117.12	10			desconocido
+4	pedernã	14	23.22	20	0.05	1642.29	159.21	13			desconocido
+5	lipoideo	7	11.61	10	0.02	1642.29	79.60	5			desconocido
+6	arreflexia	13	21.57	19	0.04	1524.99	146.83	7			desconocido
+7	neurinoma	15	24.88	23	0.05	1319.70	167.04	5			desconocido
+8	lasik	66	109.49	105	0.25	1191.11	727.22	6	Q278846		desconocido
+9	bronquiolitis	30	49.77	50	0.12	1055.76	326.23	9	Q424227		desconocido
+10	poliangeíti	6	9.95	11	0.03	844.61	63.55	5			desconocido
+11	rinosinusitis	16	26.54	30	0.07	804.39	168.44	9			desconocido
+12	bronquiectasia	25	41.47	50	0.12	703.84	258.65	13	Q32778		desconocido
+13	toracocentesis	11	18.25	22	0.05	703.84	113.81	7			desconocido
+14	miúda	5	8.29	10	0.02	703.84	51.73	5			desconocido
+15	alveolitis	13	21.57	27	0.06	653.57	133.15	6	Q448747		desconocido
+16	aspirativo	8	13.27	17	0.04	625.64	81.44	6			desconocido
+17	rinitis	15	24.88	32	0.08	621.04	152.55	7	Q114085		desconocido
+18	transcriptómica	15	24.88	32	0.08	621.04	152.55	6			desconocido
+19	roupeiro	5	8.29	11	0.03	586.53	50.44	5			desconocido
+20	ivig	14	23.22	31	0.07	579.63	140.99	5			desconocido
+21	crepitant	9	14.93	20	0.05	575.87	90.55	9			desconocido
+22	metabolómico	25	41.47	56	0.13	567.61	251.00	7	Q12149006	2	muy_generico
+23	estridor	16	26.54	37	0.09	536.26	159.30	9			desconocido
+24	neumonía	62	102.85	144	0.34	532.17	616.58	25	Q12192		desconocido
+25	dermatomiositis	28	46.45	66	0.16	518.62	277.38	6	Q681160		desconocido
+26	sdra	16	26.54	38	0.09	511.88	158.19	6			desconocido
+27	toracoscopia	5	8.29	12	0.03	502.74	49.30	5			desconocido
+28	toracotomía	6	9.95	15	0.04	469.23	58.53	5			desconocido
+29	arinto	14	23.22	36	0.08	447.90	135.57	13			desconocido
+30	síria	5	8.29	13	0.03	439.90	48.28	5			desconocido
+31	histerectomía	99	164.23	262	0.62	427.49	951.52	5	Q550675		desconocido
+32	pleural	185	306.90	495	1.17	420.03	1773.02	41			desconocido
+33	polineuropatía	35	58.06	94	0.22	417.53	335.11	10	Q1502312		desconocido
+34	rinorrea	23	38.16	62	0.15	415.09	220.00	16	Q1115038		desconocido
+35	osteotomía	33	54.74	89	0.21	414.76	315.62	5			desconocido
+36	touriga	15	24.88	41	0.10	406.06	142.96	10			desconocido
+37	biosemiótica	6	9.95	17	0.04	383.91	56.65	5			desconocido
+38	nutrigenómica	6	9.95	17	0.04	383.91	56.65	5			desconocido
+39	cornet	37	61.38	105	0.25	382.97	349.21	5			desconocido
+40	neumopatía	7	11.61	20	0.05	378.99	65.95	5			desconocido
+41	mycoplasma	8	13.27	23	0.05	375.38	75.25	6			desconocido
+42	granulomatosis	20	33.18	58	0.14	370.44	187.70	7			desconocido
+43	enfisema	15	24.88	46	0.11	340.57	138.74	10			desconocido
+44	desmielinizante	14	23.22	43	0.10	339.78	129.44	8			desconocido
+45	electromiografía	7	11.61	22	0.05	328.46	64.33	7			desconocido
+46	opacificación	7	11.61	22	0.05	328.46	64.33	5			desconocido
+47	silicosis	39	64.70	124	0.29	322.94	357.34	7	Q653318		desconocido
+48	neuroma	10	16.59	32	0.08	319.93	91.47	5			desconocido
+49	barotrauma	10	16.59	33	0.08	306.02	90.74	7			desconocido
+50	perioperatorio	10	16.59	33	0.08	306.02	90.74	6			desconocido
+51	escleral	13	21.57	43	0.10	305.00	117.89	5			desconocido
+52	periquita	8	13.27	27	0.06	296.35	72.17	8			desconocido
+53	pulmonale	10	16.59	34	0.08	293.27	90.03	7			desconocido
+54	neumonitis	5	8.29	17	0.04	293.27	45.02	5			desconocido
+55	diplopía	21	34.84	72	0.17	289.82	188.66	11	Q775940		desconocido
+56	sibilancia	25	41.47	87	0.20	283.81	223.72	19			desconocido
+57	lobar	18	29.86	63	0.15	281.54	160.83	6			desconocido
+58	adenoid	13	21.57	46	0.11	277.27	115.82	7			desconocido
+59	distrofia	137	227.27	487	1.15	275.50	1219.14	25			desconocido
+60	pleura	73	121.10	260	0.61	274.76	649.28	34			desconocido
+61	granulomatosa	7	11.61	25	0.06	273.72	62.22	6			desconocido
+62	hipoxemia	26	43.13	93	0.22	273.13	230.99	14			desconocido
+63	granulomatós	33	54.74	120	0.28	266.97	291.91	12			desconocido
+64	agroforestería	11	18.25	40	0.09	266.97	97.30	8	Q397350		desconocido
+65	epoc	95	157.60	347	0.82	265.34	839.37	17			desconocido
+66	hipermetropía	24	39.81	88	0.21	263.94	211.84	10			desconocido
+67	refractivo	73	121.10	268	0.63	263.49	644.13	11			desconocido
+68	vinha	20	33.18	74	0.17	260.68	176.11	20			desconocido
+69	hemitórax	7	11.61	26	0.06	259.31	61.58	5			desconocido
+70	disfagia	36	59.72	134	0.32	258.55	316.50	21	Q623289		desconocido
+71	neuraminidasa	23	38.16	87	0.20	252.94	201.35	5			desconocido
+72	sociobiología	35	58.06	133	0.31	251.37	306.03	6	Q190553	1	muy_generico
+73	traqueobronquial	10	16.59	38	0.09	251.37	87.44	5			desconocido
+74	ómico	6	9.95	23	0.05	248.41	52.34	5			desconocido
+75	neumotórax	7	11.61	27	0.06	246.34	60.97	7	Q203601		desconocido
+76	lobectomía	8	13.27	31	0.07	244.81	69.59	5			desconocido
+77	rinovirus	8	13.27	31	0.07	244.81	69.59	5			desconocido
+78	neuritis	24	39.81	96	0.23	234.61	207.02	8	Q2307256		desconocido
+79	mediastínico	14	23.22	56	0.13	234.61	120.76	6			desconocido
+80	hipercapnia	10	16.59	40	0.09	234.61	86.26	5			desconocido
+81	electromiograma	5	8.29	20	0.05	234.61	43.13	5			desconocido
+82	disneo	52	86.26	209	0.49	233.12	447.97	40			desconocido
+83	ortostático	36	59.72	148	0.35	226.23	308.27	6			desconocido
+84	neuropatía	12	19.91	50	0.12	222.27	102.39	9			desconocido
+85	microcirugía	15	24.88	63	0.15	219.95	127.72	10	Q977628		desconocido
+86	postoperatoria	15	24.88	63	0.15	219.95	127.72	14			desconocido
+87	cianosi	5	8.29	21	0.05	219.95	42.57	5			desconocido
+88	mielitis	14	23.22	59	0.14	218.97	119.09	6	Q551085		desconocido
+89	bronquiolo	30	49.77	127	0.30	217.68	254.90	19			desconocido
+90	zanamivir	8	13.27	34	0.08	216.57	67.90	5			desconocido
+91	intraocular	96	159.26	412	0.97	213.82	812.69	13			desconocido
+92	metaplasia	16	26.54	69	0.16	212.48	135.27	9			desconocido
+93	faringitis	46	76.31	199	0.47	211.61	388.58	15	Q2085267		desconocido
+94	refractiva	6	9.95	26	0.06	211.15	50.66	5			desconocido
+95	colgajo	50	82.95	221	0.52	205.80	419.95	15			desconocido
+96	epidermoide	9	14.93	40	0.09	204.34	75.48	7			desconocido
+97	obliterante	9	14.93	40	0.09	204.34	75.48	8			desconocido
+98	influenzavirus	20	33.18	89	0.21	204.01	167.67	5			desconocido
+99	otorrinolaringológica	8	13.27	36	0.08	201.10	66.87	8			desconocido
+100	duchenne	40	66.36	182	0.43	198.26	333.35	9			desconocido
+101	bioinformática	12	19.91	55	0.13	196.42	99.81	8			desconocido
+102	canalopatías	5	8.29	23	0.05	195.51	41.55	5			desconocido
+103	orofaríngea	5	8.29	23	0.05	195.51	41.55	5			desconocido
+104	subespecialidad	51	84.61	237	0.56	192.99	422.60	23			desconocido
+105	catarrhalis	9	14.93	42	0.10	191.96	74.49	6			desconocido
+106	esclerodermia	28	46.45	133	0.31	187.69	230.65	11			desconocido
+107	fibrosis	28	46.45	139	0.33	177.55	227.90	13			desconocido
+108	orthomyxoviridae	8	13.27	40	0.09	175.96	64.99	5			desconocido
+109	masculinizante	5	8.29	25	0.06	175.96	40.62	5			desconocido
+110	carpiano	34	56.40	171	0.40	174.68	275.75	7			desconocido
+111	paranasal	32	53.09	161	0.38	174.60	259.50	18			desconocido
+112	eosinofilia	16	26.54	81	0.19	173.25	129.53	9			desconocido
+113	epigenética	30	49.77	152	0.36	173.08	242.82	6	Q26939	2	muy_generico
+114	asbestosis	10	16.59	51	0.12	171.67	80.79	5	Q664174		desconocido
+115	farmacodinámico	10	16.59	51	0.12	171.67	80.79	5	Q725307	2	muy_generico
+116	asperger	108	179.16	551	1.30	171.59	872.49	6			desconocido
+117	bronquial	112	185.80	572	1.35	171.37	904.55	39			desconocido
+118	posología	8	13.27	41	0.10	170.63	64.55	6	Q2242794	2	muy_generico
+119	paresia	11	18.25	57	0.13	168.31	88.49	9			desconocido
+120	disfonía	16	26.54	83	0.20	168.08	128.67	15			desconocido
+121	disciplinas	62	102.85	322	0.76	167.84	498.43	54			desconocido
+122	asmática	5	8.29	26	0.06	167.58	40.18	5			desconocido
+123	neuropatías	5	8.29	26	0.06	167.58	40.18	5			desconocido
+124	biofísica	21	34.84	110	0.26	166.07	168.43	8			desconocido
+125	disnea	12	19.91	63	0.15	165.61	96.19	12			desconocido
+126	citología	25	41.47	132	0.31	164.45	200.07	7	Q3009579	1	muy_generico
+127	tromboembólico	7	11.61	37	0.09	164.23	56.00	5			desconocido
+128	miositis	10	16.59	53	0.12	163.68	79.95	5			desconocido
+129	pneumoniae	60	99.54	324	0.76	159.96	477.21	18			desconocido
+130	arteriovenosa	14	23.22	76	0.18	158.93	111.19	7			desconocido
+131	catarral	7	11.61	38	0.09	158.93	55.59	5			desconocido
+132	riniti	7	11.61	38	0.09	158.93	55.59	6			desconocido
+133	ptosis	23	38.16	126	0.30	157.17	182.20	14			desconocido
+134	influenzae	28	46.45	154	0.36	156.41	221.57	18			desconocido
+135	hipoventilación	12	19.91	66	0.16	156.41	94.96	5			desconocido
+136	espiratorio	13	21.57	72	0.17	155.08	102.67	8			desconocido
+137	humidificación	7	11.61	39	0.09	153.96	55.19	5			desconocido
+138	castelão	12	19.91	67	0.16	153.57	94.56	12			desconocido
+139	microvascular	10	16.59	56	0.13	153.01	78.74	7			desconocido
+140	mioglobín	5	8.29	28	0.07	153.01	39.37	5			desconocido
+141	estrabismo	6	9.95	34	0.08	150.82	47.09	5	Q179951		desconocido
+142	pneumophila	7	11.61	40	0.09	149.30	54.81	5			desconocido
+143	lasek	8	13.27	46	0.11	148.18	62.53	5			desconocido
+144	gasometría	10	16.59	58	0.14	146.63	77.97	8			desconocido
+145	inflamatorio	5	8.29	29	0.07	146.63	38.99	5			desconocido
+146	granulomas	6	9.95	35	0.08	145.62	46.71	5			desconocido
+147	heterocigosis	6	9.95	35	0.08	145.62	46.71	5			desconocido
+148	intraoperatorio	9	14.93	53	0.12	143.97	69.88	7			desconocido
+149	astigmatismo	26	43.13	154	0.36	142.97	201.54	9			desconocido
+150	laparoscópico	35	58.06	208	0.49	142.40	271.05	12			desconocido
+151	postoperatorio	40	66.36	239	0.56	141.48	309.30	26			desconocido
+152	extracorpóreo	21	34.84	126	0.30	140.77	162.19	6			desconocido
+153	vasculiti	13	21.57	78	0.18	140.77	100.40	7			desconocido
+154	corticoesteroid	10	16.59	60	0.14	140.77	77.23	6			desconocido
+155	broncoscopia	6	9.95	36	0.08	140.77	46.34	6			desconocido
+156	corticosteroides	5	8.29	30	0.07	140.77	38.62	5			desconocido
+157	bronquio	13	21.57	79	0.19	138.64	100.04	8			desconocido
+158	epigenético	97	160.92	590	1.39	138.48	746.30	14			desconocido
+159	bronquitis	77	127.74	469	1.10	138.25	592.19	16	Q173022		desconocido
+160	epistaxis	11	18.25	67	0.16	138.25	84.60	8	Q202013		desconocido
+161	pulmonary	10	16.59	61	0.14	138.01	76.88	6			desconocido
+162	epigenoma	9	14.93	55	0.13	137.71	69.15	6			desconocido
+163	roriz	9	14.93	55	0.13	137.71	69.15	8			desconocido
+164	laparoscopia	15	24.88	92	0.22	137.11	115.14	9			desconocido
+165	inspiratorio	12	19.91	74	0.17	136.23	91.97	9			desconocido
+166	vinho	24	39.81	149	0.35	135.14	183.59	21			desconocido
+167	posoperatorio	21	34.84	131	0.31	134.37	160.42	16			desconocido
+168	diafragmático	32	53.09	200	0.47	134.06	244.32	16			desconocido
+169	neumólogo	8	13.27	50	0.12	134.06	61.08	7			desconocido
+170	chlamydophila	9	14.93	57	0.13	131.97	68.46	6			desconocido
+171	reintroducción	9	14.93	57	0.13	131.97	68.46	8	Q784280		desconocido
+172	malformaciones	11	18.25	70	0.16	131.22	83.56	5			desconocido
+173	genodermatosis	7	11.61	45	0.11	129.65	53.02	7			desconocido
+174	hemoptisis	22	36.50	143	0.34	127.97	166.11	17			desconocido
+175	legionella	16	26.54	104	0.24	127.97	120.81	6			desconocido
+176	hiperreflexia	6	9.95	39	0.09	127.97	45.30	6			desconocido
+177	plasmaféresis	11	18.25	73	0.17	124.87	82.56	7			desconocido
+178	beijerinck	9	14.93	60	0.14	124.21	67.46	5			desconocido
+179	hipoplasia	32	53.09	214	0.50	123.75	239.65	11			desconocido
+180	citogenético	15	24.88	102	0.24	121.35	111.80	8	Q246128	2	muy_generico
+181	exudativo	5	8.29	34	0.08	121.35	37.27	5			desconocido
+182	hipersecreción	7	11.61	48	0.11	120.17	52.05	6			desconocido
+183	irritativo	7	11.61	48	0.11	120.17	52.05	6			desconocido
+184	inflamaciones	8	13.27	55	0.13	119.80	59.44	8			desconocido
+185	ninds	9	14.93	62	0.15	119.52	66.83	7			desconocido
+186	presbicia	9	14.93	62	0.15	119.52	66.83	7			desconocido
+187	amarela	10	16.59	69	0.16	119.29	74.22	10			desconocido
+188	transcrito	55	91.24	380	0.89	119.11	408.06	8			desconocido
+189	tráquea	89	147.64	617	1.45	118.64	659.67	37			desconocido
+190	nasofaringe	11	18.25	77	0.18	117.31	81.30	7			desconocido
+191	trigémino	23	38.16	162	0.38	116.46	169.70	8			desconocido
+192	prehospitalario	16	26.54	113	0.27	116.10	117.96	5			desconocido
+193	broncoespasmo	13	21.57	92	0.22	115.82	95.78	6	Q279330		desconocido
+194	atrapamiento	28	46.45	199	0.47	115.25	206.05	18			desconocido
+195	concelhos	9	14.93	64	0.15	115.17	66.22	9			desconocido
+196	distensibilidad	7	11.61	50	0.12	114.58	51.44	5			desconocido
+197	isquemia	6	9.95	43	0.10	114.14	44.05	5			desconocido
+198	sincitial	11	18.25	79	0.19	113.86	80.70	7			desconocido
+199	cristalino	93	154.28	671	1.58	113.25	681.39	14			desconocido
+200	toxicología	55	91.24	397	0.93	113.19	402.92	16	Q7218	1	muy_generico
+201	liposucción	17	28.20	123	0.29	112.88	124.45	10			desconocido
+202	λόγος	8	13.27	58	0.14	112.61	58.53	8			desconocido
+203	tintas	15	24.88	109	0.26	112.31	109.67	14			desconocido
+204	descompresión	108	179.16	788	1.85	111.79	788.71	13			desconocido
+205	macronutrient	13	21.57	95	0.22	111.58	94.89	5			desconocido
+206	cianosis	24	39.81	176	0.41	111.13	175.01	22			desconocido
+207	ciclofosfamida	12	19.91	88	0.21	111.13	87.51	10			desconocido
+208	laringe	6	9.95	44	0.10	111.13	43.75	6			desconocido
+209	inmunosupresor	16	26.54	118	0.28	110.41	116.48	10			desconocido
+210	broncodilatador	5	8.29	37	0.09	109.97	36.36	5			desconocido
+211	prednisona	17	28.20	126	0.30	109.77	123.58	11			desconocido
+212	biotransformación	12	19.91	89	0.21	109.69	87.22	5	Q864895	3	generico
+213	purulento	19	31.52	141	0.33	109.61	138.07	14			desconocido
+214	paleobiología	11	18.25	82	0.19	109.05	79.83	7	Q1578310	1	muy_generico
+215	microcítico	13	21.57	97	0.23	108.93	94.32	7			desconocido
+216	corneal	59	97.88	441	1.04	108.71	427.84	10			desconocido
+217	geobotánica	14	23.22	105	0.25	108.28	101.42	7	Q1456948	2	muy_generico
+218	biomaterial	27	44.79	203	0.48	107.98	195.45	10			desconocido
+219	laringitis	13	21.57	98	0.23	107.65	94.03	8	Q1194557		desconocido
+220	obstructivo	65	107.83	491	1.16	107.39	469.89	34			desconocido
+221	cardiopulmonar	21	34.84	159	0.37	107.11	151.71	10			desconocido
+222	parestesia	21	34.84	159	0.37	107.11	151.71	17			desconocido
+223	autoinmunitaria	15	24.88	114	0.27	106.64	108.24	15			desconocido
+224	antígeno	5	8.29	38	0.09	106.64	36.08	5			desconocido
+225	taquipneo	5	8.29	38	0.09	106.64	36.08	5			desconocido
+226	congestión	6	9.95	46	0.11	105.58	43.19	5			desconocido
+227	contractura	30	49.77	231	0.54	105.05	215.65	19			desconocido
+228	ventilatorio	10	16.59	77	0.18	105.05	71.88	9			desconocido
+229	reye	7	11.61	54	0.13	104.83	50.29	5			desconocido
+230	desmielinización	12	19.91	93	0.22	104.27	86.10	9			desconocido
+231	telangiectasia	8	13.27	62	0.15	104.27	57.40	5			desconocido
+232	vinicultura	9	14.93	70	0.16	103.85	64.50	6			desconocido
+233	bioinformático	22	36.50	172	0.40	103.23	157.43	11	Q128570	2	muy_generico
+234	biomecánica	12	19.91	94	0.22	103.00	85.82	6	Q193378	2	muy_generico
+235	neurofisiología	31	51.43	243	0.57	102.92	221.67	9	Q660910	2	muy_generico
+236	autólogo	14	23.22	110	0.26	102.64	100.04	8			desconocido
+237	cefalea	16	26.54	126	0.30	102.38	114.25	7			desconocido
+238	intranasal	8	13.27	63	0.15	102.38	57.13	6			desconocido
+239	percutáneo	28	46.45	221	0.52	102.11	199.81	16			desconocido
+240	endotraqueal	12	19.91	96	0.23	100.55	85.29	9			desconocido
+241	surgery	9	14.93	72	0.17	100.55	63.97	8			desconocido
+242	extrahospitalario	7	11.61	56	0.13	100.55	49.75	6			desconocido
+243	intratorácico	6	9.95	48	0.11	100.55	42.64	5			desconocido
+244	debilidad	11	18.25	89	0.21	99.26	77.92	9			desconocido
+245	citogenética	15	24.88	122	0.29	98.67	106.09	5			desconocido
+246	amigdalitis	14	23.22	114	0.27	98.54	98.98	6	Q186470		desconocido
+247	nutrimento	7	11.61	57	0.13	98.54	49.49	6			desconocido
+248	subcelular	18	29.86	147	0.35	98.21	127.15	13			desconocido
+249	septal	20	33.18	164	0.39	97.76	141.11	8			desconocido
+250	escoliosis	5	8.29	41	0.10	97.76	35.28	5			desconocido
+251	esputo	5	8.29	41	0.10	97.76	35.28	5			desconocido
+252	inmunohistoquímico	9	14.93	74	0.17	97.45	63.45	7			desconocido
+253	miastenia	13	21.57	107	0.25	97.34	91.62	7			desconocido
+254	derivaciones	7	11.61	58	0.14	96.61	49.23	5			desconocido
+255	ovelha	7	11.61	58	0.14	96.61	49.23	7			desconocido
+256	perivascular	7	11.61	58	0.14	96.61	49.23	5			desconocido
+257	haemophilus	24	39.81	200	0.47	95.98	168.51	16			desconocido
+258	síndromes	18	29.86	150	0.35	95.98	126.38	16			desconocido
+259	respiratory	9	14.93	75	0.18	95.98	63.19	9			desconocido
+260	vírica	26	43.13	219	0.52	94.82	181.97	13			desconocido
+261	cardiogénico	9	14.93	76	0.18	94.55	62.94	6			desconocido
+262	metilación	104	172.53	880	2.07	94.33	726.88	10			desconocido
+263	reconstructivo	34	56.40	288	0.68	94.21	237.56	19			desconocido
+264	corticoid	36	59.72	305	0.72	94.19	251.52	20			desconocido
+265	distrés	10	16.59	85	0.20	93.85	69.80	9			desconocido
+266	otorrinolaringólogo	10	16.59	85	0.20	93.85	69.80	8			desconocido
+267	oseltamivir	8	13.27	68	0.16	93.85	55.84	6			desconocido
+268	hipotensión	6	9.95	51	0.12	93.85	41.88	6			desconocido
+269	palpebral	22	36.50	188	0.44	93.28	153.31	13			desconocido
+270	agroecosistema	15	24.88	129	0.30	92.61	104.33	8			desconocido
+271	mucosidad	22	36.50	190	0.45	92.17	152.82	16			desconocido
+272	lesión	6	9.95	52	0.12	91.81	41.63	5			desconocido
+273	moraxella	6	9.95	52	0.12	91.81	41.63	5			desconocido
+274	retroperitoneal	6	9.95	52	0.12	91.81	41.63	5			desconocido
+275	adnmt	31	51.43	269	0.63	91.68	215.02	8			desconocido
+276	anticoagulant	16	26.54	140	0.33	90.82	110.70	5			desconocido
+277	proteómico	12	19.91	105	0.25	90.82	83.02	9			desconocido
+278	irradiar él	5	8.29	44	0.10	90.24	34.53	5			desconocido
+279	deglutir	7	11.61	62	0.15	89.58	48.25	6			desconocido
+280	electroencefalografía	7	11.61	62	0.15	89.58	48.25	5			desconocido
+281	neumónico	7	11.61	62	0.15	89.58	48.25	5			desconocido
+282	resección	51	84.61	452	1.06	89.52	351.49	26			desconocido
+283	subclavia	16	26.54	142	0.33	89.38	110.22	7			desconocido
+284	miosis	8	13.27	71	0.17	89.38	55.11	6			desconocido
+285	entumecimiento	26	43.13	231	0.54	89.27	179.05	18			desconocido
+286	alvéolo	73	121.10	653	1.54	88.59	501.69	34			desconocido
+287	fisiopatológico	15	24.88	135	0.32	87.98	102.90	14			desconocido
+288	diástole	12	19.91	108	0.25	87.98	82.32	5			desconocido
+289	orofaringe	6	9.95	54	0.13	87.98	41.16	6			desconocido
+290	nikolaas	5	8.29	45	0.11	87.98	34.30	5			desconocido
+291	medicamentós	7	11.61	64	0.15	86.44	47.79	5			desconocido
+292	edema	17	28.20	156	0.37	86.08	115.92	13			desconocido
+293	multifocal	13	21.57	120	0.28	85.51	88.49	7			desconocido
+294	microbián	86	142.67	794	1.87	85.49	585.34	24			desconocido
+295	extirpación	90	149.30	842	1.98	84.24	610.08	41			desconocido
+296	hipoparatiroidismo	5	8.29	47	0.11	83.79	33.84	5			desconocido
+297	ecocardiografía	12	19.91	113	0.27	83.62	81.18	7			desconocido
+298	glúteo	49	81.29	462	1.09	83.51	331.36	6			desconocido
+299	farmacocinética	7	11.61	66	0.16	83.51	47.34	5			desconocido
+300	azitromicina	9	14.93	85	0.20	83.35	60.83	5			desconocido
+301	traqueal	31	51.43	293	0.69	83.28	209.48	10			desconocido
+302	microbiana	36	59.72	341	0.80	83.08	243.10	18			desconocido
+303	inhalado	29	48.11	275	0.65	82.97	195.76	22			desconocido
+304	arritmias	8	13.27	76	0.18	82.80	53.97	6			desconocido
+305	quístico	67	111.15	637	1.50	82.73	451.92	23			desconocido
+306	botulínico	19	31.52	181	0.43	82.55	128.08	9			desconocido
+307	craneofacial	19	31.52	181	0.43	82.55	128.08	10			desconocido
+308	respiratorio	870	1443.27	8324	19.59	82.15	5856.68	248			desconocido
+309	patogenia	19	31.52	182	0.43	82.04	127.86	17			desconocido
+310	pupilar	14	23.22	135	0.32	81.44	94.02	8			desconocido
+311	angioplastia	16	26.54	155	0.36	81.02	107.29	9	Q539795		desconocido
+312	gammagrafía	10	16.59	97	0.23	80.90	67.03	6			desconocido
+313	meningioma	7	11.61	68	0.16	80.77	46.90	5			desconocido
+314	absceso	8	13.27	78	0.18	80.44	53.54	7			desconocido
+315	parénquima	51	84.61	498	1.17	80.30	341.16	34			desconocido
+316	frénico	9	14.93	88	0.21	80.18	60.18	5			desconocido
+317	alveolo	20	33.18	196	0.46	79.98	133.64	17			desconocido
+318	idiopático	50	82.95	491	1.16	79.80	333.88	28			desconocido
+319	nistagmo	12	19.91	118	0.28	79.68	80.10	10			desconocido
+320	protruir	6	9.95	59	0.14	79.68	40.05	6			desconocido
+321	genómica	54	89.58	533	1.25	79.35	360.02	28			desconocido
+322	eosinófilo	27	44.79	267	0.63	79.18	179.90	15			desconocido
+323	córnea	113	187.46	1128	2.65	78.36	750.72	18			desconocido
+324	biogeoquímico	24	39.81	242	0.57	77.49	158.94	14			desconocido
+325	electrofisiológico	10	16.59	101	0.24	77.35	66.19	9			desconocido
+326	autosómico	146	242.20	1480	3.48	77.03	965.29	58			desconocido
+327	malpighi	14	23.22	142	0.33	76.98	92.55	7			desconocido
+328	subdisciplina	31	51.43	315	0.74	76.83	204.80	22			desconocido
+329	citológico	12	19.91	122	0.29	76.78	79.27	7			desconocido
+330	pulmonar	6	9.95	61	0.14	76.78	39.63	5			desconocido
+331	perfusión	40	66.36	408	0.96	76.50	263.95	23			desconocido
+332	tóxico	34	56.40	349	0.82	75.97	223.91	10			desconocido
+333	reposicionamiento	15	24.88	155	0.36	75.41	98.58	5			desconocido
+334	biocompatibl	9	14.93	93	0.22	75.41	59.15	8			desconocido
+335	policultivo	9	14.93	93	0.22	75.41	59.15	5	Q2739133		desconocido
+336	tafonomía	9	14.93	93	0.22	75.41	59.15	6			desconocido
+337	enzimática	23	38.16	238	0.56	75.29	151.08	9			desconocido
+338	biorremediación	16	26.54	166	0.39	75.08	105.01	10			desconocido
+339	granuloma	16	26.54	166	0.39	75.08	105.01	10			desconocido
+340	torácico	182	301.92	1889	4.45	75.04	1194.39	74			desconocido
+341	micronutrient	25	41.47	260	0.61	74.88	163.96	9			desconocido
+342	inflamación	10	16.59	104	0.24	74.88	65.58	7			desconocido
+343	pneumocystis	12	19.91	125	0.29	74.74	78.66	5			desconocido
+344	cromosómica	42	69.67	438	1.03	74.65	275.21	15			desconocido
+345	tabique	11	18.25	115	0.27	74.44	72.02	6			desconocido
+346	eosinofílico	12	19.91	126	0.30	74.09	78.46	8			desconocido
+347	atrofia	8	13.27	84	0.20	74.09	52.31	5			desconocido
+348	espiración	22	36.50	232	0.55	73.74	143.65	14			desconocido
+349	preclínico	22	36.50	233	0.55	73.39	143.46	8			desconocido
+350	estertor	14	23.22	149	0.35	72.99	91.15	11			desconocido
+351	fumador	31	51.43	330	0.78	72.97	201.81	14			desconocido
+352	agroecología	12	19.91	128	0.30	72.81	78.07	8	Q396338	3	generico
+353	nebulización	6	9.95	64	0.15	72.81	39.04	5			desconocido
+354	baipás	19	31.52	204	0.48	72.29	123.36	7			desconocido
+355	embolia	59	97.88	634	1.49	72.22	382.95	16			desconocido
+356	complicaciones	8	13.27	86	0.20	72.19	51.92	8			desconocido
+357	penetrancia	9	14.93	97	0.23	71.98	58.36	7			desconocido
+358	laríngeo	14	23.22	151	0.36	71.93	90.76	11			desconocido
+359	mamario	76	126.08	824	1.94	71.51	491.89	15			desconocido
+360	intersticial	86	142.67	934	2.20	71.38	556.31	43			desconocido
+361	vestibular	11	18.25	120	0.28	71.03	71.05	7			desconocido
+362	colirio	12	19.91	131	0.31	70.98	77.50	8			desconocido
+363	elastasa	8	13.27	88	0.21	70.38	51.54	5			desconocido
+364	bioeléctrico	7	11.61	77	0.18	70.38	45.10	5			desconocido
+365	embriología	40	66.36	442	1.04	70.03	257.32	14	Q131683	1	muy_generico
+366	congénita	94	155.94	1040	2.45	69.94	604.46	68			desconocido
+367	gastroesofágico	13	21.57	144	0.34	69.85	83.56	11			desconocido
+368	metafase	12	19.91	133	0.31	69.80	77.12	6			desconocido
+369	incisión	163	270.41	1835	4.32	68.62	1042.31	45			desconocido
+370	esofágico	30	49.77	338	0.80	68.56	191.79	12			desconocido
+371	biomecánico	21	34.84	237	0.56	68.43	134.18	8			desconocido
+372	mucoso	12	19.91	136	0.32	68.11	76.57	7			desconocido
+373	supinación	6	9.95	68	0.16	68.11	38.28	5			desconocido
+374	deleción	61	101.19	693	1.63	67.93	388.92	23			desconocido
+375	tumores	31	51.43	354	0.83	67.55	197.32	24			desconocido
+376	subclínico	7	11.61	80	0.19	67.49	44.54	7			desconocido
+377	miopía	37	61.38	423	1.00	67.47	235.42	11			desconocido
+378	axonal	21	34.84	242	0.57	66.88	133.27	10			desconocido
+379	cubital	38	63.04	439	1.03	66.70	240.97	12			desconocido
+380	lewontin	14	23.22	162	0.38	66.58	88.73	10			desconocido
+381	leucocitosis	7	11.61	81	0.19	66.58	44.37	7			desconocido
+382	submucós	5	8.29	58	0.14	66.40	31.66	5			desconocido
+383	fisiopatología	21	34.84	244	0.57	66.28	132.92	17	Q1135939	2	muy_generico
+384	hematocrito	15	24.88	175	0.41	65.98	94.82	5	Q111146		desconocido
+385	edafología	6	9.95	70	0.16	65.98	37.93	5			desconocido
+386	syndrome	17	28.20	199	0.47	65.74	107.34	10			desconocido
+387	estornudo	19	31.52	223	0.52	65.55	119.87	11			desconocido
+388	neurological	8	13.27	94	0.22	65.47	50.45	8			desconocido
+389	alélico	13	21.57	153	0.36	65.36	81.94	8			desconocido
+390	gripal	7	11.61	83	0.20	64.83	44.01	5			desconocido
+391	sudorípara	7	11.61	83	0.20	64.83	44.01	6			desconocido
+392	miocárdico	15	24.88	178	0.42	64.77	94.29	11			desconocido
+393	neuromuscular	8	13.27	95	0.22	64.72	50.28	6			desconocido
+394	adenoviru	13	21.57	155	0.36	64.44	81.59	9			desconocido
+395	ortopedia	13	21.57	155	0.36	64.44	81.59	5	Q216685		desconocido
+396	enfermedades	618	1025.22	7404	17.43	64.10	3872.66	343			desconocido
+397	inactiir	11	18.25	132	0.31	63.99	68.89	7			desconocido
+398	inmunofluorescencia	9	14.93	108	0.25	63.99	56.37	9			desconocido
+399	helenismos	8	13.27	96	0.23	63.99	50.10	8			desconocido
+400	esclerótica	13	21.57	157	0.37	63.54	81.25	6			desconocido
+401	espástico	10	16.59	121	0.28	63.41	62.46	5			desconocido
+402	histopatológico	10	16.59	121	0.28	63.41	62.46	7			desconocido
+403	deformidad	82	136.03	997	2.35	63.08	511.37	34			desconocido
+404	amplicón	6	9.95	73	0.17	63.03	37.41	5			desconocido
+405	salbutamol	6	9.95	73	0.17	63.03	37.41	5			desconocido
+406	glucógeno	57	94.56	696	1.64	62.78	354.96	9			desconocido
+407	leeuwenhoek	17	28.20	208	0.49	62.65	105.80	10			desconocido
+408	etólogo	12	19.91	147	0.35	62.56	74.65	5			desconocido
+409	ipsilateral	8	13.27	98	0.23	62.56	49.77	5			desconocido
+410	contralateral	14	23.22	172	0.40	62.37	87.01	8			desconocido
+411	proteómica	13	21.57	160	0.38	62.24	80.74	9			desconocido
+412	klebsiella	14	23.22	173	0.41	61.97	86.84	9			desconocido
+413	neoplásica	8	13.27	99	0.23	61.88	49.60	5			desconocido
+414	metástasis	10	16.59	124	0.29	61.74	61.96	6			desconocido
+415	neutrófilo	39	64.70	484	1.14	61.68	241.57	19			desconocido
+416	apnea	38	63.04	472	1.11	61.63	235.31	17			desconocido
+417	segmentario	16	26.54	199	0.47	61.54	99.03	10			desconocido
+418	cicatrización	47	77.97	586	1.38	61.37	290.68	39			desconocido
+419	deglución	21	34.84	262	0.62	61.33	129.85	17			desconocido
+420	patogénico	17	28.20	213	0.50	61.05	104.97	14			desconocido
+421	endoscopio	11	18.25	138	0.32	60.96	67.89	8			desconocido
+422	trombosis	7	11.61	88	0.21	60.83	43.17	5			desconocido
+423	mielina	29	48.11	365	0.86	60.75	178.79	16			desconocido
+424	exacerbación	17	28.20	214	0.50	60.74	104.80	11			desconocido
+425	floricultura	18	29.86	227	0.53	60.62	110.90	5	Q199169	5	especifico
+426	recesivo	120	199.07	1514	3.56	60.59	739.24	49			desconocido
+427	poligénico	8	13.27	101	0.24	60.55	49.27	6			desconocido
+428	genómico	113	187.46	1427	3.36	60.53	695.90	48	Q222046	2	muy_generico
+429	tinbergen	9	14.93	114	0.27	60.33	55.37	6			desconocido
+430	auscultación	16	26.54	203	0.48	60.22	98.38	15			desconocido
+431	alélica	10	16.59	127	0.30	60.16	61.47	7			desconocido
+432	microbio	84	139.35	1068	2.51	60.08	516.14	22			desconocido
+433	permacultura	15	24.88	192	0.45	59.65	91.96	11			desconocido
+434	irritant	10	16.59	128	0.30	59.65	61.31	6			desconocido
+435	micropartícula	5	8.29	64	0.15	59.65	30.65	5			desconocido
+436	amoxicilina	13	21.57	167	0.39	59.42	79.60	7			desconocido
+437	oculomotor	8	13.27	103	0.24	59.27	48.95	6			desconocido
+438	xenobiótico	11	18.25	142	0.33	59.10	67.25	5			desconocido
+439	sistólico	27	44.79	349	0.82	59.02	164.99	13			desconocido
+440	hematología	18	29.86	234	0.55	58.65	109.78	8	Q103824		desconocido
+441	arterioso	11	18.25	143	0.34	58.65	67.09	5			desconocido
+442	hernia	8	13.27	104	0.24	58.65	48.79	7			desconocido
+443	torácica	7	11.61	91	0.21	58.65	42.69	5			desconocido
+444	isquémica	6	9.95	78	0.18	58.65	36.59	6			desconocido
+445	abiótico	5	8.29	65	0.15	58.65	30.50	5			desconocido
+446	presináptico	24	39.81	313	0.74	58.45	146.22	6			desconocido
+447	carcinoma	17	28.20	222	0.52	58.37	103.53	11			desconocido
+448	neuropático	13	21.57	170	0.40	58.28	79.13	11			desconocido
+449	propiocepción	9	14.93	118	0.28	58.12	54.74	7			desconocido
+450	anestesiólogo	7	11.61	92	0.22	57.96	42.54	5			desconocido
+451	obstrucción	13	21.57	171	0.40	57.91	78.98	11			desconocido
+452	aberrante	21	34.84	277	0.65	57.74	127.46	10			desconocido
+453	histológico	41	68.02	541	1.27	57.71	248.81	26			desconocido
+454	implantabl	5	8.29	66	0.16	57.69	30.34	5			desconocido
+455	respiratoria	5	8.29	66	0.16	57.69	30.34	5			desconocido
+456	poliomielitis	33	54.74	436	1.03	57.63	200.18	7			desconocido
+457	hipóxico	8	13.27	106	0.25	57.46	48.48	7			desconocido
+458	suturar	8	13.27	106	0.25	57.46	48.48	8			desconocido
+459	ecólogo	29	48.11	386	0.91	57.17	175.48	17			desconocido
+460	hectolitro	18	29.86	240	0.56	57.07	108.85	5			desconocido
+461	tumoración	6	9.95	80	0.19	57.07	36.28	6			desconocido
+462	hipotonía	11	18.25	147	0.35	56.93	66.47	9			desconocido
+463	adenopatía	8	13.27	107	0.25	56.88	48.33	7			desconocido
+464	cicatricial	8	13.27	107	0.25	56.88	48.33	7			desconocido
+465	comorbilidad	21	34.84	281	0.66	56.85	126.84	14			desconocido
+466	sequencing	12	19.91	161	0.38	56.69	72.42	7			desconocido
+467	biomolécula	28	46.45	376	0.88	56.63	168.92	19			desconocido
+468	asma	34	56.40	457	1.08	56.57	205.05	19	Q35869		desconocido
+469	medlineplus	21	34.84	283	0.67	56.41	126.54	21			desconocido
+470	esternón	47	77.97	634	1.49	56.36	283.11	16			desconocido
+471	extirpado	8	13.27	108	0.25	56.31	48.18	7			desconocido
+472	génico	154	255.47	2084	4.90	56.16	926.64	59			desconocido
+473	embolización	7	11.61	95	0.22	55.99	42.08	6			desconocido
+474	ronquido	7	11.61	95	0.22	55.99	42.08	6			desconocido
+475	génica	10	16.59	136	0.32	55.86	60.07	9			desconocido
+476	pathology	18	29.86	245	0.58	55.81	108.10	5			desconocido
+477	ciclosporina	8	13.27	109	0.26	55.75	48.03	5			desconocido
+478	nosocomial	8	13.27	109	0.26	55.75	48.03	6			desconocido
+479	silico	9	14.93	123	0.29	55.57	53.97	7			desconocido
+480	injerto	6	9.95	82	0.19	55.57	35.98	5			desconocido
+481	ataxio	13	21.57	178	0.42	55.45	77.91	9			desconocido
+482	surfactante	10	16.59	137	0.32	55.42	59.92	5			desconocido
+483	nasal	21	34.84	288	0.68	55.36	125.79	11			desconocido
+484	agenesia	8	13.27	110	0.26	55.20	47.88	7			desconocido
+485	traumatismo	8	13.27	110	0.26	55.20	47.88	8			desconocido
+486	mucina	9	14.93	124	0.29	55.08	53.82	7			desconocido
+487	protozoario	9	14.93	124	0.29	55.08	53.82	5			desconocido
+488	tendinoso	9	14.93	124	0.29	55.08	53.82	8			desconocido
+489	alérgeno	31	51.43	428	1.01	54.96	185.26	10			desconocido
+490	streptococcus	39	64.70	540	1.27	54.79	232.85	18			desconocido
+491	eritromicín	8	13.27	111	0.26	54.67	47.73	5			desconocido
+492	intubación	20	33.18	279	0.66	54.35	119.10	14			desconocido
+493	dificultad	31	51.43	433	1.02	54.28	184.53	24			desconocido
+494	physiological	13	21.57	182	0.43	54.14	77.32	5			desconocido
+495	hemático	7	11.61	98	0.23	54.14	41.64	6			desconocido
+496	hospedero	21	34.84	296	0.70	53.75	124.62	5			desconocido
+497	invasivo	114	189.12	1607	3.78	53.74	676.47	64			desconocido
+498	prolapso	15	24.88	212	0.50	53.59	88.93	7			desconocido
+499	antigénico	21	34.84	297	0.70	53.55	124.47	9			desconocido
+500	sinauer	12	19.91	170	0.40	53.46	71.09	8			desconocido

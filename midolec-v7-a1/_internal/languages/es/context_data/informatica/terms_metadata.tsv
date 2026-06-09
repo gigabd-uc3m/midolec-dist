@@ -1,0 +1,501 @@
+selection_rank	term	freq_abs_domain	freq_rel_dom_ppm	freq_abs_global	freq_rel_glob_ppm	specificity_ratio	log_likelihood	n_articles	qid_wikidata	depth	nivel_abstraccion
+1	arrandale	14	28.73	14	0.03	9999.00	189.58	5	Q2345193		desconocido
+2	brouter	5	10.26	5	0.01	9999.00	67.71	5	Q796956	3	generico
+3	dualdigital	12	24.62	15	0.04	3483.28	147.49	5	Q3689266	5	especifico
+4	magsafe	19	38.99	24	0.06	3309.11	232.73	9	Q1329193		desconocido
+5	mram	31	63.61	41	0.10	2699.54	374.25	7	Q1061546	3	generico
+6	vcore	22	45.14	30	0.07	2394.75	263.13	6			desconocido
+7	negcon	15	30.78	21	0.05	2177.05	178.00	5	Q1052041	5	especifico
+8	gddr	14	28.73	20	0.05	2031.91	165.16	8	Q1543359	6	muy_especifico_hoja
+9	wolfdale	13	26.68	19	0.04	1886.78	152.35	5			desconocido
+10	airpods	54	110.80	79	0.19	1880.97	632.66	5	Q26936286		desconocido
+11	microprocessor	45	92.34	67	0.16	1781.22	524.58	11			desconocido
+12	superdisk	20	41.04	30	0.07	1741.64	232.66	6	Q517919	3	generico
+13	macbooks	10	20.52	15	0.04	1741.64	116.33	8			desconocido
+14	multiómica	6	12.31	9	0.02	1741.64	69.80	6	Q25110691	3	generico
+15	emac	29	59.51	45	0.11	1578.36	334.16	7	Q306273		desconocido
+16	jedec	50	102.60	80	0.19	1451.37	571.28	24			desconocido
+17	retín	17	34.88	28	0.07	1345.81	192.70	12			desconocido
+18	dimm	6	12.31	10	0.02	1306.23	67.80	5	Q877592	2	generico
+19	microcontrollers	6	12.31	10	0.02	1306.23	67.80	5			desconocido
+20	trackpad	19	38.99	32	0.08	1272.74	214.08	7			desconocido
+21	sdram	269	551.97	465	1.09	1195.16	3009.90	48	Q746478	5	especifico
+22	nforce	67	137.48	118	0.28	1144.02	745.97	11	Q308573		desconocido
+23	gwennap	9	18.47	16	0.04	1119.62	99.96	6			desconocido
+24	ibook	34	69.77	62	0.15	1057.42	375.10	8	Q305889		desconocido
+25	isight	23	47.19	42	0.10	1054.15	253.65	17			desconocido
+26	sgram	15	30.78	28	0.07	1004.79	164.47	9			desconocido
+27	hypertransport	65	133.38	127	0.30	912.96	704.33	12			desconocido
+28	disqueteras	10	20.52	20	0.05	870.82	107.71	9			desconocido
+29	lectograbadoro	5	10.26	10	0.02	870.82	53.85	5			desconocido
+30	microprocesadores	145	297.53	296	0.70	836.22	1553.59	126			desconocido
+31	multitáctil	13	26.68	27	0.06	808.62	138.67	13			desconocido
+32	apuntadores	10	20.52	21	0.05	791.65	106.37	10			desconocido
+33	speedstep	10	20.52	21	0.05	791.65	106.37	7			desconocido
+34	turion	17	34.88	36	0.08	779.15	180.45	7			desconocido
+35	epyc	24	49.25	51	0.12	774.06	254.53	5	Q33083031		desconocido
+36	transcriptómica	15	30.78	32	0.08	768.37	158.92	6			desconocido
+37	clarkdale	14	28.73	30	0.07	761.97	148.16	5	Q1623419		desconocido
+38	recordable	7	14.36	15	0.04	761.97	74.08	5			desconocido
+39	macbook	75	153.90	165	0.39	725.68	788.42	18	Q486053		desconocido
+40	hyperthreading	18	36.93	40	0.09	712.49	188.74	11			desconocido
+41	allwinner	18	36.93	41	0.10	681.51	187.57	6			desconocido
+42	dualsense	13	26.68	30	0.07	665.92	135.02	7	Q89695113	5	especifico
+43	synchronous	28	57.45	65	0.15	659.00	290.38	19			desconocido
+44	rdram	21	43.09	49	0.12	653.11	217.50	7	Q875237	6	muy_especifico_hoja
+45	anandtech	18	36.93	42	0.10	653.11	186.43	11			desconocido
+46	pentium	554	1136.77	1315	3.10	633.95	5713.30	68			desconocido
+47	superdrive	29	59.51	70	0.16	615.95	297.81	10	Q1193976		desconocido
+48	kaby	19	38.99	46	0.11	612.80	194.97	6			desconocido
+49	rambus	19	38.99	46	0.11	612.80	194.97	11			desconocido
+50	monoplaca	7	14.36	17	0.04	609.57	71.78	7			desconocido
+51	regrabable	18	36.93	44	0.10	602.87	184.27	14			desconocido
+52	multichip	7	14.36	18	0.04	554.16	70.76	7			desconocido
+53	hynix	17	34.88	44	0.10	548.29	171.56	9			desconocido
+54	uart	46	94.39	121	0.28	534.10	462.34	21	Q280409		desconocido
+55	microfónico	11	22.57	29	0.07	532.17	110.50	6			desconocido
+56	nvram	11	22.57	29	0.07	532.17	110.50	8			desconocido
+57	grababl	20	41.04	53	0.12	527.77	200.65	13			desconocido
+58	dualshock	67	137.48	181	0.43	511.80	668.95	13	Q1262565	5	especifico
+59	iomega	44	90.29	119	0.28	510.88	439.18	6			desconocido
+60	freescale	62	127.22	172	0.40	490.83	614.94	20			desconocido
+61	ultrasparc	23	47.19	64	0.15	488.51	227.95	6	Q2641407		desconocido
+62	ryzen	62	127.22	177	0.42	469.49	610.56	6			desconocido
+63	powervr	29	59.51	83	0.20	467.66	285.40	12			desconocido
+64	xscale	30	61.56	86	0.20	466.51	295.13	9			desconocido
+65	periféricos	68	139.53	197	0.46	459.04	667.20	58			desconocido
+66	iphone	157	322.15	457	1.08	455.73	1538.62	48			desconocido
+67	xserve	23	47.19	68	0.16	445.09	224.53	8			desconocido
+68	nehalem	29	59.51	86	0.20	443.05	282.89	13			desconocido
+69	dram	200	410.39	594	1.40	442.04	1950.22	49	Q189396	4	especifico
+70	faggin	29	59.51	87	0.20	435.41	282.07	6			desconocido
+71	microservicio	18	36.93	54	0.13	435.41	175.08	5			desconocido
+72	svcd	16	32.83	48	0.11	435.41	155.63	7			desconocido
+73	multinúcleo	15	30.78	45	0.11	435.41	145.90	5			desconocido
+74	cardioide	12	24.62	36	0.08	435.41	116.72	7			desconocido
+75	coldfire	11	22.57	33	0.08	435.41	106.99	5			desconocido
+76	imation	8	16.42	24	0.06	435.41	77.81	7			desconocido
+77	trackball	6	12.31	18	0.04	435.41	58.36	6	Q20140	3	generico
+78	grabable	17	34.88	52	0.12	422.97	164.55	14			desconocido
+79	skylake	16	32.83	49	0.12	422.22	154.83	8	Q1058943		desconocido
+80	transmeta	11	22.57	34	0.08	416.48	106.20	5			desconocido
+81	disquete	9	18.47	28	0.07	412.49	86.75	7	Q5293	2	generico
+82	multiprocesamiento	29	59.51	91	0.21	407.32	278.93	14			desconocido
+83	phenom	57	116.96	179	0.42	406.86	548.13	11			desconocido
+84	hololens	20	41.04	63	0.15	405.03	192.18	6			desconocido
+85	netburst	15	30.78	50	0.12	373.21	142.11	9			desconocido
+86	microcontroladores	22	45.14	74	0.17	368.42	207.96	17			desconocido
+87	powermac	8	16.42	27	0.06	366.66	75.56	6			desconocido
+88	xeon	103	211.35	350	0.82	363.14	971.15	24			desconocido
+89	gpio	15	30.78	51	0.12	362.84	141.41	7			desconocido
+90	synertek	8	16.42	28	0.07	348.33	74.87	5			desconocido
+91	imac	6	12.31	21	0.05	348.33	56.15	5	Q14091		desconocido
+92	impresoras	26	53.35	93	0.22	337.93	242.01	21			desconocido
+93	facetime	5	10.26	18	0.04	334.93	46.47	5			desconocido
+94	tegra	40	82.08	146	0.34	328.61	370.44	6			desconocido
+95	duron	18	36.93	66	0.16	326.56	166.51	8			desconocido
+96	overclock	16	32.83	59	0.14	324.03	147.79	12			desconocido
+97	alus	13	26.68	48	0.11	323.45	120.04	9			desconocido
+98	wiimote	36	73.87	135	0.32	316.66	331.13	7			desconocido
+99	athlon	112	229.82	421	0.99	315.64	1029.57	29			desconocido
+100	westmere	9	18.47	34	0.08	313.49	82.63	5	Q1118075		desconocido
+101	renesas	10	20.52	38	0.09	311.01	91.67	6			desconocido
+102	direccionable	29	59.51	111	0.26	307.97	265.37	16			desconocido
+103	socket	167	342.67	640	1.51	307.46	1527.70	28			desconocido
+104	gigabytes	6	12.31	23	0.05	307.35	54.88	6			desconocido
+105	chipsets	16	32.83	63	0.15	296.45	145.37	14			desconocido
+106	uefi	24	49.25	95	0.22	294.36	217.76	5			desconocido
+107	logitech	51	104.65	203	0.48	292.18	462.09	12			desconocido
+108	kilobit	7	14.36	28	0.07	290.27	63.35	6			desconocido
+109	sram	89	182.62	363	0.85	282.86	801.43	30	Q267416	4	especifico
+110	displays	15	30.78	62	0.15	277.92	134.62	6			desconocido
+111	caché	24	49.25	100	0.24	275.00	214.95	17			desconocido
+112	regrababl	11	22.57	46	0.11	273.69	98.43	10			desconocido
+113	microcódigo	5	10.26	21	0.05	272.13	44.69	5			desconocido
+114	unibody	7	14.36	30	0.07	265.03	62.24	5			desconocido
+115	eprom	48	98.49	207	0.49	262.89	426.14	18			desconocido
+116	microarquitecturas	6	12.31	26	0.06	261.25	53.20	6			desconocido
+117	pipeline	27	55.40	121	0.28	250.13	237.36	16			desconocido
+118	exynos	44	90.29	202	0.48	242.51	384.42	10			desconocido
+119	microcontrolador	5	10.26	23	0.05	241.89	43.66	5	Q165678		desconocido
+120	powerbook	48	98.49	222	0.52	240.23	418.57	14			desconocido
+121	pipelín	8	16.42	37	0.09	240.23	69.76	5			desconocido
+122	intel	1484	3045.07	6911	16.27	238.12	12917.94	204			desconocido
+123	snapdragon	134	274.96	625	1.47	237.66	1165.98	14	Q1193262	2	generico
+124	penryn	19	38.99	89	0.21	236.37	165.14	6			desconocido
+125	eeprom	32	65.66	150	0.35	236.15	278.09	14			desconocido
+126	digitalizadoro	7	14.36	33	0.08	234.45	60.74	5			desconocido
+127	mayús	7	14.36	33	0.08	234.45	60.74	5			desconocido
+128	simd	42	86.18	199	0.47	232.96	363.98	30			desconocido
+129	tóner	28	57.45	134	0.32	230.03	242.03	6			desconocido
+130	procesadores	47	96.44	226	0.53	228.65	405.76	30			desconocido
+131	asrock	6	12.31	29	0.07	227.17	51.73	5			desconocido
+132	zapper	23	47.19	112	0.26	225.04	197.92	9			desconocido
+133	centrino	14	28.73	69	0.16	221.66	120.10	8			desconocido
+134	micrófonos	17	34.88	84	0.20	220.95	145.73	15			desconocido
+135	laserdisc	91	186.73	454	1.07	218.30	778.16	11	Q273309	3	generico
+136	coprocesador	6	12.31	30	0.07	217.70	51.28	6	Q859595		desconocido
+137	controller	125	256.49	627	1.48	216.84	1067.40	46			desconocido
+138	zócalos	21	43.09	108	0.25	210.20	178.16	21			desconocido
+139	atmel	20	41.04	103	0.24	209.84	169.62	10			desconocido
+140	zilog	77	158.00	398	0.94	208.89	652.40	21			desconocido
+141	cisc	22	45.14	114	0.27	208.24	186.28	14			desconocido
+142	retroiluminación	32	65.66	166	0.39	207.96	270.87	13			desconocido
+143	displayport	36	73.87	187	0.44	207.61	304.63	18			desconocido
+144	ipad	5	10.26	26	0.06	207.34	42.30	5	Q25721		desconocido
+145	pcmcia	25	51.30	131	0.31	205.38	211.06	10			desconocido
+146	compactflash	19	38.99	100	0.24	204.27	160.22	8	Q678615		desconocido
+147	broadwell	15	30.78	79	0.19	204.10	126.47	9			desconocido
+148	computex	7	14.36	37	0.09	203.19	58.96	6			desconocido
+149	physx	19	38.99	103	0.24	196.97	158.99	5			desconocido
+150	microarray	25	51.30	136	0.32	196.13	209.00	7			desconocido
+151	bioinformática	10	20.52	55	0.13	193.52	83.36	7			desconocido
+152	geforce	275	564.28	1525	3.59	191.58	2287.42	26	Q825762		desconocido
+153	processors	11	22.57	61	0.14	191.58	91.50	10			desconocido
+154	precargar	5	10.26	28	0.07	189.31	41.48	5			desconocido
+155	mbits	8	16.42	45	0.11	188.29	66.29	5			desconocido
+156	acumulador	10	20.52	58	0.14	181.42	82.20	10	Q420105	3	generico
+157	thinkpad	8	16.42	47	0.11	178.63	65.53	6			desconocido
+158	impresora	61	125.17	359	0.84	178.25	499.46	16	Q82	2	generico
+159	programmable	19	38.99	112	0.26	177.91	155.50	12			desconocido
+160	openwrt	12	24.62	71	0.17	177.12	98.12	8			desconocido
+161	micrófono	89	182.62	532	1.25	174.95	725.71	18	Q46384	3	generico
+162	multiprocesador	14	28.73	84	0.20	174.16	114.04	12			desconocido
+163	molex	8	16.42	48	0.11	174.16	65.17	7			desconocido
+164	opcode	6	12.31	36	0.08	174.16	48.88	5			desconocido
+165	oculus	98	201.09	592	1.39	172.75	796.85	8			desconocido
+166	gflops	11	22.57	67	0.16	171.05	89.25	8			desconocido
+167	cpus	55	112.86	340	0.80	168.05	444.46	35			desconocido
+168	raspberry	105	215.45	657	1.55	165.64	845.76	11			desconocido
+169	shugart	19	38.99	119	0.28	165.46	153.00	6			desconocido
+170	modificadora	7	14.36	44	0.10	164.75	56.32	6			desconocido
+171	pulgado	7	14.36	44	0.10	164.75	56.32	5			desconocido
+172	shader	29	59.51	183	0.43	163.99	233.06	11			desconocido
+173	ramdac	6	12.31	38	0.09	163.28	48.17	5			desconocido
+174	touchpad	6	12.31	38	0.09	163.28	48.17	6			desconocido
+175	gpgpu	13	26.68	83	0.20	161.72	104.15	7			desconocido
+176	búfer	91	186.73	585	1.38	160.41	727.68	31			desconocido
+177	arkanoid	18	36.93	117	0.28	158.33	143.51	5			desconocido
+178	multiobjetivo	6	12.31	39	0.09	158.33	47.84	5			desconocido
+179	pcie	38	77.97	249	0.59	156.83	302.30	16			desconocido
+180	macintosh	360	738.70	2408	5.67	153.07	2847.92	64	Q75687		desconocido
+181	retrocompatible	12	24.62	81	0.19	151.45	94.70	10			desconocido
+182	firewalls	13	26.68	88	0.21	150.94	102.51	5			desconocido
+183	multiagente	17	34.88	116	0.27	149.53	133.76	6			desconocido
+184	micron	28	57.45	194	0.46	146.89	219.39	13			desconocido
+185	retroiluminado	20	41.04	139	0.33	146.36	156.57	12			desconocido
+186	gigabyt	33	67.71	230	0.54	145.87	258.15	25			desconocido
+187	rayadura	8	16.42	56	0.13	145.14	62.51	5			desconocido
+188	signetics	7	14.36	49	0.12	145.14	54.69	5			desconocido
+189	háptico	21	43.09	148	0.35	143.99	163.77	14			desconocido
+190	risc	108	221.61	763	1.80	143.59	841.71	45			desconocido
+191	processor	41	84.13	292	0.69	142.25	318.83	28			desconocido
+192	alphago	22	45.14	157	0.37	141.91	170.98	6			desconocido
+193	haswell	21	43.09	150	0.35	141.76	163.17	11	Q59069		desconocido
+194	pencil	27	55.40	193	0.45	141.64	209.75	10			desconocido
+195	kinect	73	149.79	526	1.24	140.33	565.85	10	Q474334	5	especifico
+196	accesorios	61	125.17	441	1.04	139.79	472.40	48			desconocido
+197	nmos	12	24.62	87	0.20	139.33	92.86	9			desconocido
+198	omap	8	16.42	58	0.14	139.33	61.91	6			desconocido
+199	display	94	192.88	690	1.62	137.34	724.91	29			desconocido
+200	scsi	73	149.79	542	1.28	135.54	561.19	22			desconocido
+201	floppy	14	28.73	104	0.24	135.46	107.61	8			desconocido
+202	bios	128	262.65	965	2.27	133.17	979.83	34			desconocido
+203	gbit	47	96.44	358	0.84	131.60	358.75	20			desconocido
+204	clustering	14	28.73	107	0.25	131.09	106.76	11			desconocido
+205	centronics	12	24.62	92	0.22	130.62	91.43	9			desconocido
+206	nits	18	36.93	140	0.33	128.48	136.60	9			desconocido
+207	deepmind	21	43.09	164	0.39	127.88	159.18	12			desconocido
+208	interconnect	6	12.31	47	0.11	127.44	45.44	6			desconocido
+209	vectrex	6	12.31	47	0.11	127.44	45.44	5			desconocido
+210	bionic	59	121.06	463	1.09	127.17	446.61	25			desconocido
+211	virtualization	7	14.36	55	0.13	126.99	52.97	5			desconocido
+212	gigabyte	12	24.62	95	0.22	125.90	90.61	12			desconocido
+213	iphón	14	28.73	111	0.26	125.69	105.67	11			desconocido
+214	temporizador	10	20.52	80	0.19	124.40	75.29	8			desconocido
+215	itanium	24	49.25	193	0.45	123.67	180.43	8			desconocido
+216	northbridge	7	14.36	57	0.13	121.91	52.44	6			desconocido
+217	wwdc	16	32.83	131	0.31	121.16	119.68	15			desconocido
+218	bioinformático	21	43.09	172	0.40	121.11	157.06	10	Q128570	3	generico
+219	cyrix	17	34.88	140	0.33	120.36	126.95	9			desconocido
+220	allendale	19	38.99	157	0.37	119.90	141.75	5			desconocido
+221	adaptador	22	45.14	182	0.43	119.74	164.08	14	Q1005390	1	muy_generico
+222	informatics	21	43.09	174	0.41	119.52	156.55	7			desconocido
+223	laptops	10	20.52	83	0.20	119.29	74.51	5			desconocido
+224	omnidireccional	32	65.66	266	0.63	119.09	238.33	9			desconocido
+225	controladores	38	77.97	316	0.74	119.03	282.99	36			desconocido
+226	hdmi	66	135.43	553	1.30	118.02	490.45	29			desconocido
+227	leds	30	61.56	252	0.59	117.68	222.77	13			desconocido
+228	epson	36	73.87	303	0.71	117.41	267.18	15			desconocido
+229	conmutador	7	14.36	59	0.14	117.23	51.93	6	Q4503	2	generico
+230	classic	19	38.99	161	0.38	116.52	140.74	6			desconocido
+231	apple	1951	4003.32	16567	38.99	116.24	14443.06	221			desconocido
+232	ranuras	6	12.31	51	0.12	116.11	44.40	5			desconocido
+233	vram	24	49.25	206	0.48	114.83	177.13	14	Q114894		desconocido
+234	macworld	19	38.99	164	0.39	114.11	140.00	14			desconocido
+235	direccionamiento	88	180.57	764	1.80	113.36	647.35	54			desconocido
+236	motorola	256	525.30	2265	5.33	110.97	1873.00	59			desconocido
+237	cortafuego	61	125.17	540	1.27	110.90	446.23	5	Q80998		desconocido
+238	neural	38	77.97	338	0.80	110.30	277.60	26			desconocido
+239	svga	10	20.52	89	0.21	110.23	73.04	6			desconocido
+240	circuitería	22	45.14	196	0.46	110.10	160.64	19			desconocido
+241	cuda	37	75.92	333	0.78	108.85	269.38	7			desconocido
+242	giroscopio	5	10.26	45	0.11	108.85	36.40	5			desconocido
+243	computational	45	92.34	408	0.96	107.95	326.93	15			desconocido
+244	direccionar	47	96.44	428	1.01	107.42	341.03	36			desconocido
+245	stepping	25	51.30	229	0.54	106.72	181.09	8			desconocido
+246	qualcomm	99	203.14	915	2.15	105.65	715.26	21			desconocido
+247	mouse	52	106.70	482	1.13	105.31	375.37	25	Q7987	1	muy_generico
+248	asynchronous	7	14.36	65	0.15	105.10	50.51	6			desconocido
+249	pins	9	18.47	84	0.20	104.50	64.84	8			desconocido
+250	criptográfica	29	59.51	271	0.64	104.35	208.85	15			desconocido
+251	teclas	10	20.52	94	0.22	103.67	71.89	10			desconocido
+252	convolucional	17	34.88	160	0.38	103.52	122.18	14			desconocido
+253	nvidia	245	502.72	2314	5.45	103.12	1758.96	54			desconocido
+254	fpga	30	61.56	285	0.67	102.45	215.02	13			desconocido
+255	interrupt	7	14.36	67	0.16	101.60	50.06	6			desconocido
+256	gigahercio	5	10.26	48	0.11	101.26	35.73	5			desconocido
+257	oled	38	77.97	367	0.86	100.58	271.05	21			desconocido
+258	nanómetro	72	147.74	712	1.68	97.97	510.01	34			desconocido
+259	nvme	10	20.52	99	0.23	97.84	70.81	6			desconocido
+260	computabilidad	12	24.62	119	0.28	97.66	84.93	5			desconocido
+261	firewall	30	61.56	298	0.70	97.48	212.22	8			desconocido
+262	peripheral	15	30.78	150	0.35	96.76	105.90	12			desconocido
+263	disipador	34	69.77	344	0.81	95.51	239.22	15			desconocido
+264	cryptography	12	24.62	122	0.29	95.00	84.31	6			desconocido
+265	vlsi	15	30.78	154	0.36	93.97	105.08	12			desconocido
+266	ranura	11	22.57	113	0.27	93.91	77.05	6			desconocido
+267	infineon	9	18.47	93	0.22	93.30	62.93	8			desconocido
+268	cache	10	20.52	104	0.24	92.64	69.79	6			desconocido
+269	timer	10	20.52	104	0.24	92.64	69.79	6			desconocido
+270	mbit	82	168.26	861	2.03	91.67	570.61	25			desconocido
+271	jtag	10	20.52	105	0.25	91.67	69.59	5			desconocido
+272	graphics	150	307.79	1577	3.71	91.54	1043.40	57			desconocido
+273	sacd	30	61.56	316	0.74	91.34	208.56	6			desconocido
+274	vesa	19	38.99	202	0.48	90.41	131.72	9			desconocido
+275	computadores	18	36.93	194	0.46	89.06	124.28	18			desconocido
+276	adapter	18	36.93	195	0.46	88.56	124.09	13			desconocido
+277	joysticks	10	20.52	110	0.26	87.08	68.62	8			desconocido
+278	hdcp	7	14.36	77	0.18	87.08	48.03	5			desconocido
+279	microelectronics	7	14.36	77	0.18	87.08	48.03	6			desconocido
+280	bulldozer	22	45.14	244	0.57	86.30	150.59	6			desconocido
+281	módem	11	22.57	122	0.29	86.30	75.30	8			desconocido
+282	formateo	9	18.47	100	0.24	86.12	61.57	8			desconocido
+283	microprocesador	10	20.52	112	0.26	85.37	68.25	10	Q5297		desconocido
+284	nand	31	63.61	348	0.82	85.16	211.42	12			desconocido
+285	byte	78	160.05	878	2.07	84.90	531.53	34			desconocido
+286	analógico	7	14.36	79	0.19	84.66	47.66	5			desconocido
+287	procesador	43	88.23	487	1.15	84.34	292.48	27			desconocido
+288	formateado	16	32.83	182	0.43	83.93	108.68	14			desconocido
+289	megapíxel	51	104.65	583	1.37	83.48	345.91	20			desconocido
+290	almacenamiento	106	217.51	1218	2.87	83.01	717.82	77			desconocido
+291	megapíxeles	6	12.31	69	0.16	82.94	40.62	5			desconocido
+292	retrocompatibilidad	12	24.62	139	0.33	82.28	81.06	9			desconocido
+293	accelerated	8	16.42	94	0.22	81.01	53.81	8			desconocido
+294	netbooks	9	18.47	106	0.25	80.80	60.49	8			desconocido
+295	microcomputador	16	32.83	189	0.44	80.54	107.44	10			desconocido
+296	clasificador	67	137.48	794	1.87	80.25	449.45	12			desconocido
+297	microordenador	16	32.83	190	0.45	80.08	107.26	12			desconocido
+298	keyboard	43	88.23	511	1.20	80.01	288.20	22			desconocido
+299	tektronix	9	18.47	107	0.25	79.97	60.31	6			desconocido
+300	megabyte	8	16.42	96	0.23	79.17	53.46	7			desconocido
+301	mips	51	104.65	613	1.44	79.02	340.63	27			desconocido
+302	voltaje	13	26.68	158	0.37	78.07	86.53	10			desconocido
+303	flash	16	32.83	195	0.46	77.84	106.41	10			desconocido
+304	versatile	10	20.52	122	0.29	77.75	66.48	7			desconocido
+305	pixel	82	168.26	1004	2.36	77.45	544.55	23			desconocido
+306	subproceso	21	43.09	259	0.61	76.84	139.14	6			desconocido
+307	genómica	43	88.23	533	1.25	76.42	284.47	17			desconocido
+308	mainfram	16	32.83	199	0.47	76.14	105.74	9			desconocido
+309	computacional	35	71.82	436	1.03	76.01	231.19	13			desconocido
+310	memorio	8	16.42	100	0.24	75.72	52.79	8			desconocido
+311	component	19	38.99	239	0.56	75.21	125.12	6			desconocido
+312	gpus	12	24.62	151	0.36	75.18	79.02	10			desconocido
+313	minicomputadora	12	24.62	151	0.36	75.18	79.02	9			desconocido
+314	deshabilitado	15	30.78	189	0.44	75.07	98.73	8			desconocido
+315	capacitivo	23	47.19	290	0.68	75.01	151.35	15			desconocido
+316	megabyt	19	38.99	242	0.57	74.20	124.64	13			desconocido
+317	policarbonato	29	59.51	370	0.87	74.06	190.13	13			desconocido
+318	criptografía	72	147.74	919	2.16	74.02	471.99	17	Q8789	2	generico
+319	concentrador	5	10.26	64	0.15	73.80	32.75	5	Q128003	2	generico
+320	radeon	100	205.19	1281	3.01	73.74	654.80	32	Q295089		desconocido
+321	registradora	7	14.36	90	0.21	73.44	45.78	6			desconocido
+322	computación	637	1307.08	8200	19.30	73.35	4164.68	273			desconocido
+323	escáner	11	22.57	142	0.33	73.12	71.85	6	Q8778345	1	muy_generico
+324	multiplexado	11	22.57	142	0.33	73.12	71.85	11			desconocido
+325	píxel	337	691.50	4366	10.28	72.84	2198.86	105			desconocido
+326	clónico	15	30.78	195	0.46	72.57	97.77	5			desconocido
+327	firmware	22	45.14	288	0.68	72.02	143.08	14	Q104851	1	muy_generico
+328	ethernet	151	309.84	1981	4.66	71.85	981.36	64			desconocido
+329	gamepad	15	30.78	200	0.47	70.61	96.99	11			desconocido
+330	bayesiana	6	12.31	80	0.19	70.61	38.80	5			desconocido
+331	bits	37	75.92	497	1.17	70.04	238.68	29			desconocido
+332	reset	9	18.47	121	0.28	69.98	58.04	7			desconocido
+333	hollerith	10	20.52	135	0.32	69.67	64.40	5			desconocido
+334	formatear	17	34.88	230	0.54	69.50	109.41	13			desconocido
+335	multivariante	13	26.68	176	0.41	69.45	83.65	7			desconocido
+336	generativo	73	149.79	989	2.33	69.40	469.62	13			desconocido
+337	acelerómetro	28	57.45	380	0.89	69.27	180.03	22			desconocido
+338	rasterizado	10	20.52	136	0.32	69.11	64.25	7			desconocido
+339	miniordenador	5	10.26	68	0.16	69.11	32.13	5			desconocido
+340	kbit	23	47.19	316	0.74	68.36	147.30	11			desconocido
+341	potenciómetro	16	32.83	220	0.52	68.30	102.45	7			desconocido
+342	terabyt	9	18.47	125	0.29	67.56	57.44	8			desconocido
+343	printer	20	41.04	281	0.66	66.73	127.18	10			desconocido
+344	switch	21	43.09	296	0.70	66.50	133.40	10			desconocido
+345	openvms	6	12.31	85	0.20	66.14	38.05	5			desconocido
+346	algorithms	27	55.40	383	0.90	66.05	171.16	10			desconocido
+347	videoconsola	10	20.52	142	0.33	65.97	63.37	9			desconocido
+348	inalámbrico	257	527.35	3651	8.59	65.94	1628.41	94			desconocido
+349	verilog	6	12.31	86	0.20	65.31	37.91	6			desconocido
+350	architectures	5	10.26	72	0.17	64.99	31.54	5			desconocido
+351	auriculares	7	14.36	101	0.24	64.85	44.13	6			desconocido
+352	macs	13	26.68	188	0.44	64.69	81.90	8			desconocido
+353	sparc	19	38.99	276	0.65	64.38	119.52	11			desconocido
+354	proteómica	11	22.57	160	0.38	64.29	69.17	7			desconocido
+355	jobs	85	174.41	1239	2.92	64.14	534.12	24			desconocido
+356	bootstrap	19	38.99	277	0.65	64.13	119.38	9			desconocido
+357	compaq	27	55.40	394	0.93	64.07	169.60	15			desconocido
+358	hardware	9	18.47	132	0.31	63.72	56.44	9	Q3966	0	raiz_de_dominio
+359	granularidad	10	20.52	147	0.35	63.56	62.67	10			desconocido
+360	multitarea	21	43.09	309	0.73	63.50	131.56	15			desconocido
+361	imprimibl	7	14.36	103	0.24	63.50	43.85	7			desconocido
+362	directx	38	77.97	560	1.32	63.39	237.93	16			desconocido
+363	glove	20	41.04	297	0.70	62.88	124.92	5			desconocido
+364	amigaos	12	24.62	179	0.42	62.57	74.84	5			desconocido
+365	telnet	12	24.62	179	0.42	62.57	74.84	5			desconocido
+366	asus	22	45.14	330	0.78	62.20	136.96	16			desconocido
+367	escalado	6	12.31	91	0.21	61.47	37.22	5			desconocido
+368	loader	16	32.83	243	0.57	61.38	99.20	6			desconocido
+369	miniaturización	13	26.68	198	0.47	61.19	80.53	12			desconocido
+370	silico	8	16.42	123	0.29	60.58	49.40	7			desconocido
+371	stack	11	22.57	170	0.40	60.25	67.81	9			desconocido
+372	proyector	10	20.52	155	0.36	60.06	61.59	7			desconocido
+373	asic	22	45.14	342	0.80	59.87	135.36	15			desconocido
+374	táctil	214	439.11	3335	7.85	59.71	1315.61	74			desconocido
+375	icloud	8	16.42	125	0.29	59.54	49.14	6			desconocido
+376	dispositivos	72	147.74	1127	2.65	59.43	441.99	64			desconocido
+377	cableado	14	28.73	220	0.52	59.18	85.83	8			desconocido
+378	videograbadora	8	16.42	127	0.30	58.54	48.88	7			desconocido
+379	monocromática	11	22.57	175	0.41	58.41	67.16	6			desconocido
+380	nist	39	80.03	624	1.47	58.05	237.68	11			desconocido
+381	compatible	14	28.73	224	0.53	58.05	85.32	6			desconocido
+382	enteros	12	24.62	193	0.45	57.73	73.00	9			desconocido
+383	sequencing	10	20.52	161	0.38	57.67	60.82	5			desconocido
+384	genomics	15	30.78	243	0.57	57.29	91.04	6			desconocido
+385	patilla	25	51.30	407	0.96	56.99	151.48	13			desconocido
+386	semiconductors	6	12.31	98	0.23	56.79	36.31	6			desconocido
+387	supercomputador	11	22.57	180	0.42	56.68	66.54	9			desconocido
+388	ricoh	14	28.73	230	0.54	56.44	84.57	7			desconocido
+389	adsl	31	63.61	511	1.20	56.24	187.05	11			desconocido
+390	criptográfico	68	139.53	1129	2.66	55.81	409.31	20			desconocido
+391	controlador	54	110.80	897	2.11	55.78	324.99	35			desconocido
+392	espaciadoro	7	14.36	117	0.28	55.42	42.04	6			desconocido
+393	piezoeléctrico	29	59.51	489	1.15	54.90	173.65	12			desconocido
+394	core	17	34.88	287	0.68	54.83	101.75	13			desconocido
+395	toshiba	45	92.34	762	1.79	54.65	269.07	25			desconocido
+396	cupertino	16	32.83	271	0.64	54.64	95.66	15			desconocido
+397	kilobyt	12	24.62	204	0.48	54.43	71.66	11			desconocido
+398	trusted	8	16.42	136	0.32	54.43	47.77	5			desconocido
+399	chipset	7	14.36	119	0.28	54.43	41.80	5			desconocido
+400	router	59	121.06	1008	2.37	54.14	351.72	19			desconocido
+401	buffer	10	20.52	171	0.40	54.09	59.60	7			desconocido
+402	embebido	75	153.90	1287	3.03	53.89	446.44	50			desconocido
+403	instruction	24	49.25	414	0.97	53.59	142.61	11			desconocido
+404	robótica	50	102.60	863	2.03	53.56	297.04	18	Q170978	2	generico
+405	temporización	11	22.57	190	0.45	53.51	65.33	10			desconocido
+406	fujitsu	21	43.09	363	0.85	53.47	124.69	11			desconocido
+407	stick	16	32.83	278	0.65	53.18	94.84	9			desconocido
+408	remote	49	100.54	854	2.01	53.01	290.14	20			desconocido
+409	netbook	7	14.36	122	0.29	53.01	41.45	6			desconocido
+410	disc	102	209.30	1784	4.20	52.81	603.23	34			desconocido
+411	estuche	44	90.29	770	1.81	52.78	260.17	11			desconocido
+412	rate	55	112.86	968	2.28	52.46	324.58	34			desconocido
+413	switching	11	22.57	195	0.46	52.06	64.76	8			desconocido
+414	analógica	48	98.49	856	2.01	51.73	281.99	22			desconocido
+415	capacitancia	24	49.25	428	1.01	51.73	141.00	8			desconocido
+416	microphone	6	12.31	107	0.25	51.73	35.25	5			desconocido
+417	regresión	7	14.36	125	0.29	51.66	41.10	5			desconocido
+418	interface	16	32.83	288	0.68	51.22	93.70	8			desconocido
+419	minix	7	14.36	126	0.30	51.22	40.99	6			desconocido
+420	irda	6	12.31	108	0.25	51.22	35.14	6			desconocido
+421	lossless	6	12.31	108	0.25	51.22	35.14	6			desconocido
+422	controladora	20	41.04	365	0.86	50.48	116.57	17			desconocido
+423	pseudocódigo	8	16.42	146	0.34	50.48	46.63	6			desconocido
+424	disk	56	114.91	1026	2.41	50.27	325.94	24			desconocido
+425	escalabilidad	27	55.40	496	1.17	50.13	157.01	20			desconocido
+426	carcasa	131	268.80	2418	5.69	49.88	760.51	73	Q3975	1	muy_generico
+427	compatibilidad	25	51.30	465	1.09	49.48	144.75	8			desconocido
+428	equipment	41	84.13	767	1.81	49.18	236.91	29			desconocido
+429	commodore	199	408.33	3730	8.78	49.08	1149.13	64			desconocido
+430	connector	9	18.47	169	0.40	48.98	51.94	7			desconocido
+431	computation	17	34.88	320	0.75	48.86	98.02	6			desconocido
+432	estocástica	7	14.36	132	0.31	48.77	40.34	6			desconocido
+433	devices	32	65.66	604	1.42	48.72	184.33	28			desconocido
+434	listados	20	41.04	379	0.89	48.51	115.05	20			desconocido
+435	dial	64	131.32	1214	2.86	48.46	368.03	6			desconocido
+436	paddle	20	41.04	383	0.90	47.98	114.63	6	Q449573	4	especifico
+437	workstation	10	20.52	192	0.45	47.85	57.26	6			desconocido
+438	optimizada	9	18.47	174	0.41	47.50	51.41	8			desconocido
+439	subrutina	27	55.40	523	1.23	47.40	154.13	14			desconocido
+440	matricial	49	100.54	950	2.24	47.36	279.62	22			desconocido
+441	siri	42	86.18	817	1.92	47.19	239.40	29			desconocido
+442	modularidad	14	28.73	273	0.64	47.07	79.73	10			desconocido
+443	pantallas	10	20.52	195	0.46	47.07	56.95	8			desconocido
+444	admite	13	26.68	255	0.60	46.78	73.88	9			desconocido
+445	density	17	34.88	334	0.79	46.70	96.56	13			desconocido
+446	algoritmos	39	80.03	768	1.81	46.59	221.34	22			desconocido
+447	attached	10	20.52	197	0.46	46.57	56.74	7			desconocido
+448	nunchuk	6	12.31	119	0.28	46.24	33.97	5	Q4894974		desconocido
+449	pantalla	84	172.36	1671	3.93	46.09	475.02	45			desconocido
+450	anodizado	7	14.36	140	0.33	45.83	39.51	6			desconocido
+451	modulation	7	14.36	141	0.33	45.49	39.41	6			desconocido
+452	soportes	10	20.52	202	0.48	45.36	56.24	10			desconocido
+453	acceleration	8	16.42	162	0.38	45.24	44.95	5			desconocido
+454	computing	90	184.67	1829	4.30	45.07	505.09	46			desconocido
+455	ntsc	49	100.54	997	2.35	45.01	274.87	25			desconocido
+456	enhanced	18	36.93	370	0.87	44.53	100.61	13			desconocido
+457	pdas	9	18.47	185	0.44	44.53	50.30	8			desconocido
+458	neuronal	225	461.69	4638	10.92	44.40	1256.32	73			desconocido
+459	nano	73	149.79	1513	3.56	44.15	406.81	15			desconocido
+460	chatgpt	16	32.83	333	0.78	43.95	89.03	5			desconocido
+461	actualizable	8	16.42	167	0.39	43.81	44.47	8			desconocido
+462	ergonómico	17	34.88	355	0.84	43.80	94.48	15			desconocido
+463	multiusuario	9	18.47	189	0.44	43.54	49.92	7			desconocido
+464	chequear	8	16.42	168	0.40	43.54	44.37	6			desconocido
+465	nanosegundo	10	20.52	212	0.50	43.11	55.27	8			desconocido
+466	recargable	16	32.83	340	0.80	43.00	88.36	16			desconocido
+467	conversor	18	36.93	383	0.90	42.94	99.36	14			desconocido
+468	volátil	124	254.44	2642	6.22	42.88	684.16	45			desconocido
+469	seagate	9	18.47	193	0.45	42.59	49.54	7			desconocido
+470	openai	23	47.19	495	1.17	42.43	126.44	9			desconocido
+471	arduino	27	55.40	582	1.37	42.36	148.34	12			desconocido
+472	sobremesa	48	98.49	1036	2.44	42.31	263.60	32			desconocido
+473	instructions	12	24.62	259	0.61	42.31	65.90	8			desconocido
+474	joystick	18	36.93	389	0.92	42.25	98.80	10			desconocido
+475	procesamiento	57	116.96	1236	2.91	42.10	312.49	41			desconocido
+476	input	7	14.36	152	0.36	42.04	38.36	5			desconocido
+477	portabl	8	16.42	174	0.41	41.97	43.81	5			desconocido
+478	processing	35	71.82	763	1.80	41.87	191.51	31			desconocido
+479	sintonizador	13	26.68	285	0.67	41.62	70.99	7			desconocido
+480	hitachi	41	84.13	901	2.12	41.52	223.68	18			desconocido
+481	multicanal	19	38.99	418	0.98	41.47	103.62	12			desconocido
+482	interfaz	55	112.86	1223	2.88	41.01	298.77	44			desconocido
+483	dual	60	123.12	1337	3.15	40.92	325.67	37			desconocido
+484	cursor	38	77.97	864	2.03	40.06	204.73	22			desconocido
+485	soporte	82	168.26	1871	4.40	39.91	441.22	33			desconocido
+486	programar él	12	24.62	275	0.65	39.73	64.46	8			desconocido
+487	tamaño	23	47.19	528	1.24	39.66	123.48	16			desconocido
+488	descatalogar	6	12.31	138	0.32	39.58	32.19	6			desconocido
+489	genómico	62	127.22	1427	3.36	39.55	332.53	20	Q222046	3	generico
+490	enrutamiento	36	73.87	830	1.95	39.48	192.96	8			desconocido
+491	catódico	32	65.66	742	1.75	39.25	171.16	22			desconocido
+492	codificant	16	32.83	373	0.88	39.03	85.41	7			desconocido
+493	conectores	10	20.52	234	0.55	38.88	53.30	8			desconocido
+494	condensador	118	242.13	2762	6.50	38.86	628.93	27			desconocido
+495	inicialización	14	28.73	329	0.77	38.70	74.51	10			desconocido
+496	linley	9	18.47	213	0.50	38.42	47.77	6			desconocido
+497	chatbot	8	16.42	191	0.45	38.07	42.32	5			desconocido
+498	roms	9	18.47	215	0.51	38.05	47.60	5			desconocido
+499	autoaprendizaje	7	14.36	168	0.40	37.86	36.96	5			desconocido
+500	marvell	6	12.31	144	0.34	37.86	31.68	6			desconocido

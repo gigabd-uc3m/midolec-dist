@@ -20,7 +20,7 @@ include_empty_attributes = true
 
 [paths]
 # Root folder for external runtime assets managed by this Midolec distribution.
-# Relative paths are resolved from the v6 application root.
+# Relative paths are resolved from the V7 application root.
 runtime_root = "runtime"
 # Root folder used to locate FreeLing shared resources.
 # Midolec expects common/ and es/ under: runtime/freeling/share/freeling/

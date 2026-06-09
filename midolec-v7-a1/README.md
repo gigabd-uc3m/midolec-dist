@@ -21,16 +21,15 @@ midolec-v7-a1/
 
 ## Current Alpha Status
 
-This folder currently contains the V7-a1 package scaffold, configuration files,
-runtime helper scripts, and documentation. The executable and `_internal/`
-runtime folder must be added by the V7-a1 binary rebuild process.
+This folder currently contains the V7-a1 executable, `_internal/`, configuration
+files, runtime helper scripts, and documentation. External runtime assets such
+as FreeLing resources and spaCy models are still installed through provisioning
+scripts and are not committed to Git.
 
 Do not copy `v7/run_midolec_v6.sh` into this package. It is not part of the
 V7-a1 distribution contract.
 
 ## Basic Commands
-
-After the binary has been rebuilt and copied into this folder:
 
 ```bash
 ./midolec-v7-a1 -H

@@ -1,0 +1,34 @@
+{
+  "name": "technicism_contexts",
+  "language": "es",
+  "source": "Wikipedia ES / Wikidata technicism pipeline",
+  "selection": {
+    "specificity_ratio_min": 10.0,
+    "log_likelihood_min": 30.0,
+    "n_articles_min": 5,
+    "max_terms_per_domain": 500
+  },
+  "domains": {
+    "administracion_sistemas": 6,
+    "arquitectura": 500,
+    "ciencias_sociales": 474,
+    "derecho_y_legislacion": 372,
+    "economia": 224,
+    "fisica": 500,
+    "geografia_politica": 131,
+    "geologia": 241,
+    "historia": 258,
+    "informatica": 500,
+    "ingenieria": 465,
+    "lengua_y_linguistica": 340,
+    "matematicas": 493,
+    "medicina_y_biologia": 500,
+    "medioambiente": 278,
+    "psicologia": 441,
+    "quimica": 495,
+    "telecomunicaciones": 214
+  },
+  "total_domain_term_rows": 6432,
+  "unique_terms": 5189,
+  "overlap_review": "technicism_overlap_review.tsv"
+}

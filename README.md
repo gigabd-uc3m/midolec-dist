@@ -46,8 +46,7 @@ bash runtime/provisioning/install_midolec_runtime.sh
 ./midolec-v6 ../examples/v6/es/legal_cross_references.txt
 ```
 
-For the V7 alpha package, once the `midolec-v7-a1` binary has been built and
-copied into the folder:
+For the V7 alpha package:
 
 ```bash
 cd midolec-v7-a1
@@ -106,5 +105,9 @@ cd midolec-v6
 bash runtime/provisioning/doctor.sh --backend all
 ```
 
-For V7-a1, check the package-specific documentation because the alpha package may
-not expose the same helper scripts as V6 yet.
+For V7-a1 FreeLing runtime diagnostics:
+
+```bash
+cd midolec-v7-a1
+bash runtime/provisioning/freeling/check_runtime.sh
+```

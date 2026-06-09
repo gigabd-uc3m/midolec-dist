@@ -1,0 +1,26 @@
+{
+  "technical_glossary": [
+    "address",
+    "bloque",
+    "privado",
+    "rango",
+    "local",
+    "usar"
+  ],
+  "context_metadata": {
+    "context": "administracion_sistemas",
+    "language": "es",
+    "domain": "administracion_sistemas",
+    "source": "Wikipedia ES / Wikidata technicism pipeline",
+    "source_file": "output/administracion.tsv",
+    "selection": {
+      "specificity_ratio_min": 10.0,
+      "log_likelihood_min": 30.0,
+      "n_articles_min": 5,
+      "max_terms": 500,
+      "preserve_source_order": true
+    },
+    "terms_count": 6,
+    "runtime_note": "Terms are lemmatized by the external pipeline; Spanish runtime matches both surface text and lemmas."
+  }
+}

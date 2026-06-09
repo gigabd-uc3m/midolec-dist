@@ -1,0 +1,7 @@
+selection_rank	term	freq_abs_domain	freq_rel_dom_ppm	freq_abs_global	freq_rel_glob_ppm	specificity_ratio	log_likelihood	n_articles	qid_wikidata	depth	nivel_abstraccion
+1	address	18	6823.35	818	1.93	3623.83	258.64	5			desconocido
+2	bloque	20	7581.50	36805	86.63	87.57	139.34	5			desconocido
+3	privado	43	16300.23	95371	224.47	72.65	283.73	5			desconocido
+4	rango	19	7202.43	58681	138.11	52.17	112.99	5			desconocido
+5	local	29	10993.18	193485	455.39	24.14	129.07	5			desconocido
+6	usar	12	4548.90	151505	356.59	12.76	38.99	5			desconocido
